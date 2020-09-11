@@ -12,8 +12,6 @@
 ENTER_YOUR_NUMBER_FOR_AUTH = "Барои авторизатсия рақами телефони худро ворид намоед";
 FOR_HUMO_CE = "*Барои мутахассисони қарзи Ҳумо";
 SMS_WITH_ACTIVATE_CODE = "Ба Шумо паём ба рамзи фаъолсозӣ фиристода шуд";
-CONTINUE = "Идома диҳед";
-
 
 //MARK: -Main
 
@@ -27,6 +25,7 @@ YOU_CAN_DELETE_ONLY_DRAFT = "Шумо танҳо сиёнависҳоро мет
 
 //MARK: -Statistic
 
+STATISTIC = "Омор";
 ACTIVE_PROFILE = "Сандуқи фаъоли қарзӣ";
 LOAN_SUMM = "Маблағи тақимотшуда";
 PAR_ONE = "PAR 1";
@@ -43,7 +42,6 @@ SIX_MONTH = "6 моҳа";
 ONE_YEAR = "Солона";
 FROM = "Аз";
 TO = "То";
-CONFIRM = "Татбиқ кардан";
 
 //MARK: -Profile
 
@@ -59,6 +57,8 @@ NOTIFICATION = "Огоҳиҳо";
 VERSION = "Версия";
 
 LOGOUT = "Ғайрифаъол гардонидани дастгоҳ";
+DO_YOU_WANT_LOGOUT = "Оё Шумо мехоҳед, ки дастгоҳро ғайрифаъол гардонед?";
+
 
 //MARK: -OrderBy
 
@@ -145,3 +145,5 @@ WAIT_FOR_ANSWER = "Дар давоми 24 соат ҷавобро интизор
 FILES = "Файлҳо";
 ERROR = "Хато";
 WAIT = "Интизор шавед";
+CONTINUE = "Идома диҳед";
+APPLY = "Татбиқ кардан";

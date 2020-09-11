@@ -79,14 +79,14 @@ class FormFiveViewController: FormsBaseViewController {
                 let isAllFormsFilled = requestFull.stepFirst && requestFull.stepSecond &&
                     requestFull.stepThird && requestFull.files.count >= 2
                 if isRequestSync {
-                    self.topLabel.text = "Заявка синхронизирована!"
+                    self.topLabel.text = "REQUEST_SYNC".localized()
                     self.messageLabel.text = " "
                 } else if isAllFormsFilled {
-                    self.topLabel.text = "Все поля заполненые!"
-                    self.messageLabel.text = "Заявка готова к отправке на рассмотрение"
+                    self.topLabel.text = "REQUEST_FILL".localized()
+                    self.messageLabel.text = "REQUEST_FILL_MSG".localized()
                 } else {
-                    self.topLabel.text = "Все поля не заполненые!"
-                    self.messageLabel.text = "Заполните пропущенные поля"
+                    self.topLabel.text = "REQUEST_NOT_FILL".localized()
+                    self.messageLabel.text = "REQUEST_NOT_FILL_MSG".localized()
                 }
         }) { (error, code) in
         }
@@ -144,11 +144,11 @@ class FormFiveViewController: FormsBaseViewController {
     private func setIsEditable() {
         if self.isEditable {
             self.view.isUserInteractionEnabled = true
-            self.topLabel.text = "Все поля не заполненые!"
-            self.messageLabel.text = "Заполните пропущенные поля"
+            self.topLabel.text = "REQUEST_NOT_FILL".localized()
+            self.messageLabel.text = "REQUEST_NOT_FILL_MSG".localized()
         } else {
             self.view.isUserInteractionEnabled = false
-            self.topLabel.text = "Заявка синхронизирована"
+            self.topLabel.text = "REQUEST_SYNC".localized()
             self.messageLabel.text = " "
         }
     }

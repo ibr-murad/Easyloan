@@ -21,8 +21,9 @@ class MainViewController: BaseViewController {
         searchBar.delegate = self
         searchBar.searchBarStyle = UISearchBar.Style.default
         searchBar.tintColor = .white
-        searchBar.setTextColor(color: UIColor(named: "darkTextColor")!)
-        searchBar.setPlaceholder(color: .lightGray, text: "SEARCH".localized() ?? "Search...")
+        if let color = UIColor(named: "darkTextColor") {
+            searchBar.setTextColor(color: color)
+        }
         searchBar.setSearchField(color: .white, cornerRadius: 10)
         searchBar.setImage(UIImage(named: "searchIcon"), for: .search, state: .normal)
         searchBar.setImage(UIImage(named: "dismissIcon"), for: .clear, state: .normal)
@@ -34,10 +35,6 @@ class MainViewController: BaseViewController {
         refreshControl.addTarget(self, action: #selector(self.refreshControlListener), for: .valueChanged)
         return refreshControl
     }()
-    
-    // MARK: - Public Variables
-    
-    private let user: UserModel = UserDefaults.standard.getUser()
     
     // MARK: - Private Variables
     
@@ -59,7 +56,6 @@ class MainViewController: BaseViewController {
         super.viewWillAppear(animated)
         
         IQKeyboardManager.shared.enable = false
-        
         self.loadingAlert()
         self.backgroundDescriptionLabel.text = "YOUR_FUTURE_REQUESTS_LIST".localized()
         self.setNavigationBar()
@@ -80,11 +76,6 @@ class MainViewController: BaseViewController {
         self.setTableView()
         self.setSearchViewController()
         self.reloadControllerData()
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-
     }
     
     // MARK: - Actions
@@ -133,13 +124,7 @@ class MainViewController: BaseViewController {
     }
     
     @IBAction func notificationBarButtonTapped(_ sender: UIBarButtonItem) {
-        /*let controller = NotificationPopoverViewController.instantiate()
-        controller.isNeedFullData = false
-    
-        self.presentPopoverViewController(controller: controller,
-                                          sourceView: sender.plainView,
-                                          size: CGSize(width: UIScreen.main.bounds.width, height: 450),
-                                          minusY: -12, arrowDirection: .up)*/
+        
     }
     
     @objc private func refreshControlListener(_ sender: UIRefreshControl) {
@@ -158,6 +143,8 @@ class MainViewController: BaseViewController {
             color: .white, margin: 10)
         guard let color = UIColor(named: "appColor") else { return }
         self.setupNavBar(style: .black, backgroungColor: color, tintColor: .white)
+        self.searchController.searchBar
+            .setPlaceholder(color: .lightGray, text: "SEARCH".localized())
     }
     
     private func setTableView() {
@@ -374,13 +361,11 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
                     self.showDeleteAlert(id: indexPath.row)
                     success(true)
             })
-            if let cgImage = UIImage(named: "completedIcon")?.cgImage {
-                deleteAction.image = ImageWithoutRender(cgImage: cgImage, scale: UIScreen.main.nativeScale, orientation: .up)
-                deleteAction.backgroundColor = .white
+            if let cgImage = UIImage(named: "contextualDelete")?.cgImage {
+                deleteAction.image =
+                    ImageWithoutRender(cgImage: cgImage, scale: UIScreen.main.nativeScale, orientation: .up)
+                deleteAction.backgroundColor = .groupTableViewBackground
             }
-            //deleteAction.image = UIImage(named: "trashIcon")
-            //deleteAction.backgroundColor = UIColor(named: "appRedColor")
-            
             let callAction = UIContextualAction(
                 style: .normal, title:  "",
                 handler: { [weak self, indexPath] (ac:UIContextualAction, view:UIView, success:(Bool) -> Void) in
@@ -391,8 +376,9 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
                     success(true)
             })
             
-            if let cgImage = UIImage(named: "completedIcon")?.cgImage {
-                callAction.image = ImageWithoutRender(cgImage: cgImage, scale: UIScreen.main.nativeScale, orientation: .up)
+            if let cgImage = UIImage(named: "contextualCall")?.cgImage {
+                callAction.image =
+                    ImageWithoutRender(cgImage: cgImage, scale: UIScreen.main.nativeScale, orientation: .up)
                 callAction.backgroundColor = .white
             }
             
@@ -401,12 +387,6 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
         return UISwipeActionsConfiguration(actions: [])
     }
     
-}
-
-class ImageWithoutRender: UIImage {
-    override func withRenderingMode(_ renderingMode: UIImage.RenderingMode) -> UIImage {
-        return self
-    }
 }
 
   //***************************************************//

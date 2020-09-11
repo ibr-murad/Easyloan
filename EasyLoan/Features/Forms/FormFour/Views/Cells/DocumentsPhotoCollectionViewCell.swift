@@ -21,19 +21,19 @@ class DocumentsPhotoCollectionViewCell: UICollectionViewCell {
         // Initialization code
     }
     
-    func initView(photoImage: UIImage, status: Status, type: String) {
+    func initView(photoImage: UIImage, status: RequestState, type: String) {
         self.photoImageView.image = photoImage
         self.statusImageView.image = self.setStatusImage(status: status)
         self.typeLabel.text = self.setTypeText(type: type)
     }
     
-    private func setStatusImage(status: Status) -> UIImage {
+    private func setStatusImage(status: RequestState) -> UIImage {
         var imageName = ""
         switch status {
         case .approved:
             imageName = "completedIcon"
             break
-        case .warning:
+        case .revision:
             imageName = "warningIcon"
             break
         default:

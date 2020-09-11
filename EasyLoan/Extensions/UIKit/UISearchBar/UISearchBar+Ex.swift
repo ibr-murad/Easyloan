@@ -15,7 +15,8 @@ extension UISearchBar {
             [NSAttributedString.Key.foregroundColor: UIColor.black]
     }
     
-    func setPlaceholder(color: UIColor, text: String ) {
+    func setPlaceholder(color: UIColor, text: String? ) {
+        guard let text = text else { return }
         UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).attributedPlaceholder =
             NSAttributedString(string: " \(text)", attributes: [NSAttributedString.Key.foregroundColor: UIColor.gray])
     }

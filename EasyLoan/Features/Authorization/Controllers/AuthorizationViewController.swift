@@ -16,14 +16,14 @@ class AuthorizationViewController: UIViewController {
     
     private let textFieldNumbersLimit = 9
     
-    // MARK: - outlets
+    // MARK: - Outlets
     
     @IBOutlet weak var phoneTextField: UITextField!
     @IBOutlet weak var continueButton: RoundedTextButton!
     @IBOutlet weak var middleStackView: UIStackView!
     @IBOutlet weak var middleViewTopConstraint: NSLayoutConstraint!
     
-    // MARK: - instantiate
+    // MARK: - Instantiate
     
     static func instantiate() -> AuthorizationViewController {
         let storyboard = UIStoryboard(name: "Authorization", bundle: nil)
@@ -33,7 +33,7 @@ class AuthorizationViewController: UIViewController {
         return controller
     }
     
-    // MARK: - view life cycle
+    // MARK: - View Lifecycle
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -51,7 +51,7 @@ class AuthorizationViewController: UIViewController {
         self.phoneTextField.delegate = self
     }
     
-    // MARK: - actions and listeners
+    // MARK: - Actions
     
     @IBAction func continueButtonTapped(_ sender: UIButton) {
         self.setEnabledContinueButton(isEnabled: false)
@@ -75,7 +75,7 @@ class AuthorizationViewController: UIViewController {
         }
     }
     
-    // MARK: - helpers
+    // MARK: - Helpers
     
     private func setEnabledContinueButton(isEnabled: Bool) {
         self.continueButton.isEnabled = isEnabled
@@ -99,7 +99,7 @@ class AuthorizationViewController: UIViewController {
         }
     }
     
-    // MARK: - setters
+    // MARK: - Setters
     
     private func setTextFieldIcon() {
         let leftView = UIView(frame: CGRect(x: 0, y: 0, width: 32, height: 24))

@@ -16,25 +16,15 @@ class FilterPopoverViewController: UIViewController {
     private let datePickerFrom = UIDatePicker()
     private let datePickerTo = UIDatePicker()
     
-    // MARK: - outlets
+    // MARK: - Outlets
     
     @IBOutlet weak var periodSlide: UISlider!
     @IBOutlet weak var fromDropDownView: DropMenuView!
     @IBOutlet weak var toDropDownView: DropMenuView!
-    @IBOutlet weak var pickerFromTextField: UITextField! {
-        didSet {
-            self.pickerFromTextField.inputView = self.datePickerFrom
-            self.datePickerFrom.datePickerMode = .date
-        }
-    }
-    @IBOutlet weak var pickerToTextField: UITextField! {
-        didSet {
-            self.pickerToTextField.inputView = self.datePickerTo
-            self.datePickerTo.datePickerMode = .date
-        }
-    }
+    @IBOutlet weak var pickerFromTextField: UITextField!
+    @IBOutlet weak var pickerToTextField: UITextField!
     
-    // MARK: - instantiate
+    // MARK: - Instantiate
     
     static func instantiate() -> FilterPopoverViewController {
         let storyboard = UIStoryboard(name: "Statistics", bundle: nil)
@@ -49,11 +39,12 @@ class FilterPopoverViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.setupViews()
         self.setupDatePickers()
         self.hideKeyboardWhenTappedAround()
     }
     
-    // MARK: - Actions & listeners
+    // MARK: - Actions
     
     @IBAction func periodSliderValueChanged(_ sender: UISlider) {
         sender.value = sender.value.rounded()
@@ -92,6 +83,13 @@ class FilterPopoverViewController: UIViewController {
     
     // MARK: - Setters
     
+    private func setupViews() {
+        self.pickerFromTextField.inputView = self.datePickerFrom
+        self.pickerToTextField.inputView = self.datePickerTo
+        self.datePickerFrom.datePickerMode = .date
+        self.datePickerTo.datePickerMode = .date
+    }
+    
     private func setupDatePickers() {
         self.datePickerFrom.addTarget(self, action: #selector(self.dateFromChanged), for: .valueChanged)
         self.datePickerTo.addTarget(self, action: #selector(self.dateToChanged), for: .valueChanged)
@@ -106,11 +104,9 @@ class FilterPopoverViewController: UIViewController {
     private func setPickerDateWithComponents(picker: UIDatePicker, monthsToAdd: Int?) {
         var dateComponent = DateComponents()
         let currentDate = self.datePickerTo.date
-        
         if let months = monthsToAdd {
             dateComponent.month = months
         }
-        
         if let newDate = Calendar.current.date(byAdding: dateComponent, to: currentDate) {
             picker.date = newDate
         }

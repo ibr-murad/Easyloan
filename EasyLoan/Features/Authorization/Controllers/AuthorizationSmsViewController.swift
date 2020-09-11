@@ -17,14 +17,14 @@ class AuthorizationSmsViewController: UIViewController {
     // MARK: - Private Variables
     private let textFieldNumbersLimit = 5
     
-    // MARK: - outlets
+    // MARK: - Outlets
     
     @IBOutlet weak var middleStackView: UIStackView!
     @IBOutlet weak var middleStackViewTopConstraint: NSLayoutConstraint!
     @IBOutlet weak var smsTextField: UITextField!
     @IBOutlet weak var continueButton: RoundedTextButton!    
     
-    // MARK: - instantiate
+    // MARK: - Instantiate
     
     static func instantiate() -> AuthorizationSmsViewController {
         let storyboard = UIStoryboard(name: "Authorization", bundle: nil)
@@ -34,7 +34,7 @@ class AuthorizationSmsViewController: UIViewController {
         return controller
     }
     
-    // MARK: - view life cycle
+    // MARK: - View Lifecycle
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -50,7 +50,7 @@ class AuthorizationSmsViewController: UIViewController {
         self.smsTextField.delegate = self
     }
     
-    // MARK: - actions & listeners
+    // MARK: - Actions
     
     @IBAction func continueButtonTapped(_ sender: Any) {
         guard let pass = self.smsTextField.text?.disableFormater(regex: "-") else { return }

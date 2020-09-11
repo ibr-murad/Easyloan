@@ -24,7 +24,7 @@ class SortbyPopoverViewController: UIViewController {
         return controller
     }
     
-    // MARK: - view life cycle
+    // MARK: - View Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()

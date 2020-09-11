@@ -28,7 +28,6 @@ class FormTwoViewController: FormsBaseViewController {
 
     private var monthlyIncome: Float = 0
     private var avgConsPerFamMember: Float = 0
-    
     private let experienceCalculateController = CalculateController()
     private let homeRadionButtonController = RadioButtonController()
     private let carRadionButtonController = RadioButtonController()
@@ -36,69 +35,22 @@ class FormTwoViewController: FormsBaseViewController {
     // MARK: - Outlets
     
     @IBOutlet weak var scrollView: UIScrollView!
-    @IBOutlet weak var clientMonthlyIncomeView: LabelAndTextFieldView! {
-        didSet {
-            self.clientMonthlyIncomeView.didEndEditingHendler = { [weak self] in
-                guard let self = self else { return }
-                self.culculateMonthlyIncome()
-            }
-        }
-    }
+    @IBOutlet weak var clientMonthlyIncomeView: LabelAndTextFieldView!
     @IBOutlet weak var monthlyIncomeComTextField: UITextField!
-    @IBOutlet weak var operationExpensesPerMonthView: LabelAndTextFieldView! {
-        didSet {
-            self.operationExpensesPerMonthView.didEndEditingHendler = { [weak self] in
-                guard let self = self else { return }
-                self.culculateMonthlyIncome()
-            }
-        }
-    }
-    @IBOutlet weak var familyExpensesPerMonthView: LabelAndTextFieldView! {
-        didSet {
-            self.familyExpensesPerMonthView.didEndEditingHendler = { [weak self] in
-                guard let self = self else { return }
-                self.culculateAvgConsPerFamMember()
-                self.culculateMonthlyIncome()
-            }
-        }
-    }
+    @IBOutlet weak var operationExpensesPerMonthView: LabelAndTextFieldView!
+    @IBOutlet weak var familyExpensesPerMonthView: LabelAndTextFieldView!
     @IBOutlet weak var clientExpensesView: LabelAndTextFieldView!
     @IBOutlet weak var monthlyIncomeView: LabelAndTextFieldView!
     @IBOutlet weak var avgConsPerFamMemberView: LabelAndTextFieldView!
-    @IBOutlet weak var workRegionDropDownView: DropMenuView! {
-        didSet {
-            self.setupDropDownView(view: self.workRegionDropDownView, dataName: .regions,
-                                   #selector(self.workRegionDropDownViewTapped))
-        }
-    }
-    @IBOutlet weak var workCityDropDownView: DropMenuView! {
-        didSet {
-            self.setupDropDownView(view: self.workCityDropDownView, dataName: .nameCity,
-                                   #selector(self.workCityDropDownViewTapped))
-        }
-    }
+    @IBOutlet weak var workRegionDropDownView: DropMenuView!
+    @IBOutlet weak var workCityDropDownView: DropMenuView!
     @IBOutlet weak var workStreetTextField: FocusedTextField!
-    @IBOutlet weak var workPlaceDropDownView: DropMenuView! {
-        didSet {
-            self.setupDropDownView(view: self.workPlaceDropDownView, dataName: .workPlace,
-                                   #selector(self.workPlaceDropDownViewTapped))
-        }
-    }
+    @IBOutlet weak var workPlaceDropDownView: DropMenuView!
     @IBOutlet weak var experienceMinusButton: RoundedButton!
     @IBOutlet weak var experiencePlusButton: RoundedButton!
     @IBOutlet weak var experinceValueLabel: UILabel!
-    @IBOutlet weak var propertyDropDownView: DropMenuView! {
-        didSet {
-            self.setupDropDownView(view: self.propertyDropDownView, dataName: .haveProperty,
-                                   #selector(self.propertyDropDownViewTapped))
-        }
-    }
-    @IBOutlet weak var carDropDownView: DropMenuView! {
-        didSet {
-            self.setupDropDownView(view: self.carDropDownView, dataName: .haveCar,
-                                   #selector(self.carDropDownViewTapped))
-        }
-    }
+    @IBOutlet weak var propertyDropDownView: DropMenuView!
+    @IBOutlet weak var carDropDownView: DropMenuView!
     
     // MARK: - Instantiate
     
@@ -120,6 +72,7 @@ class FormTwoViewController: FormsBaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.setupViews()
         self.setHendlers()
         self.setIsEditable()
         self.sutupButtonsControllers()
@@ -246,17 +199,7 @@ class FormTwoViewController: FormsBaseViewController {
         return int
     }
     
-    private func culculateForCoefficient() {
-        guard let request = self.requestFull else { return }
-        /*p = Процентная ставка / 100 / 12
-         m = Сумма кредита * (p + p / ( (1+p).pow(Срок кредита) - 1))
-         k = (Финансовые поступления клиента в месяц - Операционные расходы в месяц - Семейные расходы со стороны клиента) / m
-         */
-        
-        let p = Double(request.loanPercentage) / 100 / 12
-        let m = Double(request.loanAmount) * (p + p / Double(pow(Double(1 + p), Double(request.loanTerm) - 1)))
-        let coef = Double(request.monthlyNetIncome - request.operationExpanses - request.famClientExpenses) / m
-    }
+    
     
     // MARK: - Setters
     
@@ -278,6 +221,33 @@ class FormTwoViewController: FormsBaseViewController {
         self.experinceValueLabel.text = "\(request.experience)"
         self.propertyDropDownView.selectedId = "\(request.haveProperty)"
         self.carDropDownView.selectedId = "\(request.haveCar)"
+    }
+    
+    private func setupViews() {
+        self.clientMonthlyIncomeView.didEndEditingHendler = { [weak self] in
+            guard let self = self else { return }
+            self.culculateMonthlyIncome()
+        }
+        self.operationExpensesPerMonthView.didEndEditingHendler = { [weak self] in
+            guard let self = self else { return }
+            self.culculateMonthlyIncome()
+        }
+        self.familyExpensesPerMonthView.didEndEditingHendler = { [weak self] in
+            guard let self = self else { return }
+            self.culculateAvgConsPerFamMember()
+            self.culculateMonthlyIncome()
+        }
+        self.setupDropDownView(view: self.workRegionDropDownView, dataName: .regions,
+                               #selector(self.workRegionDropDownViewTapped))
+        self.setupDropDownView(view: self.workCityDropDownView, dataName: .nameCity,
+                               #selector(self.workCityDropDownViewTapped))
+        self.setupDropDownView(view: self.workPlaceDropDownView, dataName: .workPlace,
+                               #selector(self.workPlaceDropDownViewTapped))
+        self.setupDropDownView(view: self.propertyDropDownView, dataName: .haveProperty,
+                               #selector(self.propertyDropDownViewTapped))
+        self.setupDropDownView(view: self.carDropDownView, dataName: .haveCar,
+                               #selector(self.carDropDownViewTapped))
+
     }
     
     private func sutupButtonsControllers() {
@@ -324,7 +294,6 @@ class FormTwoViewController: FormsBaseViewController {
         }
     }
 }
-
 
   //*****************************//
  // MARK: - UITextFieldDelegate //

@@ -53,7 +53,7 @@
                                         <rect key="frame" x="0.0" y="82.5" width="366" height="33"/>
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <state key="normal" title="Продолжить">
+                                        <state key="normal">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>
@@ -61,6 +61,7 @@
                                                 <real key="value" value="5"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="string" keyPath="text" value="Продолжить"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="localizedKey" value="CONTINUE"/>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="continueButtonTapped:" destination="vDn-82-D6c" eventType="touchUpInside" id="nFP-yK-6kf"/>
@@ -145,7 +146,7 @@
                                         <rect key="frame" x="0.0" y="82.5" width="366" height="33"/>
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <state key="normal" title="Продолжить">
+                                        <state key="normal">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>
@@ -153,6 +154,7 @@
                                                 <real key="value" value="5"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="string" keyPath="text" value="Продолжить"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="localizedKey" value="CONTINUE"/>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="continueButtonTapped:" destination="A0x-fw-pBp" eventType="touchUpInside" id="aVO-5W-JhK"/>

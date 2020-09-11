@@ -562,6 +562,7 @@
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                         <real key="value" value="5"/>
                                     </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="localizedKey" value="APPLY"/>
                                 </userDefinedRuntimeAttributes>
                             </button>
                         </subviews>

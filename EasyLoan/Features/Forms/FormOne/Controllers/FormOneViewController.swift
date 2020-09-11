@@ -27,44 +27,16 @@ class FormOneViewController: FormsBaseViewController {
     private let dependentCalculateController = CalculateController()
     
     // MARK: - Outlets
+    
     @IBOutlet weak var scrollView: UIScrollView!
-    @IBOutlet private weak var fullnameView: LabelAndTextFieldView! {
-        didSet {
-            self.fullnameView.validateType = .name
-        }
-    }
-    @IBOutlet private weak var regionDropDownView: DropMenuView! {
-        didSet {
-            self.setupDropDownView(view: self.regionDropDownView, dataName: .regions,
-                                   #selector(self.locationTypeViewTapped))
-        }
-    }
-    @IBOutlet private weak var cityDropDownView: DropMenuView! {
-        didSet {
-            self.setupDropDownView(view: self.cityDropDownView, dataName: .nameCity,
-                                   #selector(self.locationNameViewTapped))
-        }
-    }
+    @IBOutlet private weak var fullnameView: LabelAndTextFieldView!
+    @IBOutlet private weak var regionDropDownView: DropMenuView!
+    @IBOutlet private weak var cityDropDownView: DropMenuView!
     @IBOutlet private weak var locationTextField: FocusedTextField!
     @IBOutlet private weak var phoneNumbersCollectionView: UICollectionView!
-    @IBOutlet private weak var emailView: LabelAndTextFieldView! {
-        didSet {
-            self.emailView.textField.keyboardType = .emailAddress
-            self.emailView.validateType = .email
-        }
-    }
-    @IBOutlet private weak var educationView: DropMenuView! {
-        didSet {
-            self.setupDropDownView(view: self.educationView, dataName: .education,
-                                   #selector(self.educationViewTapped))
-        }
-    }
-    @IBOutlet private weak var relationshipView: DropMenuView! {
-        didSet {
-            self.setupDropDownView(view: self.relationshipView, dataName: .familyType,
-                                   #selector(self.relationshipViewTapped))
-        }
-    }
+    @IBOutlet private weak var emailView: LabelAndTextFieldView!
+    @IBOutlet private weak var educationView: DropMenuView!
+    @IBOutlet private weak var relationshipView: DropMenuView!
     @IBOutlet private weak var familyMinusButton: RoundedButton!
     @IBOutlet private weak var familyPlusButton: RoundedButton!
     @IBOutlet private weak var familyValueLabel: UILabel!
@@ -93,18 +65,13 @@ class FormOneViewController: FormsBaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.setupViews()
         self.setIsEditable()
         self.setDelegates()
         self.setHendlers()
         self.setCulculateControllers()
     }
     
-
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        
-    }
     
     // MARK: - Networking
     
@@ -152,19 +119,23 @@ class FormOneViewController: FormsBaseViewController {
     }
     
     @IBAction private func familyMinusButtonTapped(_ sender: RoundedButton) {
-        self.familyValueLabel.text = self.familyCalculateController.calculateUpdate(buttonSelected: sender)
+        self.familyValueLabel.text =
+            self.familyCalculateController.calculateUpdate(buttonSelected: sender)
     }
     
     @IBAction private func familyPlusButtonTappe(_ sender: RoundedButton) {
-        self.familyValueLabel.text = self.familyCalculateController.calculateUpdate(buttonSelected: sender)
+        self.familyValueLabel.text =
+            self.familyCalculateController.calculateUpdate(buttonSelected: sender)
     }
     
     @IBAction private func dependentMinusButtonTapped(_ sender: RoundedButton) {
-        self.dependentValueLabel.text = self.dependentCalculateController.calculateUpdate(buttonSelected: sender)
+        self.dependentValueLabel.text =
+            self.dependentCalculateController.calculateUpdate(buttonSelected: sender)
     }
     
     @IBAction private func dependentPlusButtonTapped(_ sender: RoundedButton) {
-        self.dependentValueLabel.text = self.dependentCalculateController.calculateUpdate(buttonSelected: sender)
+        self.dependentValueLabel.text =
+            self.dependentCalculateController.calculateUpdate(buttonSelected: sender)
     }
     
     
@@ -176,7 +147,6 @@ class FormOneViewController: FormsBaseViewController {
                 self.alertError(message: "Заполните поле имени")
             }
         }
-        
     }
     
     // MARK: - Helpers
@@ -227,6 +197,20 @@ class FormOneViewController: FormsBaseViewController {
         self.dependentValueLabel.text = "\(request.dependentsNum)"
     }
 
+    private func setupViews() {
+        self.fullnameView.validateType = .name
+        self.emailView.validateType = .email
+        self.emailView.textField.keyboardType = .emailAddress
+        self.setupDropDownView(view: self.regionDropDownView, dataName: .regions,
+                               #selector(self.locationTypeViewTapped))
+        self.setupDropDownView(view: self.cityDropDownView, dataName: .nameCity,
+                               #selector(self.locationNameViewTapped))
+        self.setupDropDownView(view: self.educationView, dataName: .education,
+                               #selector(self.educationViewTapped))
+        self.setupDropDownView(view: self.relationshipView, dataName: .familyType,
+                               #selector(self.relationshipViewTapped))
+    }
+    
     private func setupDropDownView(view: DropMenuView, dataName: DictionaryNames, _ selector: Selector) {
         let tap = UITapGestureRecognizer(target: self, action: selector)
         tap.cancelsTouchesInView = false

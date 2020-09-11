@@ -161,7 +161,7 @@ class ApprovedViewController: BaseViewController {
                            description: self.getNameById(id: "\(request.paymentType)", from: .payType)))
         items.append(.init(title: "GRACE_PERIOD".localized(), description: "\(request.gracePeriod)"))
         items.append(.init(title: "LOAN_PERCENTAGE".localized(), description: "\(request.loanPercentage)"))
-        items.append(.init(title: "LOAN_COEFFICIENT".localized(), description: "2.16"))
+        items.append(.init(title: "LOAN_COEFFICIENT".localized(), description: self.culculateForCoefficient()))
         for i in 0..<request.refereesInfo.count {
             guard let name = request.refereesInfo[i].name else { return }
             guard let phone = request.refereesInfo[i].phone else { return }
@@ -181,6 +181,16 @@ class ApprovedViewController: BaseViewController {
     }
     
     // MARK: - Helpers
+    
+    private func culculateForCoefficient() -> String{
+        guard let request = self.requestFull else { return "nan"}
+        let p = Double(request.loanPercentage / 100.0 / 12.0)
+        let sum = Double(request.loanAmount)
+        let n = Double(request.loanTerm)
+        let m = sum * (p + p / ( pow((1 + p), n) - 1 ))
+        let k = Double(request.monthlyNetIncome - request.operationExpanses - request.famClientExpenses) / m
+        return String(format: "%0.2f", k)
+    }
     
     private func getNameById(id: String, from: DictionaryNames) -> String {
         let dicts = UserDefaults.standard.getDictionaryByName(name: from)

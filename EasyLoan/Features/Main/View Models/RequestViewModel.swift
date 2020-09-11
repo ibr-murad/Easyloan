@@ -36,34 +36,3 @@ struct RequestViewModel {
     }
 }
 
-enum RequestState: String {
-    case approved = "completedIcon"
-    case draft    = "draftIcon"
-    case rejected = "canceledIcon"
-    case uploaded = "warningIcon"
-    case revision = "barterIcon"
-    
-    init(stringState: String) {
-        switch stringState {
-        case "APPROVED":
-            self = .approved
-            break
-        case "DRAFT":
-            self = .draft
-            break
-        case "REJECTED":
-            self = .rejected
-            break
-        case "UPLOADED":
-            self = .uploaded
-            break
-        case "REVISION":
-            self = .revision
-            break
-        default:
-            self = .draft
-            break
-        }
-    }
-}
-

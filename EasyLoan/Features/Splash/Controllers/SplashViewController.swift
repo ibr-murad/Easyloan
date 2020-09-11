@@ -10,11 +10,11 @@ import UIKit
 
 class SplashViewController: UIViewController {
     
-    // MARK: - outlets
+    // MARK: - Outlets
     
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
-    // MARK: - instantiate
+    // MARK: - Instantiate
     
     static func instantiate() -> SplashViewController {
         let storyboard = UIStoryboard(name: "Splash", bundle: nil)
@@ -24,7 +24,7 @@ class SplashViewController: UIViewController {
         return controller
     }
     
-    // MARK: - view life cycle
+    // MARK: - View Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()

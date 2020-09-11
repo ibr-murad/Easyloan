@@ -17,11 +17,13 @@ class RoundedTextButton: UIButton {
         }
     }
     
-    @IBInspectable var text: String = "text here" {
+    @IBInspectable var localizedKey: String? {
         didSet {
-            self.setTitle(self.text, for: .normal)
+            self.updateUI()
         }
     }
+    
+    // MARKL - Initialization
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -29,5 +31,15 @@ class RoundedTextButton: UIButton {
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(self.updateUI), name: .languageChanged, object: nil)
+    }
+    
+    // MARK: - Helpers
+    
+    @objc func updateUI() {
+        if let string = self.localizedKey {
+            self.setTitle(string.localized(), for: .normal)
+        }
     }
 }

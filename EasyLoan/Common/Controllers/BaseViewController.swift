@@ -38,23 +38,17 @@ class BaseViewController: UIViewController {
     // MARK: - setters
     
     private func initController() {
-        //hide back button text
         self.navigationController?.interactivePopGestureRecognizer?.isEnabled = false
         self.navigationItem.backBarButtonItem =
             UIBarButtonItem(title: " ", style: .plain, target: nil, action: nil)
-        //hide bottom line
         self.navigationController?.navigationBar.shadowImage = UIImage()
     }
     
     func setupNavBar(style: UIBarStyle, backgroungColor: UIColor, tintColor: UIColor) {
-        //text color
         let attr = [NSAttributedString.Key.foregroundColor: tintColor]
         self.navigationController?.navigationBar.titleTextAttributes = attr
-        //icont color
         self.navigationController?.navigationBar.tintColor = tintColor
-        //background color
         self.navigationController?.navigationBar.barTintColor = backgroungColor
-        //satus bar style
         self.navigationController?.navigationBar.barStyle = style
         switch style {
         case .black:
@@ -71,6 +65,7 @@ class BaseViewController: UIViewController {
 
 extension BaseViewController {
     func setLeftAlignedNavigationItemTitle(text: String, font: UIFont, color: UIColor, margin left: CGFloat) {
+        
         let label = UILabel()
         label.text = text
         label.font = font

@@ -10,6 +10,6 @@ import UIKit
 
 struct PhotoCellModel {
     var photo: UIImage
-    var status: Status
+    var status: RequestState
     var type: String
 }

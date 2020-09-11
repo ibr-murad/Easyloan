@@ -13,13 +13,13 @@ class FormsRootViewController: UIViewController {
     
     // MARK: - Public Variables
     
+    var isEditable: Bool = true
     var requestId: Int? {
         didSet {
             self.getRequestFullModel()
         }
         
     }
-    var isEditable: Bool = true
     
     // MARK: - Private Variables
     
@@ -51,6 +51,7 @@ class FormsRootViewController: UIViewController {
             self.startAnimate()
         }
     }
+    
     private var currentControllerIndex: Int = 0
     private var nextControllerIndex: Int = 0
     private var isFirstAppear = true
@@ -293,7 +294,7 @@ class FormsRootViewController: UIViewController {
                 guard let self = self else { return }
                 let button = self.paginationView.buttons[i]
                 if isFull {
-                    guard let image = UIImage(named: "completedIcon") else { return }
+                    guard let image = UIImage(named: "statusApproved") else { return }
                     button.setBackgroundImage(image, for: .normal)
                 } else {
                     button.setBackgroundImage(UIImage(), for: .normal)
@@ -305,7 +306,7 @@ class FormsRootViewController: UIViewController {
     private func setPaginationItemCheckImage() {
         guard let request = self.requestFull else { return }
         guard let buttons = self.paginationView.buttons else { return }
-        guard let image = UIImage(named: "completedIcon") else { return }
+        guard let image = UIImage(named: "statusApproved") else { return }
         let step1 = request.stepFirst
         let step2 = request.stepSecond
         let step3 = request.stepThird
@@ -331,7 +332,7 @@ class FormsRootViewController: UIViewController {
     private func setPaginationViewItemImage(_ value: Bool, for step: Int) {
         let button = self.paginationView.buttons[step]
         if value {
-            button.image = UIImage(named: "completedIcon")
+            button.image = UIImage(named: "statusApproved")
         } else {
             button.image = UIImage()
         }

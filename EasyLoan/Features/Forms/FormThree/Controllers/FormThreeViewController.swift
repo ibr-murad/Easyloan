@@ -167,6 +167,16 @@ class FormThreeViewController: FormsBaseViewController {
         return paramets
     }
     
+    private func culculateForCoefficient() {
+        guard let request = self.requestFull else { return }
+        let p = Double(request.loanPercentage / 100.0 / 12.0)
+        let sum = Double(request.loanAmount)
+        let n = Double(request.loanTerm)
+        let m = sum * (p + p / ( pow((1 + p), n) - 1 ))
+        let k = Double(request.monthlyNetIncome - request.operationExpanses - request.famClientExpenses) / m
+        self.loanCoeffView.textField.text = String(format: "%0.2f", k)
+    }
+    
     private func stringToFloat(_ str: String?) -> Float {
         var value: Float = 0
         if let str = str {
@@ -186,6 +196,7 @@ class FormThreeViewController: FormsBaseViewController {
         }
         return int
     }
+    
 
     // MARK: - Setters
     
@@ -201,7 +212,7 @@ class FormThreeViewController: FormsBaseViewController {
         self.gracePeriodCalculateController.calculateItem.value = request.gracePeriod
         self.gracePeriodValueLabel.text = "\(request.gracePeriod)"
         self.loanPercentageView.textField.text = "\(request.loanPercentage)"
-        //self.loanCoeffView.textField.text =
+        self.culculateForCoefficient()
         if request.refereesInfo.count > 0 {
             self.refereesOneNameView.textField.text = request.refereesInfo[0].name
             self.refereesOnePhoneView.textField.text = request.refereesInfo[0].phone
@@ -228,7 +239,6 @@ class FormThreeViewController: FormsBaseViewController {
         self.refereesOnePhoneView.validateType = .phone
         self.refereesTwoNameView.validateType = .name
         self.refereesTwoPhoneView.validateType = .phone
-        
         self.setupDropDownView(view: self.loanProductDropDownView, dataName: .creditKind,
                                #selector(self.loanProductDropDownViewTapped))
         self.setupDropDownView(view: self.loanPurposeDropDownView, dataName: .creditTarg,
@@ -239,6 +249,10 @@ class FormThreeViewController: FormsBaseViewController {
                                #selector(self.refereeOneRelationDropDownViewTapped))
         self.setupDropDownView(view: self.refereeTwoRelationDropDownView, dataName: .hm_elationship,
                                #selector(self.refereeTwoRelationDropDownViewTapped))
+        self.loanAmountView.didEndEditingHendler = { [weak self] in
+            guard let self = self else { return }
+            self.culculateForCoefficient()
+        }
     }
     
     private func sutupButtonsControllers() {

@@ -26,7 +26,6 @@ class ProfileViewController: BaseViewController {
     @IBOutlet weak var notificationSwitch: UISwitch!
     @IBOutlet weak var apVersionLabel: UILabel!
     
-    
     // MARK: - Instantiate
     
     static func instantiate() -> ProfileViewController {
