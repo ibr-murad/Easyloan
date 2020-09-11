@@ -1,0 +1,64 @@
+//
+//  SplashViewController.swift
+//  EasyLoan
+//
+//  Created by Murad Ibrohimov on 8/7/20.
+//  Copyright © 2020 Murad Ibrohimov. All rights reserved.
+//
+
+import UIKit
+
+class SplashViewController: UIViewController {
+    
+    // MARK: - outlets
+    
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    
+    // MARK: - instantiate
+    
+    static func instantiate() -> SplashViewController {
+        let storyboard = UIStoryboard(name: "Splash", bundle: nil)
+        guard let controller = storyboard
+            .instantiateViewController(withIdentifier: "Splash") as? SplashViewController
+            else { return SplashViewController()}
+        return controller
+    }
+    
+    // MARK: - view life cycle
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        self.view.backgroundColor = UIColor.white
+        self.makeServiceCall()
+    }
+     
+    // MARK: - Helpers
+    
+    private func makeServiceCall() {
+        self.activityIndicatorViewAnimate(indicator: self.activityIndicator)
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .seconds(1)) {
+            self.activityIndicator.stopAnimating()
+            if UserDefaults.standard.isLoggedIn() {
+                // user login
+                AppDelegate.shared.rootViewController.switchToMainScreen()
+            } else {
+                // user logout
+                AppDelegate.shared.rootViewController.switchToLogout()
+            }
+        }
+    }
+    
+    private func activityIndicatorViewAnimate(indicator: UIActivityIndicatorView) {
+        indicator.transform = CGAffineTransform(translationX: 0, y: 20)
+        UIView.animate(withDuration: 0.5) {
+            indicator.transform = .identity
+        }
+        indicator.alpha = 0
+        UIView.animate(withDuration: 0.2, animations: {
+            indicator.alpha = 1
+        }) { (finished) in
+            indicator.startAnimating()
+        }
+    }
+}

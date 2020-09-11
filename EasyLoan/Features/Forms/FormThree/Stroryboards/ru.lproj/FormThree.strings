@@ -1,0 +1,42 @@
+
+/* Class = "UILabel"; text = "RUB"; ObjectID = "3oE-YT-DQw"; */
+"3oE-YT-DQw.text" = "RUB";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "BMg-gk-mjR"; */
+"BMg-gk-mjR.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Кредитный продукт"; ObjectID = "Ctc-iE-5KM"; */
+"Ctc-iE-5KM.text" = "Кредитный продукт";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "CwF-G6-9zZ"; */
+"CwF-G6-9zZ.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Валюта кредита"; ObjectID = "P0S-dv-SYD"; */
+"P0S-dv-SYD.text" = "Валюта кредита";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "RH4-9V-dPt"; */
+"RH4-9V-dPt.text" = "0";
+
+/* Class = "UILabel"; text = "USD"; ObjectID = "Wyj-gG-R00"; */
+"Wyj-gG-R00.text" = "USD";
+
+/* Class = "UILabel"; text = "Аннуитет"; ObjectID = "aAf-4K-gvC"; */
+"aAf-4K-gvC.text" = "Аннуитет";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "bAH-IX-gsM"; */
+"bAH-IX-gsM.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Валюта кредита"; ObjectID = "cas-sT-opc"; */
+"cas-sT-opc.text" = "Валюта кредита";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "fpo-st-69s"; */
+"fpo-st-69s.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Дифференцированный"; ObjectID = "hiv-Gp-1sJ"; */
+"hiv-Gp-1sJ.text" = "Дифференцированный";
+
+/* Class = "UILabel"; text = "Льготный период"; ObjectID = "rOu-TI-f49"; */
+"rOu-TI-f49.text" = "Льготный период";
+
+/* Class = "UILabel"; text = "TJS"; ObjectID = "zXm-vy-oyR"; */
+"zXm-vy-oyR.text" = "TJS";

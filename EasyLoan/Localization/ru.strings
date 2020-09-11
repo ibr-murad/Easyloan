@@ -1,0 +1,145 @@
+/* 
+  ru.strings
+  EasyLoan
+
+  Created by Murad Ibrohimov on 9/8/20.
+  Copyright © 2020 Murad Ibrohimov. All rights reserved.
+*/
+
+//MARK: -Authorization
+
+ENTER_YOUR_NUMBER_FOR_AUTH = "Для авторизации введите свой номер телефона";
+FOR_HUMO_CE = "*Для кредитных экспертов Хумо";
+SMS_WITH_ACTIVATE_CODE = "Вам отправлено сообщение с кодом активации";
+CONTINUE = "Продолжить";
+
+//MARK: -Main
+
+SEARCH = "Поиск...";
+REQUESTS_LIST = "Список заявок";
+YOUR_FUTURE_REQUESTS_LIST = "Здесь будет хранится ваш будущий список заявок";
+YOU_HAVE_NOT_REQUESTS = "У вас нет заявок";
+WITH_STATUS = "со статусом";
+DO_YOU_WANT_DELETE_REQUEST = "Вы действительно хотите удалить заявку?";
+YOU_CAN_DELETE_ONLY_DRAFT = "Вы можете удалить только черновики";
+
+//MARK: -Statistic
+
+ACTIVE_PROFILE = "Активный портфель";
+LOAN_SUMM = "Выданная сумма";
+PAR_ONE = "PAR 1";
+PAR_THIRTY = "PAR 30";
+ACTICE_CLIENT_COUNT = "Активное количество клиентов";
+APPROVED_LOANS_COUNT = "Количество выданных кредитов";
+
+//MARK: -Filter
+
+FILTER_TITLE = "Фильтр данных за";
+ONE_MONTH = "Месяц";
+THREE_MONTH = "3 месяца";
+SIX_MONTH = "6 месяцев";
+ONE_YEAR = "Год";
+FROM = "От";
+TO = "До";
+CONFIRM = "Подтревдить";
+
+//MARK: -Profile
+
+ALL_REQUESTS = "Всего\nзявок";
+UPLOADED_REQUESTS = "Заявок на\nрассмотрени";
+APPROVED_REQUESTS = "Зявок\nодобрено";
+
+APP_LANGUAGE = "Язык приложения";
+LANGUAGE_RU = "Русский";
+LANGUAGE_TJ = "Таджикский";
+LANGUAGE_EN = "Анлглийский";
+NOTIFICATION = "Уведомления";
+VERSION = "Версия";
+
+LOGOUT = "Выйти из профиля";
+
+//MARK: -OrderBy
+
+TITLE = "Фильтр";
+
+ORDER_BY_DATE = "Показать все";
+ORDER_BY_NAME = "По имени";
+ORDER_BY_APPROVED = "Утвержденные";
+ORDER_BY_REJECTED = "Отклоненные";
+ORDER_BY_DRAFT = "Черновики";
+ORDER_BY_UPLOADED = "Отправленные";
+ORDER_BY_REVISION = "На доработку";
+
+//MARK: -Form 1
+
+REQUEST = "Заявка";
+NEW_REQUEST = "Новая заявка";
+
+FULL_NAME = "ФИО";
+ACTUAL_ADRESS = "Фактический адрес проживания";
+PHONE_NUMBER = "Номер телефона";
+EMAIL = "Электронная почта";
+EDUCATION = "Образование";
+FAMILY_STATUS = "Семейное пложение";
+FAMILY_NUMBER = "Количество членов семьи";
+DEPENDICIS_NUMBER = "Количество инждивенцов";
+
+//MARK: -Form 2
+
+MONTHLY_INCOME_NET = "Финансовые поступления клиена в месяц";
+MONTHLY_INCOME_NET_COM = "Подробнее";
+OPERATION_EXPENSES = "Операционные расходы в месяц";
+FAMILY_EXPENSES = "Семейные расходы в месяц";
+CLIENT_FAMILY_EXPENSES = "Семейные расходы со стороны клиента";
+MONHTLY_ICOM = "Ежемесячные доходы";
+EXPENSES_PER_FAMILY_MEMBER = "Расходы на одного члена семьи в месяц";
+WORK_ADRESS = "Адрес работы";
+WORK_PLACE = "Место деятельности клиента";
+EXPIRIENCE = "Трудовой стаж (в месяцах)";
+HAVE_PROPERTY = "Наличие недвижемости";
+HAVE_CAR = "Наличие автомобиля";
+
+//MARK: -Form 3
+
+CREDIT_PRODUCT = "Кредитный продукт";
+CREDIT_TARG = "Цель кредита";
+CREDIT_TARG_COM = "Цель кредита (подробнее)";
+LOAN_AMOUT = "Сумма кредита";
+LOAN_TERM = "Срок кредита (в месяцах)";
+LOAN_CURRENCY = "Валюта кредита";
+PAYMENT_TYPE = "Вид платежа";
+GRACE_PERIOD = "Льготный период (в месяцах)";
+LOAN_PERCENTAGE = "Процентная ставка";
+LOAN_COEFFICIENT = "Коэффициент покрытия кредита";
+REFEREE = "Рекоментатель";
+REF_ONE_NAME = "ФИО рекомендателя 1";
+REF_ONE_PNONE = "Номер рекомендателя 1";
+REF_TWO_NAME = "ФИО рекомендателя 2";
+REF_TWO_PHONE = "Номер рекомендателя 2";
+
+//MARK: -Form 4
+
+CHOSE_DOCUMENT = "Выберите документ";
+PASSPORT = "Паспорт";
+INN = "ИНН";
+INCOME_STATEMENT = "Справка доходов";
+REQUEST_FOR_LOAN = "Заявление на кредит";
+CLIENT_PHOTO = "Фотография клиента";
+OTHER_DOCUMENTS = "Другие документы";
+
+//MARK: -Form 5
+
+REQUEST_SYNC = "Заявка синхронизированна!";
+REQUEST_NOT_SYNC = "Заявка не синхронизированна!";
+REQUEST_FILL = "Все поля заполненые!";
+REQUEST_FILL_MSG = "Заявка готова к отправке на рассмотрение";
+REQUEST_NOT_FILL = "Все поля не заполены!";
+REQUEST_NOT_FILL_MSG = "Заполните все необходимые поля";
+SEND_TO_CFT = "Отпарвить в ЦФТ";
+WAIT_FOR_ANSWER = "Ожидайте ответа в течении 24-x часов";
+
+//MARK: -Other
+
+FILES = "Файлы";
+ERROR = "Ошибка";
+WAIT = "Подождите";

@@ -1,0 +1,42 @@
+PODS:
+  - Alamofire (4.9.0)
+  - Charts (3.2.0):
+    - Charts/Core (= 3.2.0)
+  - Charts/Core (3.2.0)
+  - DropDown (2.3.4)
+  - IQKeyboardManagerSwift (6.0.4)
+  - QuickLayout (2.1.1)
+  - SnapKit (4.2.0)
+  - SwiftEntryKit (0.8.1):
+    - QuickLayout (= 2.1.1)
+
+DEPENDENCIES:
+  - Alamofire (= 4.9.0)
+  - Charts (= 3.2.0)
+  - DropDown (= 2.3.4)
+  - IQKeyboardManagerSwift (= 6.0.4)
+  - SnapKit (~> 4.0)
+  - SwiftEntryKit (= 0.8.1)
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - Charts
+    - DropDown
+    - IQKeyboardManagerSwift
+    - QuickLayout
+    - SnapKit
+    - SwiftEntryKit
+
+SPEC CHECKSUMS:
+  Alamofire: afc3e7c6db61476cb45cdd23fed06bad03bbc321
+  Charts: 680c8328bd5e90cb14f67e00d2176f3113d19141
+  DropDown: f225ff0fd09dde064d17aa03db7e4d4e4ff40b6b
+  IQKeyboardManagerSwift: 36dbe324b4f9793f5f41ba5227f3e7c76dfefd50
+  QuickLayout: 9af2b7fd89a6552828f51a5aba28d1bcdb8b340c
+  SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
+  SwiftEntryKit: 132e35ac87d50d19b5f3580f8d8fa07fd1d63417
+
+PODFILE CHECKSUM: 8dced2a0aadd3c718d3abb6c288268c0130d1081
+
+COCOAPODS: 1.9.1

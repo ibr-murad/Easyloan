@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Form Five View Controller-->
+        <scene sceneID="Kq5-cT-ohX">
+            <objects>
+                <viewController storyboardIdentifier="FormFive" id="sKc-xH-Fnm" customClass="FormFiveViewController" customModule="EasyLoan" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="64j-3a-pT8">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="900"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Ldv-0n-Xwr" userLabel="Top Stack View">
+                                <rect key="frame" x="95" y="68" width="224" height="65.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Все поля не заполнены!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dtk-bY-ZnY" userLabel="Label 1">
+                                        <rect key="frame" x="0.0" y="0.0" width="224" height="24"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                                        <color key="textColor" name="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Заполните пропущенные поля" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rWp-p1-ac1" userLabel="Label 2">
+                                        <rect key="frame" x="12" y="32" width="200" height="33.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="200" id="7GB-vz-M1J"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="textColor" name="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XJ6-BZ-Azr" userLabel="Middle View">
+                                <rect key="frame" x="0.0" y="165.5" width="414" height="159"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cv4-3Y-XmE" userLabel="Top Line View">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1"/>
+                                        <color key="backgroundColor" red="0.83741801979999997" green="0.83743780850000005" blue="0.83742713930000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1" id="St5-hp-YeI"/>
+                                        </constraints>
+                                    </view>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="g2v-JV-k3U">
+                                        <rect key="frame" x="24" y="17" width="366" height="125"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="cdj-nk-tzI" userLabel="Left Stack View">
+                                                <rect key="frame" x="0.0" y="0.0" width="183" height="125"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.69999998807907104" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ФИО" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lFb-Pa-mwu" userLabel="Name label" customClass="LocalizedLabel" customModule="EasyLoan" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="80" height="17"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <color key="textColor" name="darkTextColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="localizedKey" value="FULL_NAME"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.69999998807907104" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Номер телефона" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cii-Gg-YqP" userLabel="Phone label" customClass="LocalizedLabel" customModule="EasyLoan" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="27" width="113" height="17"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <color key="textColor" name="darkTextColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="localizedKey" value="PHONE_NUMBER"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.69999998807907104" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="E-mail" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M7f-7L-VgP" userLabel="Email label" customClass="LocalizedLabel" customModule="EasyLoan" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="54" width="41" height="17"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <color key="textColor" name="darkTextColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="localizedKey" value="EMAIL"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.69999998807907104" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Сумма кредита" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EZW-gF-tW4" userLabel="Sum label" customClass="LocalizedLabel" customModule="EasyLoan" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="81" width="94.5" height="17"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <color key="textColor" name="darkTextColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="localizedKey" value="LOAN_AMOUT"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.69999998807907104" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Срок кредита" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zsI-Zc-lZ3" userLabel="Duration label" customClass="LocalizedLabel" customModule="EasyLoan" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="108" width="80.5" height="17"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <color key="textColor" name="darkTextColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="localizedKey" value="LOAN_TERM"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="bottom" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="eB8-95-JAa" userLabel="Rigth Stack View">
+                                                <rect key="frame" x="183" y="0.0" width="183" height="125"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aT0-OH-C5t" userLabel="Name label">
+                                                        <rect key="frame" x="179" y="0.0" width="4" height="17"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <color key="textColor" name="darkTextColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ynk-Cn-Nsf" userLabel="Phone label">
+                                                        <rect key="frame" x="179" y="27" width="4" height="17"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <color key="textColor" name="darkTextColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zxe-0X-gZP" userLabel="Email label">
+                                                        <rect key="frame" x="179" y="54" width="4" height="17"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <color key="textColor" name="darkTextColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bLr-0v-nef" userLabel="Sum label">
+                                                        <rect key="frame" x="179" y="81" width="4" height="17"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <color key="textColor" name="darkTextColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mWD-DP-ZNQ" userLabel="Duration label">
+                                                        <rect key="frame" x="179" y="108" width="4" height="17"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <color key="textColor" name="darkTextColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jgK-N0-zUc" userLabel="Bottom Line View">
+                                        <rect key="frame" x="0.0" y="158" width="414" height="1"/>
+                                        <color key="backgroundColor" red="0.83741801979999997" green="0.83743780850000005" blue="0.83742713930000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1" id="Lxi-W5-J28"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="cv4-3Y-XmE" firstAttribute="leading" secondItem="XJ6-BZ-Azr" secondAttribute="leading" id="5Tc-Ng-liV"/>
+                                    <constraint firstAttribute="trailing" secondItem="jgK-N0-zUc" secondAttribute="trailing" id="DRM-su-978"/>
+                                    <constraint firstAttribute="trailing" secondItem="g2v-JV-k3U" secondAttribute="trailing" constant="24" id="DVF-lO-bqV"/>
+                                    <constraint firstAttribute="bottom" secondItem="jgK-N0-zUc" secondAttribute="bottom" id="Dlj-AV-flW"/>
+                                    <constraint firstItem="jgK-N0-zUc" firstAttribute="top" secondItem="g2v-JV-k3U" secondAttribute="bottom" constant="16" id="EVF-zf-L3J"/>
+                                    <constraint firstItem="cv4-3Y-XmE" firstAttribute="top" secondItem="XJ6-BZ-Azr" secondAttribute="top" id="GZw-Nn-5n0"/>
+                                    <constraint firstItem="jgK-N0-zUc" firstAttribute="leading" secondItem="XJ6-BZ-Azr" secondAttribute="leading" id="TwV-27-o01"/>
+                                    <constraint firstItem="g2v-JV-k3U" firstAttribute="top" secondItem="cv4-3Y-XmE" secondAttribute="bottom" constant="16" id="Wfe-xK-dlF"/>
+                                    <constraint firstAttribute="trailing" secondItem="cv4-3Y-XmE" secondAttribute="trailing" id="hAY-ri-om0"/>
+                                    <constraint firstItem="g2v-JV-k3U" firstAttribute="leading" secondItem="XJ6-BZ-Azr" secondAttribute="leading" constant="24" id="vsY-V2-ji9"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HIG-Ip-r6p" customClass="RoundedTextButton" customModule="EasyLoan" customModuleProvider="target">
+                                <rect key="frame" x="24" y="800" width="366" height="42"/>
+                                <color key="backgroundColor" name="authSmsColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="42" id="SKS-aF-NTk"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <state key="normal">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="text" value="Отправить  в ЦФТ"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="sendButtonTapped:" destination="sKc-xH-Fnm" eventType="touchUpInside" id="FDE-cv-3ed"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="5NN-Zu-GzV" firstAttribute="bottom" secondItem="HIG-Ip-r6p" secondAttribute="bottom" constant="24" id="2Wd-Rn-UA0"/>
+                            <constraint firstItem="Ldv-0n-Xwr" firstAttribute="top" secondItem="5NN-Zu-GzV" secondAttribute="top" constant="24" id="4r3-uz-XCd"/>
+                            <constraint firstItem="5NN-Zu-GzV" firstAttribute="trailing" secondItem="XJ6-BZ-Azr" secondAttribute="trailing" id="INF-8P-xzX"/>
+                            <constraint firstItem="XJ6-BZ-Azr" firstAttribute="top" secondItem="Ldv-0n-Xwr" secondAttribute="bottom" constant="32" id="QQy-nu-edh"/>
+                            <constraint firstItem="Ldv-0n-Xwr" firstAttribute="centerX" secondItem="64j-3a-pT8" secondAttribute="centerX" id="WuF-dY-VaE"/>
+                            <constraint firstItem="HIG-Ip-r6p" firstAttribute="leading" secondItem="5NN-Zu-GzV" secondAttribute="leading" constant="24" id="t3M-Lm-96l"/>
+                            <constraint firstItem="5NN-Zu-GzV" firstAttribute="trailing" secondItem="HIG-Ip-r6p" secondAttribute="trailing" constant="24" id="wIK-zI-Vxj"/>
+                            <constraint firstItem="XJ6-BZ-Azr" firstAttribute="leading" secondItem="5NN-Zu-GzV" secondAttribute="leading" id="yks-3H-BsZ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="5NN-Zu-GzV"/>
+                    </view>
+                    <size key="freeformSize" width="414" height="900"/>
+                    <connections>
+                        <outlet property="emailLabel" destination="zxe-0X-gZP" id="4oX-5h-1Ho"/>
+                        <outlet property="fullNameLabel" destination="aT0-OH-C5t" id="J2t-Uq-6Jp"/>
+                        <outlet property="loanAmountLabel" destination="bLr-0v-nef" id="PQe-Tg-sSR"/>
+                        <outlet property="loanTermLabel" destination="mWD-DP-ZNQ" id="bXE-v1-YIs"/>
+                        <outlet property="messageLabel" destination="rWp-p1-ac1" id="Vcf-Oi-skJ"/>
+                        <outlet property="phoneNumberLabel" destination="ynk-Cn-Nsf" id="9wx-0e-jm7"/>
+                        <outlet property="sendButton" destination="HIG-Ip-r6p" id="zvi-bU-LAQ"/>
+                        <outlet property="topLabel" destination="Dtk-bY-ZnY" id="Hx2-sn-Jww"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x1n-zj-fuu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="85.507246376811594" y="-33.482142857142854"/>
+        </scene>
+    </scenes>
+    <resources>
+        <namedColor name="authSmsColor">
+            <color red="0.20392156862745098" green="0.27450980392156865" blue="0.49411764705882355" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="darkTextColor">
+            <color red="0.30588235294117649" green="0.29411764705882354" blue="0.29411764705882354" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

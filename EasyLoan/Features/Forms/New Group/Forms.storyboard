@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="oP5-2Q-LdO">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Forms Root View Controller-->
+        <scene sceneID="91r-cP-Dpb">
+            <objects>
+                <viewController storyboardIdentifier="Forms" id="oP5-2Q-LdO" customClass="FormsRootViewController" customModule="EasyLoan" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bTJ-pk-iO5">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sM1-i1-aHF" userLabel="Pagination View" customClass="PaginationView" customModule="EasyLoan" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="44" width="414" height="70"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="axm-Ft-zXg"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LQY-Mb-iZ5" userLabel="Content View">
+                                <rect key="frame" x="0.0" y="114" width="414" height="748"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="sM1-i1-aHF" firstAttribute="trailing" secondItem="657-rx-eYj" secondAttribute="trailing" id="Dml-oq-GXi"/>
+                            <constraint firstItem="LQY-Mb-iZ5" firstAttribute="top" secondItem="sM1-i1-aHF" secondAttribute="bottom" id="Gbt-Pb-a97"/>
+                            <constraint firstItem="sM1-i1-aHF" firstAttribute="top" secondItem="657-rx-eYj" secondAttribute="top" id="O7z-Hv-fz7"/>
+                            <constraint firstItem="LQY-Mb-iZ5" firstAttribute="leading" secondItem="657-rx-eYj" secondAttribute="leading" id="R74-hP-e5c"/>
+                            <constraint firstItem="LQY-Mb-iZ5" firstAttribute="trailing" secondItem="657-rx-eYj" secondAttribute="trailing" id="RcJ-oD-ceZ"/>
+                            <constraint firstItem="sM1-i1-aHF" firstAttribute="leading" secondItem="657-rx-eYj" secondAttribute="leading" id="XGI-SM-vzL"/>
+                            <constraint firstItem="LQY-Mb-iZ5" firstAttribute="top" secondItem="sM1-i1-aHF" secondAttribute="bottom" id="iJz-IZ-C0i"/>
+                            <constraint firstItem="657-rx-eYj" firstAttribute="bottom" secondItem="LQY-Mb-iZ5" secondAttribute="bottom" id="xlF-3K-oPu"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="657-rx-eYj"/>
+                    </view>
+                    <connections>
+                        <outlet property="containerView" destination="LQY-Mb-iZ5" id="p8V-Lt-Gma"/>
+                        <outlet property="paginationView" destination="sM1-i1-aHF" id="MxM-NH-lX3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qqB-kL-jvS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="47.826086956521742" y="26.785714285714285"/>
+        </scene>
+    </scenes>
+</document>

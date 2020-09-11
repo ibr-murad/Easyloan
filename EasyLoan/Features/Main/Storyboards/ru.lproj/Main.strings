@@ -1,0 +1,24 @@
+
+/* Class = "UISearchBar"; placeholder = "Поиск..."; ObjectID = "6NK-bO-D40"; */
+"6NK-bO-D40.placeholder" = "Поиск...";
+
+/* Class = "UISearchBar"; 6NK-bO-D40.scopeButtonTitles[0] = "Title"; ObjectID = "6NK-bO-D40"; */
+"6NK-bO-D40.scopeButtonTitles[0]" = "Title";
+
+/* Class = "UISearchBar"; 6NK-bO-D40.scopeButtonTitles[1] = "Title"; ObjectID = "6NK-bO-D40"; */
+"6NK-bO-D40.scopeButtonTitles[1]" = "Title";
+
+/* Class = "UILabel"; text = "Здесь будет хранится ваш  будущий список заявок"; ObjectID = "Di3-7Y-Py1"; */
+"Di3-7Y-Py1.text" = "Здесь будет хранится ваш  будущий список заявок";
+
+/* Class = "UILabel"; text = "17.07.2020"; ObjectID = "ET9-i5-rRp"; */
+"ET9-i5-rRp.text" = "17.07.2020";
+
+/* Class = "UILabel"; text = "Список заявок"; ObjectID = "N2g-Vb-TLE"; */
+"N2g-Vb-TLE.text" = "Список заявок";
+
+/* Class = "UILabel"; text = "Арго-микро"; ObjectID = "flI-73-BdS"; */
+"flI-73-BdS.text" = "Арго-микро";
+
+/* Class = "UILabel"; text = "Фамилия Имя"; ObjectID = "uqF-c7-IH7"; */
+"uqF-c7-IH7.text" = "Фамилия Имя";

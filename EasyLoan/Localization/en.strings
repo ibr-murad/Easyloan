@@ -1,0 +1,49 @@
+/* 
+  en.strings
+  EasyLoan
+
+  Created by Murad Ibrohimov on 9/8/20.
+  Copyright © 2020 Murad Ibrohimov. All rights reserved.
+*/
+
+//MARK: -Main
+
+//MARK: -Statistic
+
+//MARK: -Profile
+
+ALL_REQUESTS = "Total\nloans";
+UPLOADED_REQUESTS = "Uploaded\nloans";
+APPROVED_REQUESTS = "Approved\nloans";
+
+APP_LANGUAGE = "Language";
+LANGUAGE_RU = "Russian";
+LANGUAGE_TJ = "Tajik";
+LANGUAGE_EN = "English";
+NOTIFICATION = "Notification";
+VERSION = "Version";
+
+LOGOUT = "Logout";
+
+//MARK: -OrderBy
+
+TITLE = "Filter";
+
+ORDER_BY_DATE = "Show all";
+ORDER_BY_NAME = "By name";
+ORDER_BY_APPROVED = "Approved";
+ORDER_BY_REJECTED = "Rejected";
+ORDER_BY_DRAFT = "Draft";
+ORDER_BY_UPLOADED = "Uploaded";
+ORDER_BY_REVISION = "Revision";
+
+//MARK: -Form 1
+
+//MARK: -Form 2
+
+//MARK: -Form 3
+
+//MARK: -Form 4
+
+//MARK: -Form 5
+

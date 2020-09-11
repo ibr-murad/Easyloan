@@ -1,0 +1,42 @@
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "1ch-4s-OH3"; */
+"1ch-4s-OH3.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Номер телефона"; ObjectID = "Cii-Gg-YqP"; */
+"Cii-Gg-YqP.text" = "Номер телефона";
+
+/* Class = "UILabel"; text = "Все поля заполнены!"; ObjectID = "Dtk-bY-ZnY"; */
+"Dtk-bY-ZnY.text" = "Все поля заполнены!";
+
+/* Class = "UILabel"; text = "Сумма кредита"; ObjectID = "EZW-gF-tW4"; */
+"EZW-gF-tW4.text" = "Сумма кредита";
+
+/* Class = "UIButton"; normalTitle = "Продолжить"; ObjectID = "HIG-Ip-r6p"; */
+"HIG-Ip-r6p.normalTitle" = "Продолжить";
+
+/* Class = "UILabel"; text = "E-mail"; ObjectID = "M7f-7L-VgP"; */
+"M7f-7L-VgP.text" = "E-mail";
+
+/* Class = "UILabel"; text = "Таджибаев Умед Камолович"; ObjectID = "aT0-OH-C5t"; */
+"aT0-OH-C5t.text" = "Таджибаев Умед Камолович";
+
+/* Class = "UILabel"; text = "40 000"; ObjectID = "bLr-0v-nef"; */
+"bLr-0v-nef.text" = "40 000";
+
+/* Class = "UILabel"; text = "ФИО"; ObjectID = "lFb-Pa-mwu"; */
+"lFb-Pa-mwu.text" = "ФИО";
+
+/* Class = "UILabel"; text = "12 мес."; ObjectID = "mWD-DP-ZNQ"; */
+"mWD-DP-ZNQ.text" = "12 мес.";
+
+/* Class = "UILabel"; text = "Заяка готова к отправке  на рассмотрение"; ObjectID = "rWp-p1-ac1"; */
+"rWp-p1-ac1.text" = "Заяка готова к отправке  на рассмотрение";
+
+/* Class = "UILabel"; text = "93 514 61 22"; ObjectID = "ynk-Cn-Nsf"; */
+"ynk-Cn-Nsf.text" = "93 514 61 22";
+
+/* Class = "UILabel"; text = "Срок кредита"; ObjectID = "zsI-Zc-lZ3"; */
+"zsI-Zc-lZ3.text" = "Срок кредита";
+
+/* Class = "UILabel"; text = "umed888@mail.ru"; ObjectID = "zxe-0X-gZP"; */
+"zxe-0X-gZP.text" = "umed888@mail.ru";

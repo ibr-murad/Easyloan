@@ -1,0 +1,36 @@
+
+/* Class = "UILabel"; text = "Easyloan"; ObjectID = "CaG-jX-rdH"; */
+"CaG-jX-rdH.text" = "Easyloan";
+
+/* Class = "UILabel"; text = "Easyloan"; ObjectID = "Mhd-QX-v6v"; */
+"Mhd-QX-v6v.text" = "Easyloan";
+
+/* Class = "UILabel"; text = "*Для кредитных экспертов Хумо"; ObjectID = "NWJ-3f-44w"; */
+"NWJ-3f-44w.text" = "*Для кредитных экспертов Хумо";
+
+/* Class = "UILabel"; text = "Хумо"; ObjectID = "WEc-q4-ss5"; */
+"WEc-q4-ss5.text" = "Хумо";
+
+/* Class = "UITextField"; placeholder = "90 000 99 99"; ObjectID = "Zgr-vn-faD"; */
+"Zgr-vn-faD.placeholder" = "90 000 99 99";
+
+/* Class = "UIButton"; normalTitle = "Продолжить"; ObjectID = "e8i-fh-bqF"; */
+"e8i-fh-bqF.normalTitle" = "Продолжить";
+
+/* Class = "UITextField"; placeholder = "90 000 99 99"; ObjectID = "fXp-iZ-C7Z"; */
+"fXp-iZ-C7Z.placeholder" = "90 000 99 99";
+
+/* Class = "UIButton"; normalTitle = "Продолжить"; ObjectID = "nOj-0j-Kcl"; */
+"nOj-0j-Kcl.normalTitle" = "Продолжить";
+
+/* Class = "UILabel"; text = "Для авторизации введите\nсвой номер телефона"; ObjectID = "rDz-mZ-lTz"; */
+"rDz-mZ-lTz.text" = "Для авторизации введите\nсвой номер телефона";
+
+/* Class = "UIButton"; normalTitle = "Получить сообщение еще раз"; ObjectID = "rQd-aJ-4pP"; */
+"rQd-aJ-4pP.normalTitle" = "Получить сообщение еще раз";
+
+/* Class = "UILabel"; text = "Вам отправлено сообщение \nс кодом активации"; ObjectID = "rkH-j0-dqk"; */
+"rkH-j0-dqk.text" = "Вам отправлено сообщение \nс кодом активации";
+
+/* Class = "UILabel"; text = "Хумо"; ObjectID = "sjn-iL-Pm9"; */
+"sjn-iL-Pm9.text" = "Хумо";

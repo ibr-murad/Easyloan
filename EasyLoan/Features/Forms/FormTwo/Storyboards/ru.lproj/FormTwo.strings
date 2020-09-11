@@ -1,0 +1,39 @@
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "I0s-TZ-u5b"; */
+"I0s-TZ-u5b.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Наличие недвижимости"; ObjectID = "MO7-TO-mtp"; */
+"MO7-TO-mtp.text" = "Наличие недвижимости";
+
+/* Class = "UITextView"; text = "Наипишите подробнее    "; ObjectID = "Pal-PZ-KaY"; */
+"Pal-PZ-KaY.text" = "Наипишите подробнее    ";
+
+/* Class = "UILabel"; text = "Трудовой стаж"; ObjectID = "S2M-6M-OzZ"; */
+"S2M-6M-OzZ.text" = "Трудовой стаж";
+
+/* Class = "UILabel"; text = "На чужое имя"; ObjectID = "cCX-fs-qRG"; */
+"cCX-fs-qRG.text" = "На чужое имя";
+
+/* Class = "UILabel"; text = "На чужое имя"; ObjectID = "cOZ-3V-9QF"; */
+"cOZ-3V-9QF.text" = "На чужое имя";
+
+/* Class = "UILabel"; text = "Да"; ObjectID = "cS3-sR-WNH"; */
+"cS3-sR-WNH.text" = "Да";
+
+/* Class = "UILabel"; text = "Личный автомобиль"; ObjectID = "eLe-OT-gtz"; */
+"eLe-OT-gtz.text" = "Личный автомобиль";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "mCq-cu-8bP"; */
+"mCq-cu-8bP.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Да"; ObjectID = "p9l-Lf-HNl"; */
+"p9l-Lf-HNl.text" = "Да";
+
+/* Class = "UILabel"; text = "Нет"; ObjectID = "r4f-4g-Af2"; */
+"r4f-4g-Af2.text" = "Нет";
+
+/* Class = "UILabel"; text = "Нет"; ObjectID = "raE-YP-rdP"; */
+"raE-YP-rdP.text" = "Нет";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "ryA-Ar-s2V"; */
+"ryA-Ar-s2V.text" = "0";

@@ -1,0 +1,147 @@
+/* 
+  tj.strings
+  EasyLoan
+
+  Created by Murad Ibrohimov on 9/8/20.
+  Copyright © 2020 Murad Ibrohimov. All rights reserved.
+*/
+
+//MARK: -Authorization
+
+
+ENTER_YOUR_NUMBER_FOR_AUTH = "Барои авторизатсия рақами телефони худро ворид намоед";
+FOR_HUMO_CE = "*Барои мутахассисони қарзи Ҳумо";
+SMS_WITH_ACTIVATE_CODE = "Ба Шумо паём ба рамзи фаъолсозӣ фиристода шуд";
+CONTINUE = "Идома диҳед";
+
+
+//MARK: -Main
+
+SEARCH = "Ҷӯстуҷӯ...";
+REQUESTS_LIST = "Рӯйхати дархостҳо";
+YOUR_FUTURE_REQUESTS_LIST = "Дар ин ҷо рӯйхати ояднаи дархостҳоятон нигоҳ дошта мешавад";
+YOU_HAVE_NOT_REQUESTS = "Шумо дархост надоред";
+WITH_STATUS = "бо статуси";
+DO_YOU_WANT_DELETE_REQUEST = "Оё Шумо ҳақиқатан мехоҳед ки дархостро хориҷ намоед?";
+YOU_CAN_DELETE_ONLY_DRAFT = "Шумо танҳо сиёнависҳоро метавонед хориҷ намоед";
+
+//MARK: -Statistic
+
+ACTIVE_PROFILE = "Сандуқи фаъоли қарзӣ";
+LOAN_SUMM = "Маблағи тақимотшуда";
+PAR_ONE = "PAR 1";
+PAR_THIRTY = "PAR 30";
+ACTICE_CLIENT_COUNT = "Шумораи мизоҷони фаъол";
+APPROVED_LOANS_COUNT = "Шумораи қарзҳои додашуда";
+
+//MARK: -Filter
+
+FILTER_TITLE = "Филтри маълумот барои";
+ONE_MONTH = "Моҳона";
+THREE_MONTH = "3 моҳа";
+SIX_MONTH = "6 моҳа";
+ONE_YEAR = "Солона";
+FROM = "Аз";
+TO = "То";
+CONFIRM = "Татбиқ кардан";
+
+//MARK: -Profile
+
+ALL_REQUESTS = "Ҳамаи дархостҳо";
+UPLOADED_REQUESTS = "Дархостҳои барои баррасӣ";
+APPROVED_REQUESTS = "Дархостҳои тасдиқшуда";
+
+APP_LANGUAGE = "Забон";
+LANGUAGE_RU = "Русӣ";
+LANGUAGE_TJ = "Тоҷики";
+LANGUAGE_EN = "Англисӣ";
+NOTIFICATION = "Огоҳиҳо";
+VERSION = "Версия";
+
+LOGOUT = "Ғайрифаъол гардонидани дастгоҳ";
+
+//MARK: -OrderBy
+
+TITLE = "Филтр";
+
+ORDER_BY_DATE = "Ҳамаашро нишон додан";
+ORDER_BY_NAME = "Аз рӯи ном";
+ORDER_BY_APPROVED = "Тасдиқшуда";
+ORDER_BY_REJECTED = "Радшуда";
+ORDER_BY_DRAFT = "Сиёҳнависҳо";
+ORDER_BY_UPLOADED = "Фиристондашуда";
+ORDER_BY_REVISION = "Барои ислоҳ";
+
+//MARK: -Form 1
+
+REQUEST = "Дархост";
+NEW_REQUEST = "Дархости нав";
+
+FULL_NAME = "Ному насаб";
+ACTUAL_ADRESS = "Суроғаи воқеии стиқомат";
+PHONE_NUMBER = "Рақами телефон";
+EMAIL = "Почтаи электронӣ";
+EDUCATION = "Сатҳи маълумот";
+FAMILY_STATUS = "Вазъи оилавӣ";
+FAMILY_NUMBER = "Шумораи азъоёни оила";
+DEPENDICIS_NUMBER = "Шумораи хӯрандагон";
+
+//MARK: -Form 2
+
+MONTHLY_INCOME_NET = "Воридоти молиявии мизоҷ дар як моҳ";
+MONTHLY_INCOME_NET_COM = "Муфассалтар";
+OPERATION_EXPENSES = "Хароҷоти оператсиони дар як моҳ";
+FAMILY_EXPENSES = "Хароҷоти оилавӣ да як моҳ";
+CLIENT_FAMILY_EXPENSES = "Хароҷоти оилавӣ аз ҷониби мозоҷ";
+MONHTLY_ICOM = "Даромади моҳона";
+EXPENSES_PER_FAMILY_MEMBER = "Хароҷоти оилавӣ аз ҷониби мизоҷ";
+WORK_ADRESS = "Суроғаи ҷои кор";
+WORK_PLACE = "Ҷои фаъолияти мизоҷ";
+EXPIRIENCE = "Собиқаи корӣ (бо моҳ)";
+HAVE_PROPERTY = "Мавҷудияти амволи ғайриманқул";
+HAVE_CAR = "Нақлиёти автомобилии шахсӣ";
+
+//MARK: -Form 3
+
+CREDIT_PRODUCT = "Маҳсулоти қарзӣ";
+CREDIT_TARG = "Мақсади қарз";
+CREDIT_TARG_COM = "Мақсади қарз (муфассалтар)";
+LOAN_AMOUT = "Маблағи қарз";
+LOAN_TERM = "Асъори қарз";
+LOAN_CURRENCY = "Муҳлати қарз (бо моҳ)";
+PAYMENT_TYPE = "Намуди пардохт";
+GRACE_PERIOD = "Давраи имтиёзӣ (бо моҳ)";
+LOAN_PERCENTAGE = "Меъёри фоизӣ";
+LOAN_COEFFICIENT = "Меъёри пӯшонидани қарз";
+REFEREE = "Тавсиядиҳандаи";
+REF_ONE_NAME = "Ному насаби тавсиядиҳандаи 1";
+REF_ONE_PNONE = "Телефони тавсиядиҳандаи 1";
+REF_TWO_NAME = "Ному насаби тавсиядиҳандаи 2";
+REF_TWO_PHONE = "Телефони тавсиядиҳандаи 2";
+
+//MARK: -Form 4
+
+CHOSE_DOCUMENT = "Ҳуҷҷатро интихоб намоед";
+PASSPORT = "Шинос нома";
+INN = "РМА";
+INCOME_STATEMENT = "Маълумотномаи даромад";
+REQUEST_FOR_LOAN = "Ариза барои гирифтани қарз";
+CLIENT_PHOTO = "Расми мизоҷ";
+OTHER_DOCUMENTS = "Дигар ҳуҷҷатҳо";
+
+//MARK: -Form 5
+
+REQUEST_SYNC = "Дархост синхронизатсия шудааст!";
+REQUEST_NOT_SYNC = "Дархост синхронизатсия нашудааст!";
+REQUEST_FILL = "Ҳамаи ҳошияҳо пур карда шуданд!";
+REQUEST_FILL_MSG = "Ба ЦФТ фиристондан";
+REQUEST_NOT_FILL = "Ҳамаи ҳошияҳо пур карда нашуданд!";
+REQUEST_NOT_FILL_MSG = "Ҳамаи ҳошияҳоро пур кунед";
+SEND_TO_CFT = "Ба ЦФТ фиристондан";
+WAIT_FOR_ANSWER = "Дар давоми 24 соат ҷавобро интизор шавед";
+
+//MARK: -Other
+
+FILES = "Файлҳо";
+ERROR = "Хато";
+WAIT = "Интизор шавед";

@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PaginationView" customModule="EasyLoan" customModuleProvider="target">
+            <connections>
+                <outlet property="stepFiveButton" destination="4aU-Lt-8Rk" id="jGf-Wi-i2x"/>
+                <outlet property="stepFourButton" destination="MUp-wP-tU0" id="NXB-L8-LHy"/>
+                <outlet property="stepOneButton" destination="rQY-vH-EnW" id="ikM-uO-2SX"/>
+                <outlet property="stepThreeButton" destination="lJd-Vm-nGX" id="tiW-CY-itZ"/>
+                <outlet property="stepTwoButton" destination="6HQ-BQ-3hK" id="RHy-R8-LaT"/>
+                <outletCollection property="buttons" destination="rQY-vH-EnW" collectionClass="NSMutableArray" id="IHi-QA-kDL"/>
+                <outletCollection property="buttons" destination="6HQ-BQ-3hK" collectionClass="NSMutableArray" id="arH-TM-qON"/>
+                <outletCollection property="buttons" destination="lJd-Vm-nGX" collectionClass="NSMutableArray" id="jaY-vZ-G3s"/>
+                <outletCollection property="buttons" destination="MUp-wP-tU0" collectionClass="NSMutableArray" id="mbz-AC-VEs"/>
+                <outletCollection property="buttons" destination="4aU-Lt-8Rk" collectionClass="NSMutableArray" id="j28-yN-bqF"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="378" height="179"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="xph-IV-0lO">
+                    <rect key="frame" x="65" y="77.5" width="248" height="24"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rQY-vH-EnW" userLabel="step 1" customClass="RoundedButton" customModule="EasyLoan" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="24" height="24"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="24" id="gYR-pE-YSg"/>
+                                <constraint firstAttribute="width" constant="24" id="t7N-eV-0Mm"/>
+                            </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <real key="value" value="12"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                    <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                    <real key="value" value="2"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="stepOneButtonTapped:" destination="-1" eventType="touchUpInside" id="nq7-kE-dax"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6HQ-BQ-3hK" userLabel="step 2" customClass="RoundedButton" customModule="EasyLoan" customModuleProvider="target">
+                            <rect key="frame" x="56" y="0.0" width="24" height="24"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="24" id="c0a-1g-Xx9"/>
+                                <constraint firstAttribute="height" constant="24" id="dFe-DS-IrP"/>
+                            </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <real key="value" value="12"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                    <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                    <real key="value" value="2"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="stepTwoButtonTapped:" destination="-1" eventType="touchUpInside" id="tym-uR-Sjm"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lJd-Vm-nGX" userLabel="step 3" customClass="RoundedButton" customModule="EasyLoan" customModuleProvider="target">
+                            <rect key="frame" x="112" y="0.0" width="24" height="24"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="24" id="YIg-lZ-lAw"/>
+                                <constraint firstAttribute="height" constant="24" id="oJb-Xr-DA5"/>
+                            </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <real key="value" value="12"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                    <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                    <real key="value" value="2"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="stepThreeButtonTapped:" destination="-1" eventType="touchUpInside" id="Y1V-rP-DWG"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MUp-wP-tU0" userLabel="step 4" customClass="RoundedButton" customModule="EasyLoan" customModuleProvider="target">
+                            <rect key="frame" x="168" y="0.0" width="24" height="24"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="24" id="CmL-Gh-bu1"/>
+                                <constraint firstAttribute="width" constant="24" id="PBP-d1-hIM"/>
+                            </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <real key="value" value="12"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                    <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                    <real key="value" value="2"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="stepFourButtonTapped:" destination="-1" eventType="touchUpInside" id="2xW-cg-cI3"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4aU-Lt-8Rk" userLabel="step 5" customClass="RoundedButton" customModule="EasyLoan" customModuleProvider="target">
+                            <rect key="frame" x="224" y="0.0" width="24" height="24"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="24" id="Dhe-pk-VlI"/>
+                                <constraint firstAttribute="height" constant="24" id="R0e-Nk-phN"/>
+                            </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                    <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <real key="value" value="12"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                    <real key="value" value="2"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="stepFiveButtonTapped:" destination="-1" eventType="touchUpInside" id="4Kr-SP-Vww"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                </stackView>
+            </subviews>
+            <color key="backgroundColor" name="appColor"/>
+            <constraints>
+                <constraint firstItem="xph-IV-0lO" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="ODU-ba-d5c"/>
+                <constraint firstItem="xph-IV-0lO" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="o2d-wa-zRt"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="218.84057971014494" y="125.55803571428571"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="appColor">
+            <color red="0.98431372549019602" green="0.52549019607843139" blue="0.35294117647058826" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

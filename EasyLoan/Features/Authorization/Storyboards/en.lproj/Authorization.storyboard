@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="vDn-82-D6c">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Authorization View Controller-->
+        <scene sceneID="b2O-qf-jLN">
+            <objects>
+                <viewController storyboardIdentifier="Authorization" id="vDn-82-D6c" customClass="AuthorizationViewController" customModule="EasyLoan" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Maw-Qj-lXl">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Easyloan" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mhd-QX-v6v" userLabel="logo">
+                                <rect key="frame" x="24" y="92" width="118" height="33.5"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Хумо" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sjn-iL-Pm9">
+                                <rect key="frame" x="24" y="127.5" width="32.5" height="14.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
+                                <color key="textColor" name="appColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="dhY-bw-WjA">
+                                <rect key="frame" x="24" y="370.5" width="366" height="155"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.69999999999999996" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rDz-mZ-lTz" userLabel="instruction">
+                                        <rect key="frame" x="0.0" y="0.0" width="366" height="33.5"/>
+                                        <string key="text">Для авторизации введите
+свой номер телефона</string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="90 000 99 99" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Zgr-vn-faD" userLabel="phone">
+                                        <rect key="frame" x="0.0" y="49.5" width="366" height="30"/>
+                                        <color key="textColor" name="darkTextColor"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                    </textField>
+                                    <button opaque="NO" alpha="0.5" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e8i-fh-bqF" userLabel="continue" customClass="RoundedTextButton" customModule="EasyLoan" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="95.5" width="366" height="29"/>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <state key="normal" title="Продолжить">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="text" value="Продолжить"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="continueButtonTapped:" destination="vDn-82-D6c" eventType="touchUpInside" id="nFP-yK-6kf"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.69999999999999996" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="*Для кредитных экспертов Хумо" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NWJ-3f-44w" userLabel="note">
+                                        <rect key="frame" x="0.0" y="140.5" width="366" height="14.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="vuJ-de-Rbg" firstAttribute="trailing" secondItem="dhY-bw-WjA" secondAttribute="trailing" constant="24" id="44e-K8-PvN"/>
+                            <constraint firstItem="sjn-iL-Pm9" firstAttribute="top" secondItem="Mhd-QX-v6v" secondAttribute="bottom" constant="2" id="Yef-mq-2um"/>
+                            <constraint firstItem="Mhd-QX-v6v" firstAttribute="leading" secondItem="vuJ-de-Rbg" secondAttribute="leading" constant="24" id="bQ9-O9-hJE"/>
+                            <constraint firstItem="dhY-bw-WjA" firstAttribute="centerY" secondItem="Maw-Qj-lXl" secondAttribute="centerY" id="bxY-48-1k4"/>
+                            <constraint firstItem="sjn-iL-Pm9" firstAttribute="leading" secondItem="Maw-Qj-lXl" secondAttribute="leading" constant="24" id="pga-PU-9yu"/>
+                            <constraint firstItem="dhY-bw-WjA" firstAttribute="centerX" secondItem="Maw-Qj-lXl" secondAttribute="centerX" id="wFJ-4N-N6J"/>
+                            <constraint firstItem="dhY-bw-WjA" firstAttribute="leading" secondItem="vuJ-de-Rbg" secondAttribute="leading" constant="24" id="wNQ-ow-OZD"/>
+                            <constraint firstItem="Mhd-QX-v6v" firstAttribute="top" secondItem="vuJ-de-Rbg" secondAttribute="top" constant="48" id="y6c-Hs-UHL"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="vuJ-de-Rbg"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Inf-GK-dXH"/>
+                    <connections>
+                        <outlet property="continueButton" destination="e8i-fh-bqF" id="90T-A5-CtK"/>
+                        <outlet property="middleStackView" destination="dhY-bw-WjA" id="dGS-YL-1UH"/>
+                        <outlet property="phoneTextField" destination="Zgr-vn-faD" id="8wI-bW-bHy"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VDm-if-qFn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="992.75362318840587" y="77.678571428571431"/>
+        </scene>
+        <!--Authorization Sms View Controller-->
+        <scene sceneID="AGn-38-6JY">
+            <objects>
+                <viewController storyboardIdentifier="AuthorizationSms" id="A0x-fw-pBp" customClass="AuthorizationSmsViewController" customModule="EasyLoan" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0Fi-D5-nMo">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Easyloan" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CaG-jX-rdH" userLabel="logo">
+                                <rect key="frame" x="24" y="92" width="118" height="33.5"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Хумо" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WEc-q4-ss5">
+                                <rect key="frame" x="24" y="127.5" width="32.5" height="14.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="dXM-FF-9HT" userLabel="Middle Stack View">
+                                <rect key="frame" x="24" y="363.5" width="366" height="169"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.69999998807907104" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rkH-j0-dqk" userLabel="instruction">
+                                        <rect key="frame" x="0.0" y="0.0" width="366" height="33.5"/>
+                                        <string key="text">Вам отправлено сообщение 
+с кодом активации</string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="90 000 99 99" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fXp-iZ-C7Z" userLabel="phone">
+                                        <rect key="frame" x="0.0" y="49.5" width="366" height="30"/>
+                                        <color key="textColor" name="darkTextColor"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                    </textField>
+                                    <button opaque="NO" alpha="0.5" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nOj-0j-Kcl" userLabel="continue" customClass="RoundedTextButton" customModule="EasyLoan" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="95.5" width="366" height="29"/>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <state key="normal" title="Продолжить">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="text" value="Продолжить"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="continueButtonTapped:" destination="A0x-fw-pBp" eventType="touchUpInside" id="aVO-5W-JhK"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rQd-aJ-4pP" customClass="UnderlinedButton" customModule="EasyLoan" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="140.5" width="366" height="28.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Получить сообщение еще раз">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="titleShadowColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="text" value="Получить сообщение еще раз"/>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="textColor">
+                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="receiveButtonTapped:" destination="A0x-fw-pBp" eventType="touchUpInside" id="AqN-jf-mL5"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" name="authSmsColor"/>
+                        <constraints>
+                            <constraint firstItem="dXM-FF-9HT" firstAttribute="centerX" secondItem="0Fi-D5-nMo" secondAttribute="centerX" id="JOO-7t-wuI"/>
+                            <constraint firstItem="dXM-FF-9HT" firstAttribute="centerY" secondItem="0Fi-D5-nMo" secondAttribute="centerY" id="LXu-n5-olr"/>
+                            <constraint firstItem="i9A-gs-Vwe" firstAttribute="trailing" secondItem="dXM-FF-9HT" secondAttribute="trailing" constant="24" id="PQc-x6-RX6"/>
+                            <constraint firstItem="CaG-jX-rdH" firstAttribute="leading" secondItem="i9A-gs-Vwe" secondAttribute="leading" constant="24" id="PpT-tn-aF5"/>
+                            <constraint firstItem="WEc-q4-ss5" firstAttribute="top" secondItem="CaG-jX-rdH" secondAttribute="bottom" constant="2" id="XCt-2o-r5t"/>
+                            <constraint firstItem="dXM-FF-9HT" firstAttribute="leading" secondItem="i9A-gs-Vwe" secondAttribute="leading" constant="24" id="e1j-QZ-T7U"/>
+                            <constraint firstItem="WEc-q4-ss5" firstAttribute="leading" secondItem="0Fi-D5-nMo" secondAttribute="leading" constant="24" id="rZt-bj-RoO"/>
+                            <constraint firstItem="CaG-jX-rdH" firstAttribute="top" secondItem="i9A-gs-Vwe" secondAttribute="top" constant="48" id="ufa-mp-Kwl"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="i9A-gs-Vwe"/>
+                    </view>
+                    <connections>
+                        <outlet property="continueButton" destination="nOj-0j-Kcl" id="dml-eH-eoV"/>
+                        <outlet property="middleStackView" destination="dXM-FF-9HT" id="QXU-r3-Ptn"/>
+                        <outlet property="receiveAgainButton" destination="rQd-aJ-4pP" id="759-Es-Zv0"/>
+                        <outlet property="smsTextField" destination="fXp-iZ-C7Z" id="DcV-tb-srk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cfG-sw-isv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1813.0434782608697" y="77.678571428571431"/>
+        </scene>
+    </scenes>
+    <resources>
+        <namedColor name="appColor">
+            <color red="0.98431372549019602" green="0.52549019607843139" blue="0.35294117647058826" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="authSmsColor">
+            <color red="0.20392156862745098" green="0.27450980392156865" blue="0.49411764705882355" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="darkTextColor">
+            <color red="0.30588235294117649" green="0.29411764705882354" blue="0.29411764705882354" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ErrorPopoverView" customModule="EasyLoan" customModuleProvider="target">
+            <connections>
+                <outlet property="massegeLabel" destination="Jj9-C1-TIC" id="QZI-HJ-3gR"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="350" height="327"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="1Or-qH-iyY">
+                    <rect key="frame" x="0.0" y="36" width="350" height="193"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ошибка" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iiS-x2-36q">
+                            <rect key="frame" x="137" y="0.0" width="76" height="30.5"/>
+                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                            <color key="textColor" name="darkTextColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="errorBigIcon" translatesAutoresizingMaskIntoConstraints="NO" id="ehU-s5-wVT">
+                            <rect key="frame" x="142.5" y="46.5" width="65" height="65"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="65" id="GvS-Be-hx6"/>
+                                <constraint firstAttribute="height" constant="65" id="P8K-zl-umU"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Введенный вами номер отсутсвует в базе" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jj9-C1-TIC">
+                            <rect key="frame" x="75" y="127.5" width="200" height="65.5"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="200" id="u1i-UU-OCK"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <color key="textColor" name="darkTextColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                </stackView>
+                <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bSe-xI-2cS" customClass="RoundedButton" customModule="EasyLoan" customModuleProvider="target">
+                    <rect key="frame" x="150" y="253" width="50" height="50"/>
+                    <color key="backgroundColor" name="authSmsColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="ZZw-KT-cFE"/>
+                        <constraint firstAttribute="width" constant="50" id="b91-Ze-02q"/>
+                    </constraints>
+                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <state key="normal">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="25"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                            <real key="value" value="0.0"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="image" keyPath="image" value="doneIcon"/>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="okButtonTapped:" destination="-1" eventType="touchUpInside" id="xQg-CH-MSA"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="bSe-xI-2cS" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="5ka-lw-b3U"/>
+                <constraint firstItem="bSe-xI-2cS" firstAttribute="top" secondItem="1Or-qH-iyY" secondAttribute="bottom" constant="24" id="9j8-Kp-ekR"/>
+                <constraint firstItem="1Or-qH-iyY" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Sgr-fS-cuX"/>
+                <constraint firstAttribute="bottom" secondItem="bSe-xI-2cS" secondAttribute="bottom" constant="24" id="h3f-br-VW9"/>
+                <constraint firstAttribute="trailing" secondItem="1Or-qH-iyY" secondAttribute="trailing" id="uZ6-yf-mVy"/>
+                <constraint firstItem="1Or-qH-iyY" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="36" id="znl-oa-QZO"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="137.68115942028987" y="-80.691964285714278"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="doneIcon" width="18.5" height="18.5"/>
+        <image name="errorBigIcon" width="60" height="60"/>
+        <namedColor name="authSmsColor">
+            <color red="0.20392156862745098" green="0.27450980392156865" blue="0.49411764705882355" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="darkTextColor">
+            <color red="0.30588235294117649" green="0.29411764705882354" blue="0.29411764705882354" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

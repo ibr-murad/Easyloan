@@ -1,0 +1,27 @@
+
+/* Class = "UILabel"; text = "Количество иждивенцов"; ObjectID = "LFY-Yc-Ug0"; */
+"LFY-Yc-Ug0.text" = "Количество иждивенцов";
+
+/* Class = "UILabel"; text = "Количество членов семьи"; ObjectID = "MpY-Ab-kPu"; */
+"MpY-Ab-kPu.text" = "Количество членов семьи";
+
+/* Class = "UILabel"; text = "Семейное положение"; ObjectID = "PRf-3a-aPp"; */
+"PRf-3a-aPp.text" = "Семейное положение";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "SZo-NL-dwd"; */
+"SZo-NL-dwd.text" = "0";
+
+/* Class = "UILabel"; text = " Фактический адресс проживания"; ObjectID = "UgI-MG-TuJ"; */
+"UgI-MG-TuJ.text" = " Фактический адресс проживания";
+
+/* Class = "UITextField"; placeholder = "Пушкина 30/2 кв. 14"; ObjectID = "c5G-UL-HMb"; */
+"c5G-UL-HMb.placeholder" = "Пушкина 30/2 кв. 14";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "i7X-UM-AoV"; */
+"i7X-UM-AoV.text" = "0";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "mCq-cu-8bP"; */
+"mCq-cu-8bP.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Образование"; ObjectID = "rCy-zD-9gC"; */
+"rCy-zD-9gC.text" = "Образование";

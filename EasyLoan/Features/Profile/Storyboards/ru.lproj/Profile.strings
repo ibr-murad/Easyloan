@@ -1,0 +1,39 @@
+
+/* Class = "UILabel"; text = "Размер шрифта"; ObjectID = "1bX-eF-Pkb"; */
+"1bX-eF-Pkb.text" = "Размер шрифта";
+
+/* Class = "UILabel"; text = "Уведомления"; ObjectID = "3yS-eF-tiq"; */
+"3yS-eF-tiq.text" = "Уведомления";
+
+/* Class = "UILabel"; text = "90 909 09 09"; ObjectID = "54c-eJ-SPO"; */
+"54c-eJ-SPO.text" = "90 909 09 09";
+
+/* Class = "UILabel"; text = "250"; ObjectID = "CIZ-y4-Z6R"; */
+"CIZ-y4-Z6R.text" = "250";
+
+/* Class = "UILabel"; text = "60"; ObjectID = "NSq-Ln-if1"; */
+"NSq-Ln-if1.text" = "60";
+
+/* Class = "UILabel"; text = "Заявок\nодобрено"; ObjectID = "XAd-Qk-XEZ"; */
+"XAd-Qk-XEZ.text" = "Заявок\nодобрено";
+
+/* Class = "UILabel"; text = "Средний"; ObjectID = "Xoe-nV-6xq"; */
+"Xoe-nV-6xq.text" = "Средний";
+
+/* Class = "UILabel"; text = "Язык приложения"; ObjectID = "cv3-62-8wY"; */
+"cv3-62-8wY.text" = "Язык приложения";
+
+/* Class = "UILabel"; text = "Русский"; ObjectID = "jkE-UA-Ptq"; */
+"jkE-UA-Ptq.text" = "Русский";
+
+/* Class = "UILabel"; text = "Заявок  отклонено"; ObjectID = "tEm-wy-VYG"; */
+"tEm-wy-VYG.text" = "Заявок  отклонено";
+
+/* Class = "UILabel"; text = "190"; ObjectID = "v3O-1F-5a0"; */
+"v3O-1F-5a0.text" = "190";
+
+/* Class = "UIButton"; normalTitle = "Деактивировать аккаунт"; ObjectID = "x9P-2d-Nov"; */
+"x9P-2d-Nov.normalTitle" = "Деактивировать аккаунт";
+
+/* Class = "UILabel"; text = "Заявок  отправлено"; ObjectID = "xGU-VX-Cgs"; */
+"xGU-VX-Cgs.text" = "Заявок  отправлено";
