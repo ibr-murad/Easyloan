@@ -41,6 +41,9 @@
                                                         <state key="normal" title="Отпарвить сообщение">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="sendMessageButtonTapped:" destination="BYn-A6-ifA" eventType="touchUpInside" id="PZc-C7-ICe"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
@@ -60,6 +63,9 @@
                                                         <state key="normal" title="Позвонить">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="makeCallButtonTapped:" destination="BYn-A6-ifA" eventType="touchUpInside" id="N2H-gI-q9o"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>

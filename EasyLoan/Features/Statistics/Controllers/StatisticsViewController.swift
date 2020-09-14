@@ -83,7 +83,7 @@ class StatisticsViewController: BaseViewController {
     
     private func fetchStaistic(from: String, to: String) {
         
-        Network.shared.request(
+        /*Network.shared.request(
             url: URLPath.dashboard, method: .get,
             /*parameters: ["to": to,
                          "from": from],*/
@@ -94,12 +94,15 @@ class StatisticsViewController: BaseViewController {
             self.dismiss(animated: true, completion: {
                 self.alertError(message: error.msg)
             })
-        }
+        }*/
         
-        /*DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .seconds(1)) {
+        
+        
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .seconds(2)) {
             self.barChartUpdate()
             self.setStatisticVisible(true)
-        }*/
+            self.dismiss(animated: true, completion: nil)
+        }
     }
     
     // MARK: - Helpers

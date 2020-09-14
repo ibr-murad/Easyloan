@@ -61,7 +61,6 @@
                                                             <subviews>
                                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="IV5-3c-DRk">
                                                                     <rect key="frame" x="0.0" y="0.0" width="100" height="120"/>
-                                                                    <color key="backgroundColor" name="appColor"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="120" id="fH3-bw-eyH"/>
                                                                     </constraints>
@@ -92,7 +91,7 @@
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gel-gI-F4H" userLabel="Small Container" customClass="RoundedView" customModule="EasyLoan" customModuleProvider="target">
                                                             <rect key="frame" x="76" y="0.0" width="24" height="24"/>
                                                             <subviews>
-                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="completedIcon" translatesAutoresizingMaskIntoConstraints="NO" id="UMR-Vp-3Ce">
+                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="statusApproved" translatesAutoresizingMaskIntoConstraints="NO" id="UMR-Vp-3Ce">
                                                                     <rect key="frame" x="0.0" y="0.0" width="24" height="24"/>
                                                                 </imageView>
                                                             </subviews>
@@ -145,12 +144,12 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="Qeq-AZ-B0j">
                                         <rect key="frame" x="16" y="8" width="97" height="24"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iO2-ud-RIX">
+                                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iO2-ud-RIX">
                                                 <rect key="frame" x="0.0" y="0.0" width="32" height="24"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="32" id="f65-4h-btv"/>
                                                 </constraints>
-                                                <state key="normal" image="trashIcon"/>
+                                                <state key="normal" image="imageIcon"/>
                                                 <connections>
                                                     <action selector="imagePickerButtonTapped:" destination="1pl-EP-TCs" eventType="touchUpInside" id="B9O-9c-WsM"/>
                                                 </connections>
@@ -185,6 +184,9 @@
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="isRounded" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SSN-BO-zQB" customClass="RoundedButton" customModule="EasyLoan" customModuleProvider="target">
@@ -241,70 +243,94 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Выберите документ" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NkS-Q0-lAq" customClass="LocalizedLabel" customModule="EasyLoan" customModuleProvider="target">
-                                <rect key="frame" x="24" y="24" width="252" height="23"/>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="19"/>
+                                <rect key="frame" x="24" y="24" width="252" height="20.333333333333329"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="localizedKey" value="CHOSE_DOCUMENT"/>
                                 </userDefinedRuntimeAttributes>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="uKA-ef-E9O">
-                                <rect key="frame" x="24" y="71" width="252" height="196"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="uKA-ef-E9O">
+                                <rect key="frame" x="24" y="68.333333333333314" width="252" height="200"/>
                                 <subviews>
-                                    <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Паспорт" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z6b-iU-Lnu" customClass="LocalizedLabel" customModule="EasyLoan" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="252" height="19.333333333333332"/>
-                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
-                                        <color key="textColor" name="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Jd-tg-hsy" customClass="LocalizedButton" customModule="EasyLoan" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="252" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <state key="normal" title="Button">
+                                            <color key="titleColor" name="darkTextColor"/>
+                                        </state>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="string" keyPath="localizedKey" value="PASSPORT"/>
                                         </userDefinedRuntimeAttributes>
-                                    </label>
-                                    <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ИНН" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T1N-2c-3V4" customClass="LocalizedLabel" customModule="EasyLoan" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="35.333333333333329" width="252" height="19.333333333333329"/>
-                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
-                                        <color key="textColor" name="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
+                                        <connections>
+                                            <action selector="firstButtonTapped:" destination="IlQ-SW-j8e" eventType="touchUpInside" id="4FP-2F-IVB"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="igj-hv-kfd" customClass="LocalizedButton" customModule="EasyLoan" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="34" width="252" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <state key="normal" title="Button">
+                                            <color key="titleColor" name="darkTextColor"/>
+                                        </state>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="string" keyPath="localizedKey" value="INN"/>
                                         </userDefinedRuntimeAttributes>
-                                    </label>
-                                    <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Справка доходов" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fPK-gc-Apm" customClass="LocalizedLabel" customModule="EasyLoan" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="70.666666666666657" width="252" height="19.333333333333329"/>
-                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
-                                        <color key="textColor" name="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
+                                        <connections>
+                                            <action selector="secondButtonTapped:" destination="IlQ-SW-j8e" eventType="touchUpInside" id="MOI-ip-YMX"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dKD-FM-i3D" customClass="LocalizedButton" customModule="EasyLoan" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="68.000000000000014" width="252" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <state key="normal" title="Button">
+                                            <color key="titleColor" name="darkTextColor"/>
+                                        </state>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="string" keyPath="localizedKey" value="INCOME_STATEMENT"/>
                                         </userDefinedRuntimeAttributes>
-                                    </label>
-                                    <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Зявление на кредит" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aLv-CJ-AQK" customClass="LocalizedLabel" customModule="EasyLoan" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="106" width="252" height="19.333333333333329"/>
-                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
-                                        <color key="textColor" name="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
+                                        <connections>
+                                            <action selector="thirdButtonTapped:" destination="IlQ-SW-j8e" eventType="touchUpInside" id="GSL-bh-2Xj"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cB0-uJ-41r" customClass="LocalizedButton" customModule="EasyLoan" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="102.00000000000001" width="252" height="29.999999999999986"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <state key="normal" title="Button">
+                                            <color key="titleColor" name="darkTextColor"/>
+                                        </state>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="string" keyPath="localizedKey" value="REQUEST_FOR_LOAN"/>
                                         </userDefinedRuntimeAttributes>
-                                    </label>
-                                    <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Фотогрфия клиента" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ijH-iu-bvd" customClass="LocalizedLabel" customModule="EasyLoan" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="141.33333333333334" width="252" height="19.333333333333343"/>
-                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
-                                        <color key="textColor" name="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
+                                        <connections>
+                                            <action selector="fourthButtonTapped:" destination="IlQ-SW-j8e" eventType="touchUpInside" id="Jxu-Sv-pc4"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PM6-FK-edT" customClass="LocalizedButton" customModule="EasyLoan" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="136" width="252" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <state key="normal" title="Button">
+                                            <color key="titleColor" name="darkTextColor"/>
+                                        </state>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="string" keyPath="localizedKey" value="CLIENT_PHOTO"/>
                                         </userDefinedRuntimeAttributes>
-                                    </label>
-                                    <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Другие документы" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O7z-M8-apY" customClass="LocalizedLabel" customModule="EasyLoan" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="176.66666666666666" width="252" height="19.333333333333343"/>
-                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
-                                        <color key="textColor" name="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
+                                        <connections>
+                                            <action selector="fifthButtonTapped:" destination="IlQ-SW-j8e" eventType="touchUpInside" id="UNl-Xr-dQa"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pa1-c5-vgX" customClass="LocalizedButton" customModule="EasyLoan" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="170" width="252" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <state key="normal" title="Button">
+                                            <color key="titleColor" name="darkTextColor"/>
+                                        </state>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="string" keyPath="localizedKey" value="OTHER_DOCUMENTS"/>
                                         </userDefinedRuntimeAttributes>
-                                    </label>
+                                        <connections>
+                                            <action selector="sixthButtonTapped:" destination="IlQ-SW-j8e" eventType="touchUpInside" id="0YA-HM-iMV"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                             </stackView>
                         </subviews>
@@ -322,14 +348,6 @@
                     <value key="contentSizeForViewInPopover" type="size" width="414" height="600"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="300" height="300"/>
-                    <connections>
-                        <outlet property="fifthLabel" destination="ijH-iu-bvd" id="HdF-lI-WrW"/>
-                        <outlet property="firstLabel" destination="Z6b-iU-Lnu" id="5Gm-SK-Xpf"/>
-                        <outlet property="fourthLabel" destination="aLv-CJ-AQK" id="sMh-ZV-pIK"/>
-                        <outlet property="sixthLabel" destination="O7z-M8-apY" id="kSK-ab-6Ig"/>
-                        <outlet property="socondLabel" destination="T1N-2c-3V4" id="HvA-MO-YOF"/>
-                        <outlet property="thirdLabel" destination="fPK-gc-Apm" id="Wbg-sn-pdN"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e3z-zT-35D" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -338,9 +356,9 @@
     </scenes>
     <resources>
         <image name="cameraIcon" width="24" height="24"/>
-        <image name="completedIcon" width="32" height="32"/>
+        <image name="imageIcon" width="25.333333969116211" height="25.333333969116211"/>
         <image name="nextArrow" width="16" height="16"/>
-        <image name="trashIcon" width="30" height="30"/>
+        <image name="statusApproved" width="32" height="32"/>
         <namedColor name="appColor">
             <color red="0.98431372549019602" green="0.52549019607843139" blue="0.35294117647058826" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

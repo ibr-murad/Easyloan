@@ -173,7 +173,20 @@ class ApprovedViewController: BaseViewController {
         self.appovedItems = items
         self.infoTableView.reloadData()
     }
- 
+    
+    // MARK: - Actions
+    
+    @IBAction func sendMessageButtonTapped(_ sender: Any) {
+    }
+    
+    @IBAction func makeCallButtonTapped(_ sender: Any) {
+        guard let request = self.requestFull else { return }
+        if request.clientPhoneNumber.count > 0 {
+            self.showPhoneActionSheet(for: request.clientPhoneNumber[0])
+        }
+    }
+    
+    
     // MARK: - Setters
     
     private func setupNavigationBar() {
@@ -218,6 +231,22 @@ class ApprovedViewController: BaseViewController {
         return name
     }
     
+    // MARK: - Alerts
+    
+    private func showPhoneActionSheet(for number: String) {
+        let sheet = UIAlertController(title: "Позвонить", message: nil, preferredStyle: .actionSheet)
+        
+        sheet.addAction(UIAlertAction(
+            title: "Тел: \(number)", style: .default, handler: { _ in
+                guard let url = URL(string: "tel://" + number) else { return }
+                UIApplication.shared.open(url)
+        }))
+        
+        sheet.addAction(UIAlertAction(title: "Отмена", style: .cancel, handler: nil))
+        
+        self.present(sheet, animated: true, completion: nil)
+    }
+    
 }
 
 
@@ -228,10 +257,6 @@ extension ApprovedViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ApprovedInfoCell", for: indexPath)
-        
-        if let labe = cell.textLabel as? LocalizedLabel {
-            print("можно")
-        }
         cell.textLabel?.text = self.appovedItems[indexPath.row].title
         cell.detailTextLabel?.text = self.appovedItems[indexPath.row].description
         return cell

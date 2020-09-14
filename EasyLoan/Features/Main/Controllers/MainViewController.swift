@@ -181,6 +181,8 @@ class MainViewController: BaseViewController {
     
     private func requestForData(_ order: RequestsOrderBy = .date, completion: @escaping () -> Void) {
         self.data = []
+        self.filteredData = []
+        self.reloadControllerData()
         self.isFiltering = false
         self.searchController.isActive = false
         Network.shared.request(
@@ -281,6 +283,20 @@ class MainViewController: BaseViewController {
         SwiftEntryKit.display(entry: alertView,
                               using: EKAttributes.setupAttributes(statusBar: .light))
     }
+    
+    private func showPhoneActionSheet(for number: String) {
+        let sheet = UIAlertController(title: "Позвонить", message: nil, preferredStyle: .actionSheet)
+        
+        sheet.addAction(UIAlertAction(
+            title: "Тел: \(number)", style: .default, handler: { _ in
+                guard let url = URL(string: "tel://" + number) else { return }
+                UIApplication.shared.open(url)
+        }))
+        
+        sheet.addAction(UIAlertAction(title: "Отмена", style: .cancel, handler: nil))
+        
+        self.present(sheet, animated: true, completion: nil)
+    }
 }
 
   //***************************************************//
@@ -294,13 +310,34 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: MainTableViewCell.reuseIdentifier, for: indexPath)
-        cell.selectionStyle = .none
-        if self.data.count > 0 {
-            let model: RequestViewModel = (self.isFiltering ? self.filteredData[indexPath.row] : self.data[indexPath.row])
+        
+        if !self.isFiltering {
+            if self.data.count > 0 {
+                let model: RequestViewModel = self.data[indexPath.row]
+                (cell as? MainTableViewCell)?.initView(
+                    statusImage: model.stateImage, name: model.fullName,
+                    type: model.loanAmout, date: model.createdAt)
+            }
+        } else {
+            if self.filteredData.count > 0 {
+                let model: RequestViewModel = self.filteredData[indexPath.row]
+                (cell as? MainTableViewCell)?.initView(
+                    statusImage: model.stateImage, name: model.fullName,
+                    type: model.loanAmout, date: model.createdAt)
+            }
+        }
+        
+        /*if !self.isFiltering && !self.data.isEmpty {
+            let model: RequestViewModel = self.data[indexPath.row]
             (cell as? MainTableViewCell)?
                 .initView(statusImage: model.stateImage, name: model.fullName,
                           type: model.loanAmout, date: model.createdAt)
-        }
+        } else {
+            let model: RequestViewModel = self.filteredData[indexPath.row]
+            (cell as? MainTableViewCell)?
+                .initView(statusImage: model.stateImage, name: model.fullName,
+                          type: model.loanAmout, date: model.createdAt)
+        }*/
         return cell
     }
     
@@ -363,7 +400,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
             })
             if let cgImage = UIImage(named: "contextualDelete")?.cgImage {
                 deleteAction.image =
-                    ImageWithoutRender(cgImage: cgImage, scale: UIScreen.main.nativeScale, orientation: .up)
+                    ImageWithoutRender(cgImage: cgImage, scale: 2.5, orientation: .up)
                 deleteAction.backgroundColor = .groupTableViewBackground
             }
             let callAction = UIContextualAction(
@@ -371,15 +408,14 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
                 handler: { [weak self, indexPath] (ac:UIContextualAction, view:UIView, success:(Bool) -> Void) in
                     guard let self = self else { return }
                     let number = self.data[indexPath.row].clientMainPhoneNum
-                    guard let url = URL(string: "tel://" + number) else { return }
-                    UIApplication.shared.open(url)
+                    self.showPhoneActionSheet(for: number)
                     success(true)
             })
             
             if let cgImage = UIImage(named: "contextualCall")?.cgImage {
                 callAction.image =
-                    ImageWithoutRender(cgImage: cgImage, scale: UIScreen.main.nativeScale, orientation: .up)
-                callAction.backgroundColor = .white
+                    ImageWithoutRender(cgImage: cgImage, scale: 2.5, orientation: .up)
+                callAction.backgroundColor = .groupTableViewBackground
             }
             
             return UISwipeActionsConfiguration(actions: [deleteAction, callAction])

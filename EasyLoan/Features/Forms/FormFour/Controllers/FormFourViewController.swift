@@ -65,6 +65,7 @@ class FormFourViewController: FormsBaseViewController {
         controller.selectedDocumentValueHendler = { [weak self] type in
             guard let self = self else { return }
             self.currentPhotoType = type
+            print(type)
             self.dismiss(animated: true, completion: nil)
             self.showImagePickerController(sourceType: .photoLibrary)
         }

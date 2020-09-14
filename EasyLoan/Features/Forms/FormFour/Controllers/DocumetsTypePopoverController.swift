@@ -26,72 +26,34 @@ class DocumetsTypePopoverController: UIViewController {
             .instantiateViewController(withIdentifier: "Documents") as? DocumetsTypePopoverController
             else { return DocumetsTypePopoverController() }
         return controller
-    }
-    
-    // MARK: - Outlets
-    
-    @IBOutlet weak var firstLabel: UILabel! {
-        didSet {
-            let tap = UITapGestureRecognizer(target: self, action: #selector(self.firstLabelTapped))
-            self.firstLabel.addGestureRecognizer(tap)
-        }
-    }
-    @IBOutlet weak var socondLabel: UILabel! {
-        didSet {
-            let tap = UITapGestureRecognizer(target: self, action: #selector(self.socondLabelTapped))
-            self.socondLabel.addGestureRecognizer(tap)
-        }
-    }
-    @IBOutlet weak var thirdLabel: UILabel! {
-        didSet {
-            let tap = UITapGestureRecognizer(target: self, action: #selector(self.thirdLabelTapped))
-            self.thirdLabel.addGestureRecognizer(tap)
-        }
-    }
-    @IBOutlet weak var fourthLabel: UILabel! {
-        didSet {
-            let tap = UITapGestureRecognizer(target: self, action: #selector(self.fourthLabelTapped))
-            self.fourthLabel.addGestureRecognizer(tap)
-        }
-    }
-    @IBOutlet weak var fifthLabel: UILabel! {
-        didSet {
-            let tap = UITapGestureRecognizer(target: self, action: #selector(self.fifthLabelTapped))
-            self.fifthLabel.addGestureRecognizer(tap)
-        }
-    }
-    @IBOutlet weak var sixthLabel: UILabel! {
-        didSet {
-            let tap = UITapGestureRecognizer(target: self, action: #selector(self.sixthLabelTapped))
-            self.sixthLabel.addGestureRecognizer(tap)
-        }
-    }
-    
+    }    
     
     // MARK: - View Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
     }
     
-    @objc private func firstLabelTapped() {
+    // MARK: - Actions
+    
+    @IBAction private func firstButtonTapped(_ sender: UIButton) {
         self.selectedDocumentValueHendler?(self.photoTypes[0])
     }
-    @objc private func socondLabelTapped() {
+    @IBAction private func secondButtonTapped(_ sender: UIButton) {
         self.selectedDocumentValueHendler?(self.photoTypes[1])
     }
-    @objc private func thirdLabelTapped() {
+    @IBAction private func thirdButtonTapped(_ sender: UIButton) {
         self.selectedDocumentValueHendler?(self.photoTypes[2])
     }
-    @objc private func fourthLabelTapped() {
+    @IBAction private func fourthButtonTapped(_ sender: UIButton) {
         self.selectedDocumentValueHendler?(self.photoTypes[3])
     }
-    @objc private func fifthLabelTapped() {
+    @IBAction private func fifthButtonTapped(_ sender: UIButton) {
         self.selectedDocumentValueHendler?(self.photoTypes[4])
     }
-    @objc private func sixthLabelTapped() {
+    @IBAction private func sixthButtonTapped(_ sender: UIButton) {
         self.selectedDocumentValueHendler?(self.photoTypes[5])
     }
+
 }
