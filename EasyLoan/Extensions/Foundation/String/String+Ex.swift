@@ -45,4 +45,32 @@ extension String {
         }
         return NSLocalizedString(self, tableName: language, comment: "")
     }
+    
+}
+
+extension String {
+    
+    func toFloat() -> Float {
+        var value: Float = 0
+        if let valueFromString = Float(self) {
+            value = valueFromString
+        }
+        return value
+    }
+    
+    func toInt() -> Int {
+        var value: Int = 0
+        if let valueFromString = Int(self) {
+            value = valueFromString
+        }
+        return value
+    }
+    
+    func toDouble() -> Double {
+        var value: Double = 0
+        if let valueFromString = Double(self) {
+            value = valueFromString
+        }
+        return value
+    }
 }

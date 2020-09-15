@@ -145,15 +145,15 @@ class FormThreeViewController: FormsBaseViewController {
             paramets = [
                 "id": id,
                 "fillStep": 3,
-                "loanProduct": self.stringToInt(self.loanProductDropDownView.selectedId),
-                "loanPurpose": self.stringToInt(self.loanPurposeDropDownView.selectedId),
+                "loanProduct": self.loanProductDropDownView.selectedId.toInt(),
+                "loanPurpose": self.loanPurposeDropDownView.selectedId.toInt(),
                 "loanPurposeComment": self.loanPurposeComView.textField.text ?? "",
-                "loanAmount": self.stringToFloat(self.loanAmountView.textField.text),
-                "loanTerm": self.stringToInt(self.loanTermView.textField.text),
-                "loanCurrency": self.stringToInt(self.currencyRadionButtonController.selectedButton?.value),
-                "paymentType": self.stringToInt(self.paymentTypeDropDownView.selectedId),
-                "gracePeriod": self.stringToInt(self.gracePeriodValueLabel.text),
-                "loanPercentage": self.stringToInt(self.loanPercentageView.textField.text),
+                "loanAmount": self.loanAmountView.textField.text?.toFloat() ?? 0,
+                "loanTerm": self.loanTermView.textField.text?.toInt() ?? 0,
+                "loanCurrency": self.currencyRadionButtonController.selectedButton?.value.toInt() ?? 0,
+                "paymentType": self.paymentTypeDropDownView.selectedId.toInt(),
+                "gracePeriod": self.gracePeriodValueLabel.text?.toInt() ?? 0,
+                "loanPercentage": self.loanPercentageView.textField.text?.toFloat() ?? 0,
                 "refereesInfo": [
                     ["name": self.refereesOneNameView.textField.text ?? "",
                      "phone": self.refereesOnePhoneView.textField.text ?? "",
@@ -170,37 +170,19 @@ class FormThreeViewController: FormsBaseViewController {
     private func culculateForCoefficient() {
         guard let request = self.requestFull else { return }
         
-        let loanAmount = self.stringToFloat(self.loanAmountView.textField.text)
-        let loanTerm = self.stringToFloat(self.loanTermView.textField.text)
-        let loanPercentage = self.stringToFloat(self.loanPerentageView.textField.text)
+        guard let loanAmount = self.loanAmountView.textField.text?.toDouble(),
+            let loanTerm = self.loanTermView.textField.text?.toDouble(),
+            let loanPercentage = self.loanPercentageView.textField.text?.toDouble()
+            else {
+                return
+        }
         
-        let p = Double(loanPercentage / 100.0 / 12.0)
-        let sum = Double(loanAmount)
-        let n = Double(loanTerm)
-        let m = sum * (p + p / ( pow((1 + p), n) - 1 ))
-        let k = Double(request.monthlyNetIncome - request.operationExpanses - request.famClientExpenses) / m
+        let p = loanPercentage / 100.0 / 12.0
+        let m = loanAmount * (p + p / ( pow((1 + p), loanTerm) - 1 ))
+        let k = Double(request.monthlyNetIncome -
+            request.operationExpanses - request.famClientExpenses) / m
         
         self.loanCoeffView.textField.text = String(format: "%0.2f", k)
-    }
-    
-    private func stringToFloat(_ str: String?) -> Float {
-        var value: Float = 0
-        if let str = str {
-            if let valueFromString = Float(str) {
-                value = valueFromString
-            }
-        }
-        return value
-    }
-    
-    private func stringToInt(_ str: String?) -> Int {
-        var int = 0
-        if let str = str {
-            if let intFromString = Int(str) {
-                int = intFromString
-            }
-        }
-        return int
     }
     
 
