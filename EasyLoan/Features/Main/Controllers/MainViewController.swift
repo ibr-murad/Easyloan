@@ -11,7 +11,7 @@ import SwiftEntryKit
 import IQKeyboardManagerSwift
 
 class MainViewController: BaseViewController {
-    
+
     // MARK: - GUI Variables
     
     private lazy var searchController: UISearchController = {
@@ -21,12 +21,12 @@ class MainViewController: BaseViewController {
         searchBar.delegate = self
         searchBar.searchBarStyle = UISearchBar.Style.default
         searchBar.tintColor = .white
-        if let color = UIColor(named: "darkTextColor") {
-            searchBar.setTextColor(color: color)
-        }
         searchBar.setSearchField(color: .white, cornerRadius: 10)
         searchBar.setImage(UIImage(named: "searchIcon"), for: .search, state: .normal)
         searchBar.setImage(UIImage(named: "dismissIcon"), for: .clear, state: .normal)
+        if let color = UIColor(named: "darkTextColor") {
+            searchBar.setTextColor(color: color)
+        }
         return controller
     }()
     
@@ -139,7 +139,7 @@ class MainViewController: BaseViewController {
     
     private func setNavigationBar() {
         self.setLeftAlignedNavigationItemTitle(
-            text: "Easyloan", font: .boldSystemFont(ofSize: 20),
+            text: "EasyLoan", font: .boldSystemFont(ofSize: 20),
             color: .white, margin: 10)
         guard let color = UIColor(named: "appColor") else { return }
         self.setupNavBar(style: .black, backgroungColor: color, tintColor: .white)
@@ -208,24 +208,18 @@ class MainViewController: BaseViewController {
     }
     
     private func deleteRequest(index: Int) {
-        if self.data[index].state == .draft {
-            let url = URLPath.applicationById + String(describing: self.data[index].id)
-            Network.shared.delete(url: url, success: { [weak self, index] in
-                guard let self = self else { return }
-                let indexPath = IndexPath(item: index, section: 0)
-                self.tableView.beginUpdates()
-                self.data.remove(at: index)
-                self.tableView.deleteRows(at: [indexPath], with: .fade)
-                self.tableView.endUpdates()
-                self.tableView.reloadData()
-            }) { [weak self] (error) in
-                guard let self = self else { return }
-                self.alertError(message: error.localizedDescription)
-            }
-        } else {
-            if let msg = "YOU_CAN_DELETE_ONLY_DRAFT".localized() {
-                self.alertError(message: msg)
-            }
+        let url = URLPath.applicationById + String(describing: self.data[index].id)
+        Network.shared.delete(url: url, success: { [weak self, index] in
+            guard let self = self else { return }
+            let indexPath = IndexPath(item: index, section: 0)
+            self.tableView.beginUpdates()
+            self.data.remove(at: index)
+            self.tableView.deleteRows(at: [indexPath], with: .fade)
+            self.tableView.endUpdates()
+            self.tableView.reloadData()
+        }) { [weak self] (error) in
+            guard let self = self else { return }
+            self.alertError(message: error.localizedDescription)
         }
     }
     
@@ -271,6 +265,7 @@ class MainViewController: BaseViewController {
                 ["name": "hm_relationship","version": 0]]]
         return parametrs
     }
+    
     // MARK: - Alerts
     
     private func showDeleteAlert(id: Int) {
@@ -327,17 +322,6 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
             }
         }
         
-        /*if !self.isFiltering && !self.data.isEmpty {
-            let model: RequestViewModel = self.data[indexPath.row]
-            (cell as? MainTableViewCell)?
-                .initView(statusImage: model.stateImage, name: model.fullName,
-                          type: model.loanAmout, date: model.createdAt)
-        } else {
-            let model: RequestViewModel = self.filteredData[indexPath.row]
-            (cell as? MainTableViewCell)?
-                .initView(statusImage: model.stateImage, name: model.fullName,
-                          type: model.loanAmout, date: model.createdAt)
-        }*/
         return cell
     }
     
@@ -395,7 +379,13 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
                 style: .normal, title:  "",
                 handler: { [weak self, indexPath] (ac: UIContextualAction, view: UIView, success:(Bool) -> Void) in
                     guard let self = self else { return }
-                    self.showDeleteAlert(id: indexPath.row)
+                    if self.data[indexPath.row].state == .draft {
+                        self.showDeleteAlert(id: indexPath.row)
+                    } else {
+                        if let msg = "YOU_CAN_DELETE_ONLY_DRAFT".localized() {
+                            self.alertError(message: msg)
+                        }
+                    }
                     success(true)
             })
             if let cgImage = UIImage(named: "contextualDelete")?.cgImage {
@@ -462,4 +452,3 @@ extension MainViewController: UISearchBarDelegate {
     }
     
 }
-

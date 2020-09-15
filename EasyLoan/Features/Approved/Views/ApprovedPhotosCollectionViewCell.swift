@@ -11,6 +11,8 @@ import SnapKit
 
 class ApprovedPhotosCollectionViewCell: UICollectionViewCell {
     
+    // MARK: - Constants
+    
     static let reuseIdentifier = "ApprovedPhotosCollectionViewCell"
 
     // MARK: - GUI Variables
@@ -55,8 +57,7 @@ class ApprovedPhotosCollectionViewCell: UICollectionViewCell {
     
     func initCell(image: UIImage, description: String) {
         self.cellImageView.image = image
-        self.cellLabel.text = self.setTypeText(type: description)
-        
+        self.cellLabel.text = description
         self.updateConstraintsIfNeeded()
     }
     
@@ -77,32 +78,4 @@ class ApprovedPhotosCollectionViewCell: UICollectionViewCell {
         super.updateConstraints()
     }
     
-    // MARK: - Helpers
-    
-    private func setTypeText(type: String) -> String {
-        var text = ""
-        switch type {
-        case "PAS":
-            text = "Паспорт"
-            break
-        case "TIN":
-            text = "ИНН"
-            break
-        case "INC":
-            text = "Спарвка доходов"
-            break
-        case "APP":
-            text = "Заявление на кредит"
-            break
-        case "PHO":
-            text = "Фотография клиента"
-            break
-        case "OTH":
-            text = "Другие документы"
-            break
-        default:
-            break
-        }
-        return text
-    }
 }

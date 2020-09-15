@@ -12,7 +12,20 @@ import SwiftEntryKit
 @IBDesignable
 class DeleteAlertView: UIView {
     
+    // MARK: - Public Variables
+    
     var yesButtonTappedHendler: (() -> Void)?
+    var messageKey: String? {
+        didSet {
+            self.messageLabel.localizedKey = self.messageKey
+        }
+    }
+    
+    // MARK: - Outlets
+    
+    @IBOutlet weak var messageLabel: LocalizedLabel!
+    
+    // MARKL - Initialization
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -24,6 +37,8 @@ class DeleteAlertView: UIView {
         setupViews()
     }
     
+    // MARK: - Actions
+    
     @IBAction func yesButtonTapped(_ sender: RoundedButton) {
         self.yesButtonTappedHendler?()
     }
@@ -31,6 +46,8 @@ class DeleteAlertView: UIView {
     @IBAction func noButtonTapped(_ sender: RoundedButton) {
         SwiftEntryKit.dismiss()
     }
+    
+    // MARK: - Setters
     
     private func setupViews() {
         let xibView = loadViewFromXib()

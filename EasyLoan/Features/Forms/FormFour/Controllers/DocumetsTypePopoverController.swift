@@ -55,5 +55,5 @@ class DocumetsTypePopoverController: UIViewController {
     @IBAction private func sixthButtonTapped(_ sender: UIButton) {
         self.selectedDocumentValueHendler?(self.photoTypes[5])
     }
-
+    
 }

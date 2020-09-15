@@ -105,7 +105,7 @@ class ApprovedViewController: BaseViewController {
             group.enter()
             Network.shared.downloadImage(fileId: key) { [weak self] (image) in
                 guard let self = self else { return }
-                self.allPhotosData.append(PhotoCellModel(photo: image, status: .approved, type: value))
+                self.allPhotosData.append(PhotoCellModel(photo: image, status: .approved, type: value, fileId: key))
                 group.leave()
             }
         }
@@ -319,7 +319,7 @@ extension ApprovedViewController: UICollectionViewDelegate, UICollectionViewData
             as? ApprovedPhotosCollectionViewCell else { return ApprovedPhotosCollectionViewCell() }
         
         let model = self.allPhotosData[indexPath.row]
-        cell.initCell(image: model.photo, description: model.type)
+        cell.initCell(image: model.photo, description: model.typeText)
         
         return cell
     }

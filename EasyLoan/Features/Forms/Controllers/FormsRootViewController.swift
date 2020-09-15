@@ -215,6 +215,8 @@ class FormsRootViewController: UIViewController {
     // MARK: - Setters
     
     private func setNavigationBar() {
+        let emptyBackButton = UIBarButtonItem(title: " ", style: .plain, target: nil, action: nil)
+        self.navigationItem.backBarButtonItem = emptyBackButton
         if self.isEditable {
             self.navigationItem.title = "NEW_REQUEST".localized()
             self.setNavigationBarDeleteButton()

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 class SplashViewController: UIViewController {
     
@@ -31,6 +32,18 @@ class SplashViewController: UIViewController {
         
         self.view.backgroundColor = UIColor.white
         self.makeServiceCall()
+        
+        /*AVCaptureDevice.requestAccess(for: .video) { (granted) in
+            print(granted)
+        }*/
+        
+        /*switch AVCaptureDevice.authorizationStatus(for: .video) {
+        case .authorized:
+        case .notDetermined:
+        case .denied: return
+        case.restricted: return
+        }*/
+        
     }
      
     // MARK: - Helpers

@@ -11,7 +11,11 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DeleteAlertView" customModule="EasyLoan" customModuleProvider="target"/>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DeleteAlertView" customModule="EasyLoan" customModuleProvider="target">
+            <connections>
+                <outlet property="messageLabel" destination="FQA-hW-OsM" id="c5g-cC-KbS"/>
+            </connections>
+        </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="qrF-gu-1cZ">
             <rect key="frame" x="0.0" y="0.0" width="276" height="402"/>
@@ -65,7 +69,7 @@
                                 <action selector="yesButtonTapped:" destination="-1" eventType="touchUpInside" id="PNU-PC-wGS"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="63V-Ey-e7I" userLabel="no" customClass="RoundedButton" customModule="EasyLoan" customModuleProvider="target">
+                        <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="63V-Ey-e7I" userLabel="no" customClass="RoundedButton" customModule="EasyLoan" customModuleProvider="target">
                             <rect key="frame" x="88" y="0.0" width="56" height="56"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="56" id="f3Z-1E-RiM"/>
@@ -80,6 +84,9 @@
                                     <real key="value" value="1"/>
                                 </userDefinedRuntimeAttribute>
                                 <userDefinedRuntimeAttribute type="image" keyPath="image" value="dismissIcon"/>
+                                <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                    <color key="value" name="darkTextColor"/>
+                                </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
                             <connections>
                                 <action selector="noButtonTapped:" destination="-1" eventType="touchUpInside" id="FZH-S6-JhS"/>

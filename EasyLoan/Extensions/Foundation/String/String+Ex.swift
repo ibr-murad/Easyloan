@@ -38,12 +38,11 @@ extension String {
     }
     
     func localized() -> String? {
-        var language = "ru"
+        var language = Locale.current.languageCode
         
         if let selectedLanguage = UserDefaults.standard.string(forKey: "appLanguage") {
             language = selectedLanguage
         }
-        
         return NSLocalizedString(self, tableName: language, comment: "")
     }
 }

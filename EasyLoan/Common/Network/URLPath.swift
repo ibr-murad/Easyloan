@@ -16,7 +16,9 @@ struct URLPath {
     static let applicationById = "application/id/"
     static let dictGet = "dict/get"
     static let dashboard = "dashboard/user"
+    static let file = "file/"
     static let uploadFile = "file/application/"
     static let downloadFile = "file/application/"
     static let syncWithCFT = "application/sync/"
+    
 }

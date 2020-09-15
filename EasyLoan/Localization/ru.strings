@@ -126,6 +126,7 @@ INCOME_STATEMENT = "Справка доходов";
 REQUEST_FOR_LOAN = "Заявление на кредит";
 CLIENT_PHOTO = "Фотография клиента";
 OTHER_DOCUMENTS = "Другие документы";
+DO_YOU_WANT_DELETE_DOCUMENT = "Вы действительно хотите удалить документ?";
 
 //MARK: -Form 5
 

@@ -10,31 +10,42 @@ import UIKit
 
 class DocumentsPhotoCollectionViewCell: UICollectionViewCell {
     
+    // MARK: - Constants
+    
     static let reuseIdentifier = "DocumentsPhotoCollectionViewCell"
+    
+    // MARK: - Outlets
     
     @IBOutlet weak var photoImageView: UIImageView!
     @IBOutlet weak var statusImageView: UIImageView!
     @IBOutlet weak var typeLabel: UILabel!
     
+    // MARKL - Initialization
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
     
-    func initView(photoImage: UIImage, status: RequestState, type: String) {
-        self.photoImageView.image = photoImage
-        self.statusImageView.image = self.setStatusImage(status: status)
-        self.typeLabel.text = self.setTypeText(type: type)
+    override func prepareForReuse() {
+        super.prepareForReuse()
     }
+    
+    func initView(with model: PhotoCellModel) {
+        self.photoImageView.image = model.photo
+        self.statusImageView.image = self.setStatusImage(status: model.status)
+        self.typeLabel.text = model.typeText
+    }
+    
+    // MARK: - Setters
     
     private func setStatusImage(status: RequestState) -> UIImage {
         var imageName = ""
         switch status {
         case .approved:
-            imageName = "completedIcon"
+            imageName = "statusApproved"
             break
-        case .revision:
-            imageName = "warningIcon"
+        case .uploaded:
+            imageName = "statusRevision2"
             break
         default:
             break
@@ -43,35 +54,7 @@ class DocumentsPhotoCollectionViewCell: UICollectionViewCell {
         guard let statusImage = UIImage(named: imageName) else { return UIImage()}
         return statusImage
     }
-    
-    private func setTypeText(type: String) -> String {
-        var text = ""
-        switch type {
-        case "PAS":
-            text = "Паспорт"
-            break
-        case "TIN":
-            text = "ИНН"
-            break
-        case "INC":
-            text = "Спарвка доходов"
-            break
-        case "APP":
-            text = "Заявление на кредит"
-            break
-        case "PHO":
-            text = "Фотография клиента"
-            break
-        case "OTH":
-            text = "Другие документы"
-            break
-        default:
-            break
-        }
-        return text
-    }
-    
-    override func prepareForReuse() {
-        super.prepareForReuse()
-    }
 }
+
+
+//$(DEVELOPMENT_LANGUAGE)

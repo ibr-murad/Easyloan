@@ -128,6 +128,7 @@ INCOME_STATEMENT = "Маълумотномаи даромад";
 REQUEST_FOR_LOAN = "Ариза барои гирифтани қарз";
 CLIENT_PHOTO = "Расми мизоҷ";
 OTHER_DOCUMENTS = "Дигар ҳуҷҷатҳо";
+DO_YOU_WANT_DELETE_DOCUMENT = "Оё Шумо ҳақиқатан мехоҳед ки ҳуҷҷатро хориҷ намоед?";
 
 //MARK: -Form 5
 

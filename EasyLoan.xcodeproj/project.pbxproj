@@ -42,6 +42,7 @@
 		20A414BD250B6AC60026967D /* ImageWithoutRender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A414BC250B6AC60026967D /* ImageWithoutRender.swift */; };
 		20A414C1250B87B30026967D /* LogoutAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A414C0250B87B30026967D /* LogoutAlertView.swift */; };
 		20A414C3250B87BC0026967D /* LogoutAlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20A414C2250B87BC0026967D /* LogoutAlertView.xib */; };
+		20A8BCD92510862200170704 /* ImageViewerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A8BCD82510862200170704 /* ImageViewerViewController.swift */; };
 		20AD6973250618DE000996D0 /* ApprovedPhotosCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20AD6971250618DE000996D0 /* ApprovedPhotosCollectionViewCell.swift */; };
 		20AD697725062147000996D0 /* ApprovedTableViewCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20AD697625062147000996D0 /* ApprovedTableViewCellModel.swift */; };
 		20B484A624D009AA00326734 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B484A524D009AA00326734 /* BaseViewController.swift */; };
@@ -147,6 +148,7 @@
 		20A414BC250B6AC60026967D /* ImageWithoutRender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageWithoutRender.swift; sourceTree = "<group>"; };
 		20A414C0250B87B30026967D /* LogoutAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutAlertView.swift; sourceTree = "<group>"; };
 		20A414C2250B87BC0026967D /* LogoutAlertView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LogoutAlertView.xib; sourceTree = "<group>"; };
+		20A8BCD82510862200170704 /* ImageViewerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewerViewController.swift; sourceTree = "<group>"; };
 		20AD6971250618DE000996D0 /* ApprovedPhotosCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApprovedPhotosCollectionViewCell.swift; sourceTree = "<group>"; };
 		20AD697625062147000996D0 /* ApprovedTableViewCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApprovedTableViewCellModel.swift; sourceTree = "<group>"; };
 		20B484A524D009AA00326734 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
@@ -349,6 +351,7 @@
 			children = (
 				2003502024CEFD5B00ED30A1 /* FormFourViewController.swift */,
 				209C985524EBE9F30079315A /* DocumetsTypePopoverController.swift */,
+				20A8BCD82510862200170704 /* ImageViewerViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -1350,6 +1353,7 @@
 				20CEA87C24F79ACE00AFF5D1 /* DictinaryNames.swift in Sources */,
 				20DA479024EFDED200AB1D2C /* UserModel.swift in Sources */,
 				20F9F51624CFE8D000E68CD7 /* FormFiveViewController.swift in Sources */,
+				20A8BCD92510862200170704 /* ImageViewerViewController.swift in Sources */,
 				20A414BD250B6AC60026967D /* ImageWithoutRender.swift in Sources */,
 				20B525A324C80A0B00473D6D /* MainTableViewCell.swift in Sources */,
 				20C102A024EE7BB700A12EAB /* FormsBaseViewController.swift in Sources */,

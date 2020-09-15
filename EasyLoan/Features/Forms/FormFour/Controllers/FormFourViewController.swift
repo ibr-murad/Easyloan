@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 import DropDown
 import Alamofire
 
@@ -65,9 +66,9 @@ class FormFourViewController: FormsBaseViewController {
         controller.selectedDocumentValueHendler = { [weak self] type in
             guard let self = self else { return }
             self.currentPhotoType = type
-            print(type)
-            self.dismiss(animated: true, completion: nil)
-            self.showImagePickerController(sourceType: .photoLibrary)
+            self.dismiss(animated: true, completion: { [weak self] in
+                self?.showImagePickerController(sourceType: .photoLibrary)
+            })
         }
     }
     
@@ -76,7 +77,7 @@ class FormFourViewController: FormsBaseViewController {
     }
     
     @IBAction func continueButtonTapped(_ sender: Any) {
-        self.uploadImages()
+        self.continueButtonTappedHandler?()
     }
     
     
@@ -84,12 +85,13 @@ class FormFourViewController: FormsBaseViewController {
     
     private func loadImages() {
         guard let request = self.requestFull else { return }
+        self.allPhotosData = []
         let group = DispatchGroup()
         for (key, value) in request.files {
             group.enter()
             Network.shared.downloadImage(fileId: key) { [weak self] (image) in
                 guard let self = self else { return }
-                self.allPhotosData.append(PhotoCellModel(photo: image, status: .approved, type: value))
+                self.allPhotosData.append(PhotoCellModel(photo: image, status: .approved, type: value, fileId: key))
                 group.leave()
             }
         }
@@ -104,31 +106,26 @@ class FormFourViewController: FormsBaseViewController {
         }
     }
     
-    private func uploadImages() {
+    private func uploadImage(_ item: PhotoCellModel) {
         if let id = self.createdRequestId {
-            let group = DispatchGroup()
-            for item in self.uploadedPhotosData {
-                group.enter()
-                Network.shared.uploadImage(
-                    id: id, type: item.type, image: item.photo,
-                    success: { (data: PhotoModel) in
-                        group.leave()
-                }) { (error, code) in
-                    print(error)
-                    group.leave()
-                }
-            }
-            
-            group.notify(queue: .main) {
-                self.uploadedPhotosData = []
-                self.collectionView.reloadData()
-                if self.allPhotosData.count >= 2 {
-                    self.isFormFullHandler?(true)
-                } else {
-                    self.isFormFullHandler?(false)
-                }
-                self.continueButtonTappedHandler?()
-                self.completionHendler?(id, self.familyMemberNum)
+            var localItem = item
+            Network.shared.uploadImage(
+                id: id, type: item.type, image: item.photo,
+                success: { [weak self] (data: PhotoModel) in
+                    guard let self = self else { return }
+                    localItem.status = .approved
+                    localItem.fileId = "\(data.id)"
+                    self.allPhotosData.removeLast()
+                    self.allPhotosData.append(localItem)
+                    self.collectionView.reloadData()
+                    if self.allPhotosData.count >= 2 {
+                        self.isFormFullHandler?(true)
+                    } else {
+                        self.isFormFullHandler?(false)
+                    }
+                    self.completionHendler?(id, self.familyMemberNum)
+            }) { (error, code) in
+                print(error)
             }
         }
     }
@@ -154,24 +151,42 @@ class FormFourViewController: FormsBaseViewController {
 //*****************************************//
 
 extension FormFourViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
     func showImagePickerController(sourceType: UIImagePickerController.SourceType) {
+        
         let imagePickerController = UIImagePickerController()
         imagePickerController.delegate = self
         imagePickerController.allowsEditing = true
         imagePickerController.sourceType = sourceType
-        self.present(imagePickerController, animated: true, completion: nil)
+        
+
+        switch AVCaptureDevice.authorizationStatus(for: .video) {
+        case .authorized:
+            self.present(imagePickerController, animated: true, completion: nil)
+            
+            break
+        default:
+            AVCaptureDevice.requestAccess(for: .video) { [weak self] (granted) in
+                print(granted)
+                if granted {
+                    self?.present(imagePickerController, animated: true, completion: nil)
+                }
+            }
+            break
+        }
+        
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         
         if let editedImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage {
-            let model = PhotoCellModel(photo: editedImage, status: .approved, type: self.currentPhotoType)
-            self.uploadedPhotosData.append(model)
+            let model = PhotoCellModel(photo: editedImage, status: .uploaded, type: self.currentPhotoType, fileId: nil)
             self.allPhotosData.append(model)
+            self.uploadImage(model)
         } else if let originalImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
-            let model = PhotoCellModel(photo: originalImage, status: .approved, type: self.currentPhotoType)
-            self.uploadedPhotosData.append(model)
+            let model = PhotoCellModel(photo: originalImage, status: .uploaded, type: self.currentPhotoType, fileId: nil)
             self.allPhotosData.append(model)
+            self.uploadImage(model)
         }
         self.collectionView.reloadData()
         self.dismiss(animated: true, completion: nil)
@@ -191,8 +206,18 @@ extension FormFourViewController: UICollectionViewDelegate, UICollectionViewData
         let cell = collectionView.dequeueReusableCell(
                 withReuseIdentifier: DocumentsPhotoCollectionViewCell.reuseIdentifier, for: indexPath)
         let model = self.allPhotosData[indexPath.row]
-        (cell as? DocumentsPhotoCollectionViewCell)?
-            .initView(photoImage: model.photo, status: model.status, type: model.type)
+        (cell as? DocumentsPhotoCollectionViewCell)?.initView(with: model)
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let model = self.allPhotosData[indexPath.row]
+        let controller = ImageViewerViewController.instantiate(with: model)
+        
+        controller.imageWasDeletedHandler = { [weak self] id in
+            self?.allPhotosData = self?.allPhotosData.filter({$0.fileId != id}) ?? []
+            self?.collectionView.reloadData()
+        }
+        self.navigationController?.pushViewController(controller, animated: true)
     }
 }

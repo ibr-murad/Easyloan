@@ -23,7 +23,7 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="432"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="NotificationTableViewCell" rowHeight="94" id="302-hX-d0m" customClass="NotificationTableViewCell" customModule="EasyLoan" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="NotificationTableViewCell" rowHeight="94" id="302-hX-d0m" customClass="NotificationTableViewCell" customModule="EasyLoan" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="94"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="302-hX-d0m" id="ouy-SP-5oG">
@@ -31,7 +31,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sUe-fk-vpK" userLabel="Conteiner View" customClass="RoundedView" customModule="EasyLoan" customModuleProvider="target">
-                                                    <rect key="frame" x="8" y="0.0" width="398" height="53"/>
+                                                    <rect key="frame" x="8" y="0.0" width="437" height="53"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="statusApproved" translatesAutoresizingMaskIntoConstraints="NO" id="HUk-Nm-3mV">
                                                             <rect key="frame" x="16" y="15.999999999999996" width="24" height="24.000000000000004"/>
@@ -41,7 +41,7 @@
                                                             </constraints>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" alpha="0.5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Только что" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kqc-vy-79o" userLabel="time">
-                                                            <rect key="frame" x="313" y="15.999999999999996" width="69" height="21.000000000000004"/>
+                                                            <rect key="frame" x="352" y="15.999999999999996" width="69" height="21.000000000000004"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                             <color key="textColor" name="darkTextColor"/>
                                                             <nil key="highlightedColor"/>
@@ -601,7 +601,7 @@
                                     <outlet property="delegate" destination="e27-oN-Ce6" id="30h-cI-zR9"/>
                                 </connections>
                             </tableView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nqv-Uc-GzE" userLabel="Bottom Tab View">
+                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nqv-Uc-GzE" userLabel="Bottom Tab View">
                                 <rect key="frame" x="0.0" y="654" width="375" height="70"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wwR-Gd-has" userLabel="Statistic Tab">
@@ -611,7 +611,7 @@
                                             <action selector="statisticsTabButtonTapped:" destination="e27-oN-Ce6" eventType="touchUpInside" id="9dU-N5-5AX"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6hd-b3-gbQ" userLabel="New Tab" customClass="RoundedButton" customModule="EasyLoan" customModuleProvider="target">
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6hd-b3-gbQ" userLabel="New Tab" customClass="RoundedButton" customModule="EasyLoan" customModuleProvider="target">
                                         <rect key="frame" x="159.66666666666666" y="-16" width="56" height="56"/>
                                         <color key="backgroundColor" name="appColor"/>
                                         <constraints>
@@ -639,21 +639,52 @@
                                             <action selector="profileTabButtonTapped:" destination="e27-oN-Ce6" eventType="touchUpInside" id="zZQ-yN-11w"/>
                                         </connections>
                                     </button>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="RQR-AY-Br2">
+                                        <rect key="frame" x="24" y="44.666666666666629" width="327" height="13.333333333333336"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Статистика" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gb0-Ww-7kZ">
+                                                <rect key="frame" x="0.0" y="0.0" width="109" height="13.333333333333334"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                <color key="textColor" name="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Новая заявка" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o6m-Az-r5w">
+                                                <rect key="frame" x="109" y="0.0" width="109" height="13.333333333333334"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                <color key="textColor" name="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Профиль" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OC6-Bu-ueG">
+                                                <rect key="frame" x="218" y="0.0" width="109" height="13.333333333333334"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                <color key="textColor" name="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
-                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="0.3457566352739726" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="vGH-gX-gjN" firstAttribute="top" secondItem="Nqv-Uc-GzE" secondAttribute="top" id="0Lu-2b-BmZ"/>
                                     <constraint firstItem="6hd-b3-gbQ" firstAttribute="centerX" secondItem="Nqv-Uc-GzE" secondAttribute="centerX" id="CHN-Yi-KU6"/>
                                     <constraint firstItem="vGH-gX-gjN" firstAttribute="leading" secondItem="6hd-b3-gbQ" secondAttribute="trailing" constant="16" id="O2A-Up-uiu"/>
+                                    <constraint firstItem="RQR-AY-Br2" firstAttribute="leading" secondItem="Nqv-Uc-GzE" secondAttribute="leading" constant="24" id="WYa-82-Cvz"/>
                                     <constraint firstAttribute="height" constant="70" id="XgV-dY-3WL"/>
                                     <constraint firstAttribute="bottom" secondItem="vGH-gX-gjN" secondAttribute="bottom" constant="16" id="XxS-7V-ni0"/>
                                     <constraint firstAttribute="bottom" secondItem="wwR-Gd-has" secondAttribute="bottom" constant="16" id="Z1T-Cw-VBR"/>
                                     <constraint firstAttribute="trailing" secondItem="vGH-gX-gjN" secondAttribute="trailing" constant="16" id="hac-rA-KAU"/>
                                     <constraint firstItem="6hd-b3-gbQ" firstAttribute="leading" secondItem="wwR-Gd-has" secondAttribute="trailing" constant="16" id="jts-sm-64t"/>
+                                    <constraint firstAttribute="bottom" secondItem="RQR-AY-Br2" secondAttribute="bottom" constant="12" id="nZo-8U-Apn"/>
                                     <constraint firstItem="wwR-Gd-has" firstAttribute="top" secondItem="Nqv-Uc-GzE" secondAttribute="top" id="obA-c0-rVU"/>
                                     <constraint firstItem="6hd-b3-gbQ" firstAttribute="top" secondItem="Nqv-Uc-GzE" secondAttribute="top" constant="-16" id="qst-W0-Wi2"/>
+                                    <constraint firstAttribute="trailing" secondItem="RQR-AY-Br2" secondAttribute="trailing" constant="24" id="sT3-Wa-ZzA"/>
                                     <constraint firstItem="wwR-Gd-has" firstAttribute="leading" secondItem="Nqv-Uc-GzE" secondAttribute="leading" constant="16" id="xmY-Pf-mes"/>
                                 </constraints>
+                                <variation key="default">
+                                    <mask key="subviews">
+                                        <exclude reference="RQR-AY-Br2"/>
+                                    </mask>
+                                </variation>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

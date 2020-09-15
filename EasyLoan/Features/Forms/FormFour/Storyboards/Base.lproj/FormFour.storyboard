@@ -234,6 +234,35 @@
             </objects>
             <point key="canvasLocation" x="84" y="-33.733133433283363"/>
         </scene>
+        <!--Image Viewer View Controller-->
+        <scene sceneID="JUq-JS-BRe">
+            <objects>
+                <viewController storyboardIdentifier="ImageViewer" id="0Cc-ya-Yj4" customClass="ImageViewerViewController" customModule="EasyLoan" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wP7-pX-O7X">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="J6j-fT-UFD">
+                                <rect key="frame" x="4" y="24" width="406" height="708"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="J6j-fT-UFD" firstAttribute="top" secondItem="Qo9-IL-XzB" secondAttribute="top" constant="4" id="1Xh-16-pG9"/>
+                            <constraint firstItem="Qo9-IL-XzB" firstAttribute="trailing" secondItem="J6j-fT-UFD" secondAttribute="trailing" constant="4" id="84T-rE-jeZ"/>
+                            <constraint firstItem="Qo9-IL-XzB" firstAttribute="bottom" secondItem="J6j-fT-UFD" secondAttribute="bottom" constant="4" id="uud-th-1Oa"/>
+                            <constraint firstItem="J6j-fT-UFD" firstAttribute="leading" secondItem="Qo9-IL-XzB" secondAttribute="leading" constant="4" id="wJT-g9-Elw"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Qo9-IL-XzB"/>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="J6j-fT-UFD" id="lwU-Bx-9Nt"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="w9m-A3-ePz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="779" y="-31"/>
+        </scene>
         <!--Documets Type Popover Controller-->
         <scene sceneID="97n-s8-SNW">
             <objects>
@@ -351,7 +380,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e3z-zT-35D" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="962" y="-64"/>
+            <point key="canvasLocation" x="1359" y="-212"/>
         </scene>
     </scenes>
     <resources>
