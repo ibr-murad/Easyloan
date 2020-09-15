@@ -143,31 +143,33 @@ class FormTwoViewController: FormsBaseViewController {
             paramets = [
                 "id": id,
                 "fillStep": 2,
-                "monthlyNetIncome": self.stringToFloat(self.clientMonthlyIncomeView.textField.text),
+                "monthlyNetIncome": self.clientMonthlyIncomeView.textField.text?.toFloat() ?? 0,
                 "monthlyNetIncomeCom": self.monthlyIncomeComTextField.text ?? "",
-                "operationExpanses": self.stringToFloat(self.operationExpensesPerMonthView.textField.text),
-                "familyExpenses": self.stringToFloat(self.familyExpensesPerMonthView.textField.text),
-                "famClientExpenses": self.stringToFloat(self.clientExpensesView.textField.text),
-                "monthlyIncome": self.stringToFloat(self.monthlyIncomeView.textField.text),
-                "avgConsPerFamMember": self.stringToFloat(self.avgConsPerFamMemberView.textField.text),
+                "operationExpanses": self.operationExpensesPerMonthView.textField.text?.toFloat() ?? 0,
+                "familyExpenses": self.familyExpensesPerMonthView.textField.text?.toFloat() ?? 0,
+                "famClientExpenses": self.clientExpensesView.textField.text?.toFloat() ?? 0,
+                "monthlyIncome": self.monthlyIncomeView.textField.text?.toFloat() ?? 0,
+                "avgConsPerFamMember": self.avgConsPerFamMemberView.textField.text?.toFloat() ?? 0,
                 "workAddress": [
-                    "city": self.stringToInt(self.workCityDropDownView.selectedId),
+                    "city": self.workCityDropDownView.selectedId.toInt(),
                     "street": self.workStreetTextField.text ?? ""],
-                "workPlace": self.stringToInt(self.workPlaceDropDownView.selectedId),
+                "workPlace": self.workPlaceDropDownView.selectedId.toInt(),
                 "experience": self.experienceCalculateController.calculateItem.value,
-                "haveProperty": self.stringToInt(self.propertyDropDownView.selectedId),
-                "haveCar": self.stringToInt(self.carDropDownView.selectedId),
+                "haveProperty": self.propertyDropDownView.selectedId.toInt(),
+                "haveCar": self.carDropDownView.selectedId.toInt()
             ]
         }
         return paramets
     }
     
     private func culculateMonthlyIncome() {
-        let monthlyNetIncome = self.stringToFloat(self.clientMonthlyIncomeView.textField.text)
-        let operationExpanses = self.stringToFloat(self.operationExpensesPerMonthView.textField.text)
-        let familyExpenses = self.stringToFloat(self.familyExpensesPerMonthView.textField.text)
+        guard let monthlyNetIncome = self.clientMonthlyIncomeView.textField.text?.toFloat(),
+            let operationExpanses = self.operationExpensesPerMonthView.textField.text?.toFloat(),
+            let familyExpenses = self.familyExpensesPerMonthView.textField.text?.toFloat()
+            else { return }
+        
         self.monthlyIncome = monthlyNetIncome - operationExpanses - familyExpenses
-        self.monthlyIncomeView.textField.text = "\(self.monthlyIncome)"
+        self.monthlyIncomeView.textField.text = String(format: "%0.2f", self.monthlyIncome)
     }
     
     private func culculateAvgConsPerFamMember() {
@@ -177,29 +179,7 @@ class FormTwoViewController: FormsBaseViewController {
                 self.avgConsPerFamMemberView.textField.text = String(format: "%0.2f", avgConsPerFamMember)
             }
         }
-    }
-    
-    private func stringToFloat(_ str: String?) -> Float {
-        var value: Float = 0
-        if let str = str {
-            if let valueFromString = Float(str) {
-                value = valueFromString
-            }
-        }
-        return value
-    }
-    
-    private func stringToInt(_ str: String?) -> Int {
-        var int = 0
-        if let str = str {
-            if let intFromString = Int(str) {
-                int = intFromString
-            }
-        }
-        return int
-    }
-    
-    
+    }    
     
     // MARK: - Setters
     

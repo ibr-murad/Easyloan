@@ -162,12 +162,14 @@ class FormOneViewController: FormsBaseViewController {
         paramets = [
             "fillStep": 1,
             "fullName": self.fullnameView.textField.text ?? "",
-            "actualAddress": ["city": "\(self.cityDropDownView.selectedId)","street": self.locationTextField.text ?? ""],
+            "actualAddress": [
+                "city": "\(self.cityDropDownView.selectedId)",
+                "street": self.locationTextField.text ?? ""],
             "clientMainPhoneNum": numbers[0],
             "clientPhoneNumber": numbers,
             "email": self.emailView.textField.text ?? "",
-            "clientEducation": Int(self.educationView.selectedId) ?? 3534162386,
-            "familyStatus": Int(self.relationshipView.selectedId) ?? 3534164707,
+            "clientEducation": self.educationView.selectedId.toInt(),
+            "familyStatus": self.relationshipView.selectedId.toInt(),
             "familyMemberNum": self.familyCalculateController.calculateItem.value,
             "dependentsNum": self.dependentCalculateController.calculateItem.value
         ]

@@ -59,6 +59,8 @@ class MainViewController: BaseViewController {
         IQKeyboardManager.shared.enable = false
         self.loadingAlert()
         self.backgroundDescriptionLabel.text = "YOUR_FUTURE_REQUESTS_LIST".localized()
+        self.retryButton.isEnabled = false
+        self.retryButton.isHidden = true
         self.setNavigationBar()
     }
     
@@ -209,11 +211,13 @@ class MainViewController: BaseViewController {
                     self.data.append(.init(model: $0))
                 }
                 self.dismiss(animated: true, completion: nil)
+                self.newRequestButton.isEnabled = true
                 completion()
         }) { [weak self] (error, code) in
             guard let self = self else { return }
             self.dismiss(animated: true, completion: {
                 self.alertError(message: error.msg)
+                self.newRequestButton.isEnabled = false
                 self.retryButton.isHidden = false
                 self.retryButton.isEnabled = true
                 self.backgroundTitleLabel.text = "ERROR".localized()
