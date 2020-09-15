@@ -48,6 +48,7 @@ class MainViewController: BaseViewController {
     @IBOutlet weak var backgroundView: UIView!
     @IBOutlet weak var backgroundTitleLabel: UILabel!
     @IBOutlet weak var backgroundDescriptionLabel: UILabel!
+    @IBOutlet weak var retryButton: LocalizedButton!
     @IBOutlet weak var newRequestButton: RoundedButton!
     
     // MARK: - View Lifecycle
@@ -127,6 +128,17 @@ class MainViewController: BaseViewController {
         
     }
     
+
+    @IBAction func retryButtonTapped(_ sender: LocalizedButton) {
+        sender.isHidden = true
+        sender.isEnabled = false
+        self.loadingAlert()
+        self.requestForData {
+            self.reloadControllerData()
+        }
+    }
+    
+    
     @objc private func refreshControlListener(_ sender: UIRefreshControl) {
         sender.beginRefreshing()
         self.requestForData {
@@ -202,6 +214,10 @@ class MainViewController: BaseViewController {
             guard let self = self else { return }
             self.dismiss(animated: true, completion: {
                 self.alertError(message: error.msg)
+                self.retryButton.isHidden = false
+                self.retryButton.isEnabled = true
+                self.backgroundTitleLabel.text = "ERROR".localized()
+                self.backgroundDescriptionLabel.text = "ERROR_MSG".localized()
             })
             completion()
         }
@@ -354,15 +370,23 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
                 (controller as? FormsRootViewController)?.requestId = model.id
                 (controller as? FormsRootViewController)?.isEditable = true
                 break
+            case .rejected:
+                storyboard = UIStoryboard(name: "Forms", bundle: nil)
+                controller = storyboard?.instantiateInitialViewController()
+                (controller as? FormsRootViewController)?.requestId = model.id
+                (controller as? FormsRootViewController)?.isEditable = false
+                break
+            case .revision:
+                storyboard = UIStoryboard(name: "Forms", bundle: nil)
+                controller = storyboard?.instantiateInitialViewController()
+                (controller as? FormsRootViewController)?.requestId = model.id
+                (controller as? FormsRootViewController)?.isEditable = false
+                (controller as? FormsRootViewController)?.isRevision = true
+                break
             case .approved:
                 storyboard = UIStoryboard(name: "Approved", bundle: nil)
                 controller = storyboard?.instantiateInitialViewController()
                 (controller as? ApprovedViewController)?.requestId = model.id
-                break
-            case .rejected:
-                break
-                
-            case .revision:
                 break
                 
             }

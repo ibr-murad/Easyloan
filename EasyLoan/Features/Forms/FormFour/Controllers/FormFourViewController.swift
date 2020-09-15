@@ -15,6 +15,13 @@ class FormFourViewController: FormsBaseViewController {
     
     // MARK: - Public Variables
     
+    var isRevision: Bool = false {
+        didSet {
+            if self.isRevision {
+                self.view.isUserInteractionEnabled = true
+            }
+        }
+    }
     override var requestFull: RequestFullViewModel? {
         didSet {
             self.loadImages()
@@ -24,7 +31,6 @@ class FormFourViewController: FormsBaseViewController {
     // MARK: - Private Variables
     
     private var allPhotosData: [PhotoCellModel] = []
-    private var uploadedPhotosData: [PhotoCellModel] = []
     private var currentPhotoType: String = "PAS"
     
     // MARK: - Outlets
@@ -141,7 +147,11 @@ class FormFourViewController: FormsBaseViewController {
         if self.isEditable {
             self.view.isUserInteractionEnabled = true
         } else {
-            self.view.isUserInteractionEnabled = false
+            if self.isRevision {
+                self.view.isUserInteractionEnabled = true
+            } else {
+                self.view.isUserInteractionEnabled = false
+            }
         }
     }
 }
@@ -215,8 +225,14 @@ extension FormFourViewController: UICollectionViewDelegate, UICollectionViewData
         let controller = ImageViewerViewController.instantiate(with: model)
         
         controller.imageWasDeletedHandler = { [weak self] id in
-            self?.allPhotosData = self?.allPhotosData.filter({$0.fileId != id}) ?? []
-            self?.collectionView.reloadData()
+            guard let self = self else { return }
+            self.allPhotosData = self.allPhotosData.filter({$0.fileId != id})
+            self.collectionView.reloadData()
+            
+            if let id = self.createdRequestId {
+                self.isFormFullHandler?(self.allPhotosData.count >= 2)
+                self.completionHendler?(id, self.familyMemberNum)
+            }
         }
         self.navigationController?.pushViewController(controller, animated: true)
     }

@@ -21,6 +21,7 @@ YOU_HAVE_NOT_REQUESTS = "У вас нет заявок";
 WITH_STATUS = "со статусом";
 DO_YOU_WANT_DELETE_REQUEST = "Вы действительно хотите удалить заявку?";
 YOU_CAN_DELETE_ONLY_DRAFT = "Вы можете удалить только черновики";
+RETRY = "Повторить";
 
 //MARK: -Statistic
 
@@ -143,6 +144,7 @@ WAIT_FOR_ANSWER = "Ожидайте ответа в течении 24-x часо
 
 FILES = "Файлы";
 ERROR = "Ошибка";
+ERROR_MSG = "Что-то пошло не так. Повторите попытку.";
 WAIT = "Подождите";
 CONTINUE = "Продолжить";
 APPLY = "Подтвердить";

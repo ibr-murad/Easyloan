@@ -14,6 +14,7 @@ class FormsRootViewController: UIViewController {
     // MARK: - Public Variables
     
     var isEditable: Bool = true
+    var isRevision: Bool = false
     var requestId: Int? {
         didSet {
             self.getRequestFullModel()
@@ -87,6 +88,9 @@ class FormsRootViewController: UIViewController {
         self.forms.forEach {
             $0.isEditable = self.isEditable
             $0.createdRequestId = self.requestId
+            if let formFour = $0 as? FormFourViewController {
+                formFour.isRevision = self.isRevision
+            }
         }
         
         self.setNavigationBar()

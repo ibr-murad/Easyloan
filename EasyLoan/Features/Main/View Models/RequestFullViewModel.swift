@@ -60,7 +60,7 @@ struct RequestFullViewModel {
         self.clientEducation = request.clientEducation ?? 3534162386
         self.familyStatus = request.familyStatus ?? 3534164707
         self.familyMemberNum = request.familyMemberNum ?? 1
-        self.dependentsNum = request.dependentsNum ?? 0
+        self.dependentsNum = request.dependentsNum ?? 1
         self.monthlyNetIncome = request.monthlyNetIncome ?? 0
         self.monthlyNetIncomeCom = request.monthlyNetIncomeCom ?? ""
         self.operationExpanses = request.operationExpanses ?? 0
@@ -70,7 +70,7 @@ struct RequestFullViewModel {
         self.avgConsPerFamMember = request.avgConsPerFamMember ?? 0
         self.workAddress = request.workAddress ?? WorkAddressModel(city: 346518264, street: "")
         self.workPlace = request.workPlace ?? 3526166396
-        self.experience = request.experience ?? 0
+        self.experience = request.experience ?? 6
         self.haveProperty = request.haveProperty ?? 3526175586
         self.haveCar = request.haveCar ?? 3534156540
         self.loanProduct = request.loanProduct ?? 1963342046

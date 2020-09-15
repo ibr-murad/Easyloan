@@ -493,7 +493,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="724"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jPw-yI-4X0" userLabel="Backgronund View">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jPw-yI-4X0" userLabel="Backgronund View">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="654"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="mIm-hv-x2d" userLabel="Top Stack View">
@@ -514,6 +514,19 @@
                                                 <color key="textColor" name="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cno-JR-Jl4" customClass="LocalizedButton" customModule="EasyLoan" customModuleProvider="target">
+                                                <rect key="frame" x="89.999999999999986" y="65.666666666666686" width="44.000000000000014" height="0.0"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <state key="normal" title="Button">
+                                                    <color key="titleColor" name="linkColor" catalog="System" colorSpace="catalog"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="localizedKey" value="RETRY"/>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="retryButtonTapped:" destination="e27-oN-Ce6" eventType="touchUpInside" id="AdY-4M-AGP"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                     </stackView>
                                 </subviews>
@@ -724,6 +737,7 @@
                         <outlet property="backgroundTitleLabel" destination="ldx-xB-aos" id="2xG-18-88M"/>
                         <outlet property="backgroundView" destination="jPw-yI-4X0" id="qBW-wv-Bon"/>
                         <outlet property="newRequestButton" destination="6hd-b3-gbQ" id="7oO-Le-PLz"/>
+                        <outlet property="retryButton" destination="Cno-JR-Jl4" id="RkA-0p-YvT"/>
                         <outlet property="tableView" destination="J9v-ad-enC" id="6ua-YJ-0b9"/>
                     </connections>
                 </viewController>
