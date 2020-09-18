@@ -23,6 +23,7 @@
 		205736A924D034F40033152F /* KeyboardLayoutConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205736A824D034F40033152F /* KeyboardLayoutConstraint.swift */; };
 		205736AD24D05BA30033152F /* ApprovedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205736AC24D05BA30033152F /* ApprovedViewController.swift */; };
 		2069180D2500BA0300AE03CD /* PhotoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2069180C2500BA0300AE03CD /* PhotoModel.swift */; };
+		207BD89F2513742A00E9DF05 /* AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207BD89E2513742A00E9DF05 /* AppColors.swift */; };
 		208EC36324E3C469009E7F25 /* FilterPopoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208EC36224E3C469009E7F25 /* FilterPopoverViewController.swift */; };
 		2093341A24ECFE96005A48ED /* FormsRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2093341924ECFE96005A48ED /* FormsRootViewController.swift */; };
 		2093341C24ED312A005A48ED /* Forms.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2093341B24ED312A005A48ED /* Forms.storyboard */; };
@@ -53,7 +54,6 @@
 		20B525A324C80A0B00473D6D /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B525A224C80A0B00473D6D /* MainTableViewCell.swift */; };
 		20B525A524C80D2B00473D6D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 20B525A424C80D2B00473D6D /* Images.xcassets */; };
 		20B525A724C80DAD00473D6D /* RequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B525A624C80DAD00473D6D /* RequestModel.swift */; };
-		20B525A924C82FD200473D6D /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 20B525A824C82FD200473D6D /* Colors.xcassets */; };
 		20B525B724C8581700473D6D /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B525B624C8581700473D6D /* ProfileViewController.swift */; };
 		20B525BF24C8657800473D6D /* LabelAndTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B525BE24C8657800473D6D /* LabelAndTextFieldView.swift */; };
 		20B525C224C865AF00473D6D /* LabelAndTextFieldView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20B525C124C865AF00473D6D /* LabelAndTextFieldView.xib */; };
@@ -129,6 +129,7 @@
 		205736A824D034F40033152F /* KeyboardLayoutConstraint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardLayoutConstraint.swift; sourceTree = "<group>"; };
 		205736AC24D05BA30033152F /* ApprovedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApprovedViewController.swift; sourceTree = "<group>"; };
 		2069180C2500BA0300AE03CD /* PhotoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoModel.swift; sourceTree = "<group>"; };
+		207BD89E2513742A00E9DF05 /* AppColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColors.swift; sourceTree = "<group>"; };
 		208EC36224E3C469009E7F25 /* FilterPopoverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterPopoverViewController.swift; sourceTree = "<group>"; };
 		2093341924ECFE96005A48ED /* FormsRootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormsRootViewController.swift; sourceTree = "<group>"; };
 		2093341B24ED312A005A48ED /* Forms.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Forms.storyboard; path = "../New Group/Forms.storyboard"; sourceTree = "<group>"; };
@@ -161,7 +162,6 @@
 		20B525A224C80A0B00473D6D /* MainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
 		20B525A424C80D2B00473D6D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		20B525A624C80DAD00473D6D /* RequestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestModel.swift; sourceTree = "<group>"; };
-		20B525A824C82FD200473D6D /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		20B525B624C8581700473D6D /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		20B525BE24C8657800473D6D /* LabelAndTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelAndTextFieldView.swift; sourceTree = "<group>"; };
 		20B525C124C865AF00473D6D /* LabelAndTextFieldView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LabelAndTextFieldView.xib; sourceTree = "<group>"; };
@@ -688,7 +688,6 @@
 			children = (
 				20B5258424C7F90500473D6D /* Assets.xcassets */,
 				20B525A424C80D2B00473D6D /* Images.xcassets */,
-				20B525A824C82FD200473D6D /* Colors.xcassets */,
 				20B5258F24C7FDA900473D6D /* LaunchScreen.storyboard */,
 			);
 			path = Resources;
@@ -1021,6 +1020,7 @@
 			isa = PBXGroup;
 			children = (
 				20CEA87B24F79ACE00AFF5D1 /* DictinaryNames.swift */,
+				207BD89E2513742A00E9DF05 /* AppColors.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -1190,7 +1190,7 @@
 				};
 			};
 			buildConfigurationList = 20B5257524C7F90300473D6D /* Build configuration list for PBXProject "EasyLoan" */;
-			compatibilityVersion = "Xcode 9.3";
+			compatibilityVersion = "Xcode 6.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -1215,7 +1215,6 @@
 				20C05DDF24E148C4007D5A5A /* Authorization.storyboard in Resources */,
 				20CBD4E6250784AF002CD451 /* ru.strings in Resources */,
 				20B525C224C865AF00473D6D /* LabelAndTextFieldView.xib in Resources */,
-				20B525A924C82FD200473D6D /* Colors.xcassets in Resources */,
 				20C05DE324E1490A007D5A5A /* Statistics.storyboard in Resources */,
 				20C05DF224E14966007D5A5A /* FormThree.storyboard in Resources */,
 				20C05DF824E14977007D5A5A /* FormFive.storyboard in Resources */,
@@ -1355,6 +1354,7 @@
 				20F9F51624CFE8D000E68CD7 /* FormFiveViewController.swift in Sources */,
 				20A8BCD92510862200170704 /* ImageViewerViewController.swift in Sources */,
 				20A414BD250B6AC60026967D /* ImageWithoutRender.swift in Sources */,
+				207BD89F2513742A00E9DF05 /* AppColors.swift in Sources */,
 				20B525A324C80A0B00473D6D /* MainTableViewCell.swift in Sources */,
 				20C102A024EE7BB700A12EAB /* FormsBaseViewController.swift in Sources */,
 				20C9F6CD24DD1FB300E430D9 /* Network.swift in Sources */,
@@ -1580,7 +1580,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = EasyLoan/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1600,7 +1600,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = EasyLoan/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

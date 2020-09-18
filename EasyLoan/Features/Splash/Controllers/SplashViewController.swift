@@ -30,19 +30,9 @@ class SplashViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.view.backgroundColor = UIColor.white
         self.makeServiceCall()
         
-        /*AVCaptureDevice.requestAccess(for: .video) { (granted) in
-            print(granted)
-        }*/
-        
-        /*switch AVCaptureDevice.authorizationStatus(for: .video) {
-        case .authorized:
-        case .notDetermined:
-        case .denied: return
-        case.restricted: return
-        }*/
+        AVCaptureDevice.requestAccess(for: .video) { (_) in }            
         
     }
      

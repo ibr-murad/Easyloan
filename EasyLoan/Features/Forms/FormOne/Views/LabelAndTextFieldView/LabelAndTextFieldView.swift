@@ -136,11 +136,13 @@ extension LabelAndTextFieldView: UITextFieldDelegate {
         self.textField.layer.borderWidth = 1
         self.layoutIfNeeded()
     }
-    
-    public func textFieldDidEndEditing(_ textField: UITextField, reason: UITextField.DidEndEditingReason) {
+
+    public func textFieldDidEndEditing(_ textField: UITextField) {
         self.textField.layer.borderWidth = 0
+        self.textField.clipsToBounds = true
         self.layoutIfNeeded()
     }
+
     
     func isValidateEmail(email: String) -> Bool {
         let regex = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"

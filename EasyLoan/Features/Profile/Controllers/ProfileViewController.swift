@@ -8,6 +8,7 @@
 
 import UIKit
 import DropDown
+import SwiftEntryKit
 
 class ProfileViewController: BaseViewController {
     
@@ -48,6 +49,7 @@ class ProfileViewController: BaseViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        
         
         self.requestForData()
     }
@@ -90,6 +92,18 @@ class ProfileViewController: BaseViewController {
         }
     }
     
+    private func logout() {
+        Network.shared.delete(
+            url: URLPath.logout,
+            headers: ["auth-token": UserDefaults.standard.getUser().token],
+            success: {
+                UserDefaults.standard.setLoggedOutUser()
+                AppDelegate.shared.rootViewController.switchToLogout()
+        }, feilure: { (error) in
+            print(error)
+        })
+    }
+    
     // MARK: - Actions
     
     @objc private func languageViewTapped() {
@@ -123,22 +137,20 @@ class ProfileViewController: BaseViewController {
     }
     
     @IBAction func logoutButtonTapped(_ sender: UnderlinedButton) {
-        Network.shared.delete(
-            url: URLPath.logout,
-            headers: ["auth-token": UserDefaults.standard.getUser().token],
-            success: {
-                UserDefaults.standard.setLoggedOutUser()
-                AppDelegate.shared.rootViewController.switchToLogout()
-        }, feilure: { (error) in
-            print(error)
-        })
+        let logoutAlert = LogoutAlertView()
+        logoutAlert.yesButtonTappedHendler = { [weak self] in
+            guard let self = self else { return }
+            self.logout()
+            SwiftEntryKit.dismiss()
+        }
+        SwiftEntryKit.display(entry: logoutAlert,
+                              using: EKAttributes.setupAttributes(statusBar: .dark))
     }
     
     // MARK: - Setters
     
     private func setNavigationBar() {
-        guard let tintColor = UIColor(named: "darkTextColor") else { return }
-        self.setupNavBar(style: .default, backgroungColor: .white, tintColor: tintColor)
+        self.setupNavBar(style: .default, backgroungColor: .white, tintColor: AppColors.dark.color())
         self.navigationTitle = self.userModel.user.fullName
     }
     

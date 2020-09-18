@@ -119,7 +119,9 @@ extension UIViewController {
         transition.duration = duration
         transition.type = .push
         transition.subtype = subtype
-        self.navigationItem.searchController = nil
+        if #available(iOS 11.0, *) {
+            self.navigationItem.searchController = nil
+        }
         self.navigationController?.view.layer.add(transition, forKey: kCATransition)
         self.navigationController?.pushViewController(vc, animated: false)
     }
@@ -129,7 +131,9 @@ extension UIViewController {
         transition.duration = duration
         transition.type = .push
         transition.subtype = subtype
-        self.navigationItem.searchController = nil
+        if #available(iOS 11.0, *) {
+            self.navigationItem.searchController = nil
+        }
         self.navigationController?.view.layer.add(transition, forKey: kCATransition)
         self.navigationController?.popToViewController(vc, animated: false)
     }

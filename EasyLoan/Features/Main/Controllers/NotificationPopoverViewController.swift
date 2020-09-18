@@ -59,7 +59,7 @@ extension NotificationPopoverViewController: UITableViewDelegate, UITableViewDat
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: NotificationTableViewCell.reuseIdentifier, for: indexPath)
         cell.selectionStyle = .none
-        let model = self.data[indexPath.row]
+        //let model = self.data[indexPath.row]
         return cell
     }
 }

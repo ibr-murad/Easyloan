@@ -75,8 +75,9 @@ class StatisticsViewController: BaseViewController {
     // MARK: - Setters
     
     private func setNavigationBar() {
-        guard let color = UIColor(named: "appColor") else { return }
-        self.setupNavBar(style: .black, backgroungColor: color, tintColor: .white)
+        self.setupNavBar(style: .black,
+                         backgroungColor: AppColors.orange.color(),
+                         tintColor: .white)
     }
     
     // MARK: - Networking
@@ -98,7 +99,7 @@ class StatisticsViewController: BaseViewController {
         
         
         
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .seconds(2)) {
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .seconds(1)) {
             self.barChartUpdate()
             self.setStatisticVisible(true)
             self.dismiss(animated: true, completion: nil)
@@ -133,10 +134,10 @@ class StatisticsViewController: BaseViewController {
         
         let dataSet = BarChartDataSet(values: [entry1, entry2, entry3, entry4], label: nil)
         dataSet.colors = [
-            NSUIColor(named: "appColor")!,
-            NSUIColor(named: "lineColor")!,
-            NSUIColor(named: "authSmsColor")!,
-            NSUIColor(named: "greenTextColor")!]
+            AppColors.orange.color(),
+            UIColor.lightGray,
+            AppColors.darkBlue.color(),
+            AppColors.green.color()]
         dataSet.highlightEnabled = false
         dataSet.drawValuesEnabled = false
         

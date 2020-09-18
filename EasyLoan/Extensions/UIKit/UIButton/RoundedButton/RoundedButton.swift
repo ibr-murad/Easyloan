@@ -52,7 +52,7 @@ class RoundedButton: UIButton {
     private func sharedInit() {
         self.setTitle("", for: .normal)
         self.layer.borderWidth = self.borderWidth
-        self.layer.borderColor = UIColor(named: "darkTextColor")?.cgColor
+        self.layer.borderColor = AppColors.dark.color().cgColor
         self.refreshCorners(value: self.cornerRadius)
     }
     

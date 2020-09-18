@@ -33,7 +33,7 @@ class ApprovedPhotosCollectionViewCell: UICollectionViewCell {
     private lazy var cellLabel: UILabel = {
         var label = UILabel()
         label.textAlignment = .center
-        label.textColor = UIColor(named: "darkTextColor")
+        label.textColor = AppColors.dark.color()
         label.font = .systemFont(ofSize: 14)
         return label
     }()

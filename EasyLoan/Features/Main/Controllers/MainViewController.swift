@@ -16,17 +16,25 @@ class MainViewController: BaseViewController {
     
     private lazy var searchController: UISearchController = {
         var controller = UISearchController(searchResultsController: nil)
-        controller.obscuresBackgroundDuringPresentation = false
+        if #available(iOS 9.1, *) {
+            controller.obscuresBackgroundDuringPresentation = false
+        }
         var searchBar = controller.searchBar
         searchBar.delegate = self
         searchBar.searchBarStyle = UISearchBar.Style.default
         searchBar.tintColor = .white
+        #if compiler(>=5.1)
+        if #available(iOS 13.0, *) {
+            searchBar.searchField.backgroundColor = .white
+        }
+        #else
         searchBar.setSearchField(color: .white, cornerRadius: 10)
+        #endif
         searchBar.setImage(UIImage(named: "searchIcon"), for: .search, state: .normal)
         searchBar.setImage(UIImage(named: "dismissIcon"), for: .clear, state: .normal)
-        if let color = UIColor(named: "darkTextColor") {
-            searchBar.setTextColor(color: color)
-        }
+        searchBar.setTextColor(color: AppColors.dark.color())
+        searchBar.backgroundColor = AppColors.orange.color()
+        searchBar.setBackgroundImage(UIImage(), for: .any, barMetrics: .default)
         return controller
     }()
     
@@ -120,10 +128,11 @@ class MainViewController: BaseViewController {
             }
         }
         
-        self.presentPopoverViewController(controller: controller,
-                                          sourceView: self.view,
-                                          size: CGSize(width: 300, height: 360),
-                                          minusY: 70, arrowDirection: UIPopoverArrowDirection(rawValue: 0))
+        self.presentPopoverViewController(
+            controller: controller,
+            sourceView: self.view,
+            size: CGSize(width: 300, height: 360),
+            minusY: 70, arrowDirection: UIPopoverArrowDirection(rawValue: 0))
     }
     
     @IBAction func notificationBarButtonTapped(_ sender: UIBarButtonItem) {
@@ -155,8 +164,7 @@ class MainViewController: BaseViewController {
         self.setLeftAlignedNavigationItemTitle(
             text: "EasyLoan", font: .boldSystemFont(ofSize: 20),
             color: .white, margin: 10)
-        guard let color = UIColor(named: "appColor") else { return }
-        self.setupNavBar(style: .black, backgroungColor: color, tintColor: .white)
+        self.setupNavBar(style: .black, backgroungColor: AppColors.orange.color(), tintColor: .white)
         self.searchController.searchBar
             .setPlaceholder(color: .lightGray, text: "SEARCH".localized())
     }
@@ -165,15 +173,29 @@ class MainViewController: BaseViewController {
         self.tableView.tableHeaderView = UIView()
         self.tableView.tableFooterView = UIView()
         self.tableView.rowHeight = 78
-        self.tableView.contentInsetAdjustmentBehavior =
-            UIScrollView.ContentInsetAdjustmentBehavior.never
-        self.tableView.refreshControl = self.refreshControl
+        if #available(iOS 11.0, *) {
+            self.tableView.contentInsetAdjustmentBehavior =
+                UIScrollView.ContentInsetAdjustmentBehavior.never
+        } else {
+            self.tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        }
+        if #available(iOS 10.0, *) {
+            self.tableView.refreshControl = self.refreshControl
+        } else {
+            self.tableView.addSubview(self.refreshControl)
+        }
     }
     
     private func setSearchViewController() {
-        self.navigationItem.searchController = self.searchController
-        self.navigationItem.hidesSearchBarWhenScrolling = false
-        self.definesPresentationContext = true
+        if #available(iOS 11.0, *) {
+            self.navigationItem.searchController = self.searchController
+            self.navigationItem.hidesSearchBarWhenScrolling = false
+        } else {
+            self.tableView.tableHeaderView = self.searchController.searchBar
+            self.tableView.tableHeaderView?.backgroundColor = AppColors.orange.color()
+            self.searchController.hidesNavigationBarDuringPresentation = false
+            self.extendedLayoutIncludesOpaqueBars = true
+        }
     }
     
     private func setBackgroundViewVisible(value: Bool) {
@@ -305,11 +327,14 @@ class MainViewController: BaseViewController {
         sheet.addAction(UIAlertAction(
             title: "Тел: \(number)", style: .default, handler: { _ in
                 guard let url = URL(string: "tel://" + number) else { return }
-                UIApplication.shared.open(url)
+                if #available(iOS 10.0, *) {
+                    UIApplication.shared.open(url)
+                } else {
+                    UIApplication.shared.openURL(url)
+                }
         }))
         
         sheet.addAction(UIAlertAction(title: "Отмена", style: .cancel, handler: nil))
-        
         self.present(sheet, animated: true, completion: nil)
     }
 }
@@ -401,6 +426,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
         }
     }
     
+    @available(iOS 11.0, *)
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         if !self.isFiltering {
             let deleteAction = UIContextualAction(
@@ -439,6 +465,26 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
             return UISwipeActionsConfiguration(actions: [deleteAction, callAction])
         }
         return UISwipeActionsConfiguration(actions: [])
+    }
+    
+    @available(iOS 9.0, *)
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        
+        let deleteAction = UITableViewRowAction(
+            style: .normal,
+            title: "DELETE".localized()) { (action, index) in
+                print("delete")
+        }
+        deleteAction.backgroundColor = AppColors.red.color()
+        
+        let callAction = UITableViewRowAction(
+            style: .normal,
+            title: "MAKE_CALL".localized()) { (action, index) in
+                print("call")
+        }
+        callAction.backgroundColor = AppColors.green.color()
+    
+        return [deleteAction, callAction]
     }
     
 }

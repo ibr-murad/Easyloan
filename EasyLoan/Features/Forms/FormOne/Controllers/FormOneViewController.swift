@@ -266,13 +266,16 @@ class FormOneViewController: FormsBaseViewController {
 extension FormOneViewController: UITextFieldDelegate {
     
     public func textFieldDidBeginEditing(_ textField: UITextField) {
-        self.locationTextField.layer.cornerRadius = 5
-        self.locationTextField.layer.borderColor = UIColor.gray.cgColor
-        self.locationTextField.layer.borderWidth = 1
+        textField.layer.cornerRadius = 5
+        textField.layer.borderColor = UIColor.gray.cgColor
+        textField.layer.borderWidth = 1
+        textField.layoutIfNeeded()
     }
     
-    public func textFieldDidEndEditing(_ textField: UITextField, reason: UITextField.DidEndEditingReason) {
-        self.locationTextField.layer.borderWidth = 0
+    public func textFieldDidEndEditing(_ textField: UITextField) {
+        textField.layer.borderWidth = 0
+        textField.clipsToBounds = true
+        textField.layoutIfNeeded()
     }
 }
 

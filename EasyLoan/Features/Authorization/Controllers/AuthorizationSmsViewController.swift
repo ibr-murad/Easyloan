@@ -75,7 +75,11 @@ class AuthorizationSmsViewController: UIViewController {
         self.continueButton.isEnabled = isEnabled
         if isEnabled {
             UIView.animate(withDuration: 0.5) {
-                self.continueButton.backgroundColor = UIColor(named: "appColor")
+                if #available(iOS 11.0, *) {
+                    self.continueButton.backgroundColor = UIColor(named: "appColor")
+                } else {
+                    // Fallback on earlier versions
+                }
                 self.continueButton.alpha = 1
             }
         } else {

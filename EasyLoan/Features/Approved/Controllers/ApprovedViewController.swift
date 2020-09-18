@@ -79,7 +79,7 @@ class ApprovedViewController: BaseViewController {
     
     
     override func viewWillDisappear(_ animated: Bool) {
-        self.setupNavBar(style: .black, backgroungColor: UIColor(named: "appColor")!, tintColor: .white)
+        self.setupNavBar(style: .black, backgroungColor: AppColors.orange.color(), tintColor: .white)
     }
     
     // MARK: - Networking
@@ -186,11 +186,10 @@ class ApprovedViewController: BaseViewController {
         }
     }
     
-    
     // MARK: - Setters
     
     private func setupNavigationBar() {
-        self.setupNavBar(style: .black, backgroungColor: UIColor(named: "greenTextColor")!, tintColor: .white)
+        self.setupNavBar(style: .black, backgroungColor: AppColors.green.color(), tintColor: .white)
     }
     
     // MARK: - Helpers
@@ -239,11 +238,14 @@ class ApprovedViewController: BaseViewController {
         sheet.addAction(UIAlertAction(
             title: "Тел: \(number)", style: .default, handler: { _ in
                 guard let url = URL(string: "tel://" + number) else { return }
-                UIApplication.shared.open(url)
+                if #available(iOS 10.0, *) {
+                    UIApplication.shared.open(url)
+                } else {
+                    UIApplication.shared.openURL(url)
+                }
         }))
         
         sheet.addAction(UIAlertAction(title: "Отмена", style: .cancel, handler: nil))
-        
         self.present(sheet, animated: true, completion: nil)
     }
     
@@ -286,7 +288,7 @@ extension ApprovedViewController: UICollectionViewDelegate, UICollectionViewData
         lineView.backgroundColor = .lightGray
         
         let label = UILabel()
-        label.textColor = UIColor(named: "darkTextColor")
+        label.textColor = AppColors.dark.color()
         label.text = "Файлы"
         
         headerView.addSubview(lineView)

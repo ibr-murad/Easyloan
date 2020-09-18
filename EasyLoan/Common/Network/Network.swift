@@ -23,7 +23,6 @@ class Network {
     private let baseURL = "https://easyloan.humo.tj/v2/"
     private var headers = ["version": "201000"]
     
-    
     // MARK: - Initialization
     
     private init() { }
@@ -47,25 +46,6 @@ class Network {
             encoding: (isQueryString ? URLEncoding.queryString : JSONEncoding.default),
             headers: self.headers)
             .responseData { (response) in
-                
-                if let request = response.request {
-                    if let body = request.httpBody {
-                        if let str = String(bytes: body, encoding: .utf8) {
-                            //print("Request: \(request)")
-                            //print("Body: " + str)
-                        }
-                    }
-                    
-                }
-                
-                if let json = response.result.value {
-                    if let str = String(bytes: json, encoding: .utf8) {
-                        //print(response.result)
-                        //print("Code: \(response.response?.statusCode)")
-                        //print("Json: " + str)
-                        
-                    }
-                }
                 
                 switch (response.result) {
                 case .success(let data):
@@ -223,4 +203,5 @@ class Network {
         let letters = "qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM123456789"
         return String((0..<length).map{_ in letters.randomElement()!})
     }
+    
 }

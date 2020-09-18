@@ -164,21 +164,22 @@ extension FormFourViewController: UIImagePickerControllerDelegate, UINavigationC
     
     func showImagePickerController(sourceType: UIImagePickerController.SourceType) {
         
-        let imagePickerController = UIImagePickerController()
-        imagePickerController.delegate = self
-        imagePickerController.allowsEditing = true
-        imagePickerController.sourceType = sourceType
-        
-
         switch AVCaptureDevice.authorizationStatus(for: .video) {
         case .authorized:
+            let imagePickerController = UIImagePickerController()
+            imagePickerController.delegate = self
+            imagePickerController.allowsEditing = true
+            imagePickerController.sourceType = sourceType
             self.present(imagePickerController, animated: true, completion: nil)
-            
             break
         default:
             AVCaptureDevice.requestAccess(for: .video) { [weak self] (granted) in
                 print(granted)
                 if granted {
+                    let imagePickerController = UIImagePickerController()
+                    imagePickerController.delegate = self
+                    imagePickerController.allowsEditing = true
+                    imagePickerController.sourceType = sourceType
                     self?.present(imagePickerController, animated: true, completion: nil)
                 }
             }

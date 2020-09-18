@@ -56,6 +56,7 @@ extension PhoneNumbersCollectionViewCell: UITextFieldDelegate {
         textField.layer.borderWidth = 1
     }
     
+    @available(iOS 10.0, *)
     public func textFieldDidEndEditing(_ textField: UITextField, reason: UITextField.DidEndEditingReason) {
         textField.layer.borderWidth = 0
     }

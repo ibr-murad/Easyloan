@@ -15,7 +15,7 @@ class UnderlinedButton: UIButton {
     
     var buttonAtributes: [NSAttributedString.Key: Any] = [
         .font: UIFont.systemFont(ofSize: 14),
-        .underlineStyle: NSUnderlineStyle.single.rawValue]
+        .underlineStyle: NSUnderlineStyle.double.rawValue]
     
     @IBInspectable
     var textColor: UIColor = .black {
@@ -25,11 +25,9 @@ class UnderlinedButton: UIButton {
     }
     
     @IBInspectable
-    var text: String = "text here" {
+    var localizedKey: String? {
         didSet {
-            self.setAttributedTitle(
-                NSAttributedString(string: self.text,
-                                   attributes: self.buttonAtributes), for: .normal)
+            self.updateUI()
         }
     }
     
@@ -41,5 +39,18 @@ class UnderlinedButton: UIButton {
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(self.updateUI),
+                                               name: .languageChanged, object: nil)
+    }
+    
+    // MARK: - Helpers
+    
+    @objc func updateUI() {
+        if let key = self.localizedKey, let text = key.localized() {
+            self.setAttributedTitle(NSAttributedString(
+                string: text,
+                attributes: self.buttonAtributes), for: .normal)
+        }
     }
 }

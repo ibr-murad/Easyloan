@@ -285,9 +285,12 @@ extension FormTwoViewController: UITextFieldDelegate {
         textField.layer.cornerRadius = 5
         textField.layer.borderColor = UIColor.gray.cgColor
         textField.layer.borderWidth = 1
+        textField.layoutIfNeeded()
     }
     
-    public func textFieldDidEndEditing(_ textField: UITextField, reason: UITextField.DidEndEditingReason) {
+    public func textFieldDidEndEditing(_ textField: UITextField) {
         textField.layer.borderWidth = 0
+        textField.clipsToBounds = true
+        textField.layoutIfNeeded()
     }
 }

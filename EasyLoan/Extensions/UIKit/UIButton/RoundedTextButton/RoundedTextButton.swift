@@ -32,7 +32,8 @@ class RoundedTextButton: UIButton {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         
-        NotificationCenter.default.addObserver(self, selector: #selector(self.updateUI), name: .languageChanged, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.updateUI),
+                                               name: .languageChanged, object: nil)
     }
     
     // MARK: - Helpers

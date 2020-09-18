@@ -81,7 +81,7 @@ class AuthorizationViewController: UIViewController {
         self.continueButton.isEnabled = isEnabled
         if isEnabled {
             UIView.animate(withDuration: 0.5) {
-                self.continueButton.backgroundColor = UIColor(named: "appColor")
+                self.continueButton.backgroundColor = AppColors.orange.color()
                 self.continueButton.alpha = 1
             }
         } else {

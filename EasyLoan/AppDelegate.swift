@@ -24,6 +24,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         IQKeyboardManager.shared.enableAutoToolbar = false
         DropDown.startListeningToKeyboard()
         
+        #if compiler(>=5.1)
+        if #available(iOS 13.0, *) {
+            window.overrideUserInterfaceStyle = .light
+        }
+        #endif
+        
         window.rootViewController = RootViewController()
         window.makeKeyAndVisible()
         

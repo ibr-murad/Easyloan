@@ -130,7 +130,7 @@ class FormFiveViewController: FormsBaseViewController {
         self.sendButton.isEnabled = isEnabled
         if isEnabled {
             UIView.animate(withDuration: 0.5) {
-                self.sendButton.backgroundColor = UIColor(named: "authSmsColor")
+                self.sendButton.backgroundColor = AppColors.darkBlue.color()
                 self.sendButton.alpha = 1
             }
         } else {
