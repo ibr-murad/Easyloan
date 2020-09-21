@@ -14,6 +14,15 @@ class MainViewController: BaseViewController {
 
     // MARK: - GUI Variables
     
+    private lazy var searchBar: UISearchBar = {
+        var searchBar = UISearchBar()
+        
+        searchBar.barStyle = .default
+        searchBar.searchTextField.backgroundColor = .white
+        
+        return searchBar
+    }()
+    
     private lazy var searchController: UISearchController = {
         var controller = UISearchController(searchResultsController: nil)
         if #available(iOS 9.1, *) {
@@ -21,20 +30,19 @@ class MainViewController: BaseViewController {
         }
         var searchBar = controller.searchBar
         searchBar.delegate = self
-        searchBar.searchBarStyle = UISearchBar.Style.default
+        searchBar.barStyle = .default
         searchBar.tintColor = .white
-        #if compiler(>=5.1)
         if #available(iOS 13.0, *) {
-            searchBar.searchField.backgroundColor = .white
+            searchBar.searchTextField.leftView?.tintColor = .black
+            searchBar.searchTextField.rightView?.tintColor = .black
+            searchBar.searchTextField.backgroundColor = .white
+            searchBar.searchTextField.subviews[0].subviews[0].removeFromSuperview()
+        } else {
+            searchBar.setSearchField(color: .white, cornerRadius: 12)
+            searchBar.setTextColor(color: AppColors.dark.color())
+            searchBar.backgroundColor = AppColors.orange.color()
+            searchBar.setBackgroundImage(UIImage(), for: .any, barMetrics: .default)
         }
-        #else
-        searchBar.setSearchField(color: .white, cornerRadius: 10)
-        #endif
-        searchBar.setImage(UIImage(named: "searchIcon"), for: .search, state: .normal)
-        searchBar.setImage(UIImage(named: "dismissIcon"), for: .clear, state: .normal)
-        searchBar.setTextColor(color: AppColors.dark.color())
-        searchBar.backgroundColor = AppColors.orange.color()
-        searchBar.setBackgroundImage(UIImage(), for: .any, barMetrics: .default)
         return controller
     }()
     
@@ -139,7 +147,6 @@ class MainViewController: BaseViewController {
         
     }
     
-
     @IBAction func retryButtonTapped(_ sender: LocalizedButton) {
         sender.isHidden = true
         sender.isEnabled = false
@@ -170,7 +177,6 @@ class MainViewController: BaseViewController {
     }
     
     private func setTableView() {
-        self.tableView.tableHeaderView = UIView()
         self.tableView.tableFooterView = UIView()
         self.tableView.rowHeight = 78
         if #available(iOS 11.0, *) {
@@ -444,7 +450,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
             })
             if let cgImage = UIImage(named: "contextualDelete")?.cgImage {
                 deleteAction.image =
-                    ImageWithoutRender(cgImage: cgImage, scale: 2.5, orientation: .up)
+                    ImageWithoutRender(cgImage: cgImage, scale: 2, orientation: .up)
                 deleteAction.backgroundColor = .groupTableViewBackground
             }
             let callAction = UIContextualAction(
@@ -458,11 +464,14 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
             
             if let cgImage = UIImage(named: "contextualCall")?.cgImage {
                 callAction.image =
-                    ImageWithoutRender(cgImage: cgImage, scale: 2.5, orientation: .up)
+                    ImageWithoutRender(cgImage: cgImage, scale: 2, orientation: .up)
                 callAction.backgroundColor = .groupTableViewBackground
             }
             
-            return UISwipeActionsConfiguration(actions: [deleteAction, callAction])
+            let config = UISwipeActionsConfiguration(actions: [deleteAction, callAction])
+            config.performsFirstActionWithFullSwipe = false
+            
+            return config
         }
         return UISwipeActionsConfiguration(actions: [])
     }
@@ -472,18 +481,27 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
         
         let deleteAction = UITableViewRowAction(
             style: .normal,
-            title: "DELETE".localized()) { (action, index) in
-                print("delete")
+            title: "DELETE".localized()) { [weak self] (action, index) in
+                guard let self = self else { return }
+                if self.data[index.row].state == .draft {
+                    self.showDeleteAlert(id: index.row)
+                } else {
+                    if let msg = "YOU_CAN_DELETE_ONLY_DRAFT".localized() {
+                        self.alertError(message: msg)
+                    }
+                }
         }
         deleteAction.backgroundColor = AppColors.red.color()
         
         let callAction = UITableViewRowAction(
             style: .normal,
-            title: "MAKE_CALL".localized()) { (action, index) in
-                print("call")
+            title: "MAKE_CALL".localized()) { [weak self] (action, index) in
+                guard let self = self else { return }
+                let number = self.data[index.row].clientMainPhoneNum
+                self.showPhoneActionSheet(for: number)
         }
         callAction.backgroundColor = AppColors.green.color()
-    
+        
         return [deleteAction, callAction]
     }
     
@@ -502,6 +520,7 @@ extension MainViewController: UISearchBarDelegate {
     
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
         self.isFiltering = true
+        self.tableView.setEditing(false, animated: true)
     }
     
     func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {

@@ -143,7 +143,6 @@ extension LabelAndTextFieldView: UITextFieldDelegate {
         self.layoutIfNeeded()
     }
 
-    
     func isValidateEmail(email: String) -> Bool {
         let regex = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
         let pred = NSPredicate(format: "SELF MATCHES %@", regex)
@@ -151,7 +150,7 @@ extension LabelAndTextFieldView: UITextFieldDelegate {
     }
     
     func isValidateFullName(name: String) -> Bool {
-        let regex = "[A-Za-z]{2,64}+ [A-Za-z]{2,64}"
+        let regex = "[A-Za-z]{2,64}+ [A-Za-z]{2,64}+ [A-Za-z]{2,64}"
         let pred = NSPredicate(format: "SELF MATCHES %@", regex)
         return pred.evaluate(with: name)
     }

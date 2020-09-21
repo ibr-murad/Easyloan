@@ -30,5 +30,15 @@ extension UISearchBar {
                 backgroundView.clipsToBounds = true
             }
         }
+        
+        if let clearCgImage = UIImage(named: "clearIcon")?.cgImage,
+            let searchCgImage = UIImage(named: "searchIcon")?.cgImage {
+            
+            let clearImage = ImageWithoutRender(cgImage: clearCgImage, scale: 6, orientation: .up)
+            let searchImage = ImageWithoutRender(cgImage: searchCgImage, scale: 6, orientation: .up)
+            
+            self.setImage(searchImage, for: .search, state: .normal)
+            self.setImage(clearImage, for: .clear, state: .normal)
+        }
     }
 }

@@ -18,13 +18,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="1500"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S9i-oo-Vsc">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S9i-oo-Vsc">
                                 <rect key="frame" x="0.0" y="44" width="414" height="1422"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="7NT-GM-7tk">
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="7NT-GM-7tk">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="1309"/>
                                         <subviews>
-                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="e0r-1B-G4i" userLabel="Education">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e0r-1B-G4i" userLabel="Education">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="126"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Кредитный продукт" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ctc-iE-5KM" userLabel="Label" customClass="LocalizedLabel" customModule="EasyLoan" customModuleProvider="target">
@@ -37,7 +37,7 @@
                                                             <userDefinedRuntimeAttribute type="string" keyPath="localizedKey" value="CREDIT_PRODUCT"/>
                                                         </userDefinedRuntimeAttributes>
                                                     </label>
-                                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dEG-rn-vYr" userLabel="Drop Menu View 1" customClass="DropMenuView" customModule="EasyLoan" customModuleProvider="target">
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dEG-rn-vYr" userLabel="Drop Menu View 1" customClass="DropMenuView" customModule="EasyLoan" customModuleProvider="target">
                                                         <rect key="frame" x="24" y="57" width="366" height="69"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <userDefinedRuntimeAttributes>
@@ -56,7 +56,7 @@
                                                     <constraint firstAttribute="trailing" secondItem="Ctc-iE-5KM" secondAttribute="trailing" constant="24" id="uLT-IA-286"/>
                                                 </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bd6-dD-w6S" userLabel="цель">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bd6-dD-w6S" userLabel="цель">
                                                 <rect key="frame" x="0.0" y="126" width="414" height="126"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Цель кредита" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="grR-8u-yvk" userLabel="Label" customClass="LocalizedLabel" customModule="EasyLoan" customModuleProvider="target">
@@ -69,7 +69,7 @@
                                                             <userDefinedRuntimeAttribute type="string" keyPath="localizedKey" value="CREDIT_TARG"/>
                                                         </userDefinedRuntimeAttributes>
                                                     </label>
-                                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SgR-cu-W3f" userLabel="Drop Menu View 1" customClass="DropMenuView" customModule="EasyLoan" customModuleProvider="target">
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SgR-cu-W3f" userLabel="Drop Menu View 1" customClass="DropMenuView" customModule="EasyLoan" customModuleProvider="target">
                                                         <rect key="frame" x="24" y="57" width="366" height="69"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <userDefinedRuntimeAttributes>
@@ -88,7 +88,7 @@
                                                     <constraint firstAttribute="trailing" secondItem="SgR-cu-W3f" secondAttribute="trailing" constant="24" id="tof-7j-qbI"/>
                                                 </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fgb-bF-jHZ" userLabel="Section 3" customClass="LabelAndTextFieldView" customModule="EasyLoan" customModuleProvider="target">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fgb-bF-jHZ" userLabel="Section 3" customClass="LabelAndTextFieldView" customModule="EasyLoan" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="252" width="414" height="75"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <userDefinedRuntimeAttributes>
@@ -98,7 +98,7 @@
                                                     <userDefinedRuntimeAttribute type="string" keyPath="localizedKey" value="CREDIT_TARG_COM"/>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
-                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OwZ-0R-tnR" userLabel="Section 4" customClass="LabelAndTextFieldView" customModule="EasyLoan" customModuleProvider="target">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OwZ-0R-tnR" userLabel="Section 4" customClass="LabelAndTextFieldView" customModule="EasyLoan" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="327" width="414" height="78"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <userDefinedRuntimeAttributes>
@@ -108,7 +108,7 @@
                                                     <userDefinedRuntimeAttribute type="string" keyPath="localizedKey" value="LOAN_AMOUT"/>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
-                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nqc-rN-bJ9" userLabel="Section 5" customClass="LabelAndTextFieldView" customModule="EasyLoan" customModuleProvider="target">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nqc-rN-bJ9" userLabel="Section 5" customClass="LabelAndTextFieldView" customModule="EasyLoan" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="405" width="414" height="78"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <userDefinedRuntimeAttributes>
@@ -118,7 +118,7 @@
                                                     <userDefinedRuntimeAttribute type="string" keyPath="localizedKey" value="LOAN_TERM"/>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
-                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jCX-hp-FsY" userLabel="Section 8">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jCX-hp-FsY" userLabel="Section 8">
                                                 <rect key="frame" x="0.0" y="483" width="414" height="85"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Валюта кредита" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P0S-dv-SYD" userLabel="Label" customClass="LocalizedLabel" customModule="EasyLoan" customModuleProvider="target">
@@ -231,7 +231,7 @@
                                                     <constraint firstItem="P0S-dv-SYD" firstAttribute="top" secondItem="jCX-hp-FsY" secondAttribute="top" constant="24" id="oiE-jc-qDs"/>
                                                 </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xSm-4Z-cvx" userLabel="payment type">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xSm-4Z-cvx" userLabel="payment type">
                                                 <rect key="frame" x="0.0" y="568" width="414" height="126"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" Вид платежа" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Pp-Bg-klb" userLabel="Label" customClass="LocalizedLabel" customModule="EasyLoan" customModuleProvider="target">
@@ -244,7 +244,7 @@
                                                             <userDefinedRuntimeAttribute type="string" keyPath="localizedKey" value="PAYMENT_TYPE"/>
                                                         </userDefinedRuntimeAttributes>
                                                     </label>
-                                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="O7n-cM-STI" userLabel="Drop Menu View 1" customClass="DropMenuView" customModule="EasyLoan" customModuleProvider="target">
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O7n-cM-STI" userLabel="Drop Menu View 1" customClass="DropMenuView" customModule="EasyLoan" customModuleProvider="target">
                                                         <rect key="frame" x="24" y="57" width="366" height="69"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <userDefinedRuntimeAttributes>
@@ -263,7 +263,7 @@
                                                     <constraint firstAttribute="bottom" secondItem="O7n-cM-STI" secondAttribute="bottom" id="xOA-5u-vjL"/>
                                                 </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yfQ-k9-AfQ" userLabel="Section 10">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yfQ-k9-AfQ" userLabel="Section 10">
                                                 <rect key="frame" x="0.0" y="694" width="414" height="85"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Льготный период (в месяцах)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rOu-TI-f49" userLabel="Label" customClass="LocalizedLabel" customModule="EasyLoan" customModuleProvider="target">
@@ -331,7 +331,7 @@
                                                     <constraint firstAttribute="bottom" secondItem="ZQ8-ph-Bzt" secondAttribute="bottom" id="pcE-o8-TiA"/>
                                                 </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JtU-on-ZTJ" userLabel="Section 11" customClass="LabelAndTextFieldView" customModule="EasyLoan" customModuleProvider="target">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JtU-on-ZTJ" userLabel="Section 11" customClass="LabelAndTextFieldView" customModule="EasyLoan" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="779" width="414" height="75"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <userDefinedRuntimeAttributes>
@@ -342,7 +342,7 @@
                                                     <userDefinedRuntimeAttribute type="string" keyPath="localizedKey" value="LOAN_PERCENTAGE"/>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
-                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="E94-EB-gvM" userLabel="Section 12" customClass="LabelAndTextFieldView" customModule="EasyLoan" customModuleProvider="target">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E94-EB-gvM" userLabel="Section 12" customClass="LabelAndTextFieldView" customModule="EasyLoan" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="854" width="414" height="75"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <userDefinedRuntimeAttributes>
@@ -353,7 +353,7 @@
                                                     <userDefinedRuntimeAttribute type="string" keyPath="localizedKey" value="LOAN_COEFFICIENT"/>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
-                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0fE-at-HZD" userLabel="ref 1 name" customClass="LabelAndTextFieldView" customModule="EasyLoan" customModuleProvider="target">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0fE-at-HZD" userLabel="ref 1 name" customClass="LabelAndTextFieldView" customModule="EasyLoan" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="929" width="414" height="75"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <userDefinedRuntimeAttributes>
@@ -362,10 +362,10 @@
                                                     <userDefinedRuntimeAttribute type="string" keyPath="localizedKey" value="REF_ONE_NAME"/>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
-                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AUk-Cy-m1N">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AUk-Cy-m1N">
                                                 <rect key="frame" x="0.0" y="1004" width="414" height="115"/>
                                                 <subviews>
-                                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LGA-YH-NIZ" userLabel="ref 1 tel" customClass="LabelAndTextFieldView" customModule="EasyLoan" customModuleProvider="target">
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LGA-YH-NIZ" userLabel="ref 1 tel" customClass="LabelAndTextFieldView" customModule="EasyLoan" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="290" height="115"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <userDefinedRuntimeAttributes>
@@ -375,7 +375,7 @@
                                                             <userDefinedRuntimeAttribute type="string" keyPath="localizedKey" value="REF_ONE_PNONE"/>
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
-                                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vfu-bY-oyI" userLabel="Drop Menu View 1" customClass="DropMenuView" customModule="EasyLoan" customModuleProvider="target">
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vfu-bY-oyI" userLabel="Drop Menu View 1" customClass="DropMenuView" customModule="EasyLoan" customModuleProvider="target">
                                                         <rect key="frame" x="290" y="82" width="100" height="33"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
@@ -396,7 +396,7 @@
                                                     <constraint firstAttribute="trailing" secondItem="vfu-bY-oyI" secondAttribute="trailing" constant="24" id="ofJ-Hb-csn"/>
                                                 </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iFD-E8-9fq" userLabel="ref 2 name" customClass="LabelAndTextFieldView" customModule="EasyLoan" customModuleProvider="target">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iFD-E8-9fq" userLabel="ref 2 name" customClass="LabelAndTextFieldView" customModule="EasyLoan" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="1119" width="414" height="75"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <userDefinedRuntimeAttributes>
@@ -405,10 +405,10 @@
                                                     <userDefinedRuntimeAttribute type="string" keyPath="localizedKey" value="REF_TWO_NAME"/>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
-                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jlc-qK-TES">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jlc-qK-TES">
                                                 <rect key="frame" x="0.0" y="1194" width="414" height="115"/>
                                                 <subviews>
-                                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zoa-BB-vZk" userLabel="ref 2 te" customClass="LabelAndTextFieldView" customModule="EasyLoan" customModuleProvider="target">
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zoa-BB-vZk" userLabel="ref 2 te" customClass="LabelAndTextFieldView" customModule="EasyLoan" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="290" height="115"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <userDefinedRuntimeAttributes>
@@ -418,7 +418,7 @@
                                                             <userDefinedRuntimeAttribute type="string" keyPath="localizedKey" value="REF_TWO_PHONE"/>
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
-                                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PZy-Ds-I6C" userLabel="Drop Menu View 1" customClass="DropMenuView" customModule="EasyLoan" customModuleProvider="target">
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PZy-Ds-I6C" userLabel="Drop Menu View 1" customClass="DropMenuView" customModule="EasyLoan" customModuleProvider="target">
                                                         <rect key="frame" x="290" y="82" width="100" height="33"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
@@ -442,7 +442,7 @@
                                             </view>
                                         </subviews>
                                     </stackView>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BMg-gk-mjR" customClass="RoundedButton" customModule="EasyLoan" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BMg-gk-mjR" customClass="RoundedButton" customModule="EasyLoan" customModuleProvider="target">
                                         <rect key="frame" x="24" y="1333" width="366" height="40"/>
                                         <color key="backgroundColor" red="0.20305740829999999" green="0.27641239760000003" blue="0.49340111019999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>

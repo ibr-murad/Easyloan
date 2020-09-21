@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="aDO-IW-an2">
-    <device id="retina6_5" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="aDO-IW-an2">
+    <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment version="2304" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -18,14 +16,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="1200"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" tag="2" contentMode="scaleToFill" ambiguous="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cKY-K2-5gL">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" tag="2" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cKY-K2-5gL">
                                 <rect key="frame" x="0.0" y="44" width="414" height="1122"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="o6K-Py-3Fg">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="780"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="o6K-Py-3Fg">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="788"/>
                                         <subviews>
-                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UHK-VX-iCj" userLabel="Name" customClass="LabelAndTextFieldView" customModule="EasyLoan" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="75"/>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UHK-VX-iCj" userLabel="Name" customClass="LabelAndTextFieldView" customModule="EasyLoan" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="77"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="title" value="ФИО"/>
@@ -33,8 +31,8 @@
                                                     <userDefinedRuntimeAttribute type="string" keyPath="localizedKey" value="FULL_NAME"/>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
-                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="r3U-eE-bZE" userLabel="Adress">
-                                                <rect key="frame" x="0.0" y="75" width="414" height="144"/>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r3U-eE-bZE" userLabel="Adress">
+                                                <rect key="frame" x="0.0" y="77" width="414" height="148"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" Фактический адресс проживания" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UgI-MG-TuJ" userLabel="Label" customClass="LocalizedLabel" customModule="EasyLoan" customModuleProvider="target">
                                                         <rect key="frame" x="24" y="24" width="366" height="17"/>
@@ -46,17 +44,17 @@
                                                             <userDefinedRuntimeAttribute type="string" keyPath="localizedKey" value="ACTUAL_ADRESS"/>
                                                         </userDefinedRuntimeAttributes>
                                                     </label>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="IRQ-11-zD4">
+                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="IRQ-11-zD4">
                                                         <rect key="frame" x="24" y="51" width="366" height="53"/>
                                                         <subviews>
-                                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ypt-jj-R0o" userLabel="Drop Menu View 1" customClass="DropMenuView" customModule="EasyLoan" customModuleProvider="target">
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ypt-jj-R0o" userLabel="Drop Menu View 1" customClass="DropMenuView" customModule="EasyLoan" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="0.0" width="175" height="53"/>
                                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <userDefinedRuntimeAttributes>
                                                                     <userDefinedRuntimeAttribute type="string" keyPath="title" value="Не выбрано"/>
                                                                 </userDefinedRuntimeAttributes>
                                                             </view>
-                                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="b6W-Hq-Prj" userLabel="Drop Menu View 2" customClass="DropMenuView" customModule="EasyLoan" customModuleProvider="target">
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b6W-Hq-Prj" userLabel="Drop Menu View 2" customClass="DropMenuView" customModule="EasyLoan" customModuleProvider="target">
                                                                 <rect key="frame" x="191" y="0.0" width="175" height="53"/>
                                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <userDefinedRuntimeAttributes>
@@ -65,8 +63,8 @@
                                                             </view>
                                                         </subviews>
                                                     </stackView>
-                                                    <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Пушкина 30/2 кв. 14" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="c5G-UL-HMb" userLabel="Street" customClass="FocusedTextField" customModule="EasyLoan" customModuleProvider="target">
-                                                        <rect key="frame" x="24" y="114" width="366" height="30"/>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Пушкина 30/2 кв. 14" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="c5G-UL-HMb" userLabel="Street" customClass="FocusedTextField" customModule="EasyLoan" customModuleProvider="target">
+                                                        <rect key="frame" x="24" y="114" width="366" height="34"/>
                                                         <color key="textColor" red="0.3068953156" green="0.2954892516" blue="0.2954892516" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
@@ -86,8 +84,8 @@
                                                     <constraint firstAttribute="trailing" secondItem="IRQ-11-zD4" secondAttribute="trailing" constant="24" id="oAL-ZB-I1B"/>
                                                 </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Vhr-Rj-F5Y">
-                                                <rect key="frame" x="0.0" y="219" width="414" height="107"/>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vhr-Rj-F5Y">
+                                                <rect key="frame" x="0.0" y="225" width="414" height="107"/>
                                                 <subviews>
                                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Gou-b6-rsa">
                                                         <rect key="frame" x="24" y="59" width="318" height="48"/>
@@ -95,22 +93,22 @@
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="48" id="aik-iL-f26"/>
                                                         </constraints>
-                                                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="10" id="ZfC-5x-7sv">
-                                                            <size key="itemSize" width="102" height="44"/>
+                                                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="6" minimumInteritemSpacing="10" id="ZfC-5x-7sv">
+                                                            <size key="itemSize" width="110" height="44"/>
                                                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                                             <inset key="sectionInset" minX="0.0" minY="4" maxX="0.0" maxY="0.0"/>
                                                         </collectionViewFlowLayout>
                                                         <cells>
                                                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PhoneNumbersCollectionViewCell" id="Grm-I3-rsm" customClass="PhoneNumbersCollectionViewCell" customModule="EasyLoan" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="7" width="102" height="38"/>
+                                                                <rect key="frame" x="0.0" y="7" width="100" height="38"/>
                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="102" height="38"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="100" height="38"/>
                                                                     <autoresizingMask key="autoresizingMask"/>
                                                                     <subviews>
                                                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="987654321" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Wh0-xm-JPU" userLabel="text filed">
-                                                                            <rect key="frame" x="3" y="4" width="96" height="30"/>
+                                                                            <rect key="frame" x="-1.3333333333333357" y="2" width="102.66666666666669" height="34"/>
                                                                             <color key="textColor" red="0.3068953156" green="0.2954892516" blue="0.2954892516" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                             <textInputTraits key="textInputTraits"/>
@@ -121,7 +119,7 @@
                                                                     <constraint firstItem="Wh0-xm-JPU" firstAttribute="centerX" secondItem="Grm-I3-rsm" secondAttribute="centerX" id="WQE-vc-5MT"/>
                                                                     <constraint firstItem="Wh0-xm-JPU" firstAttribute="centerY" secondItem="Grm-I3-rsm" secondAttribute="centerY" id="g3w-ER-Nd6"/>
                                                                 </constraints>
-                                                                <size key="customSize" width="102" height="38"/>
+                                                                <size key="customSize" width="100" height="38"/>
                                                                 <connections>
                                                                     <outlet property="phoneTextField" destination="Wh0-xm-JPU" id="Cqh-kB-5Ra"/>
                                                                 </connections>
@@ -178,8 +176,8 @@
                                                     <constraint firstItem="Gou-b6-rsa" firstAttribute="leading" secondItem="Vhr-Rj-F5Y" secondAttribute="leading" constant="24" id="h0o-Yj-kh0"/>
                                                 </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9At-T8-OvM" userLabel="Email" customClass="LabelAndTextFieldView" customModule="EasyLoan" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="326" width="414" height="75"/>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9At-T8-OvM" userLabel="Email" customClass="LabelAndTextFieldView" customModule="EasyLoan" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="332" width="414" height="77"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="title" value="Электронная почта"/>
@@ -187,8 +185,8 @@
                                                     <userDefinedRuntimeAttribute type="string" keyPath="localizedKey" value="EMAIL"/>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
-                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MTJ-Yb-TWo" userLabel="Education">
-                                                <rect key="frame" x="0.0" y="401" width="414" height="99"/>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MTJ-Yb-TWo" userLabel="Education">
+                                                <rect key="frame" x="0.0" y="409" width="414" height="99"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Образование" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rCy-zD-9gC" userLabel="Label" customClass="LocalizedLabel" customModule="EasyLoan" customModuleProvider="target">
                                                         <rect key="frame" x="24" y="24" width="366" height="17"/>
@@ -200,7 +198,7 @@
                                                             <userDefinedRuntimeAttribute type="string" keyPath="localizedKey" value="EDUCATION"/>
                                                         </userDefinedRuntimeAttributes>
                                                     </label>
-                                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5du-VS-eej" userLabel="Drop Menu View 1" customClass="DropMenuView" customModule="EasyLoan" customModuleProvider="target">
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5du-VS-eej" userLabel="Drop Menu View 1" customClass="DropMenuView" customModule="EasyLoan" customModuleProvider="target">
                                                         <rect key="frame" x="24" y="57" width="366" height="42"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <userDefinedRuntimeAttributes>
@@ -219,8 +217,8 @@
                                                     <constraint firstAttribute="trailing" secondItem="5du-VS-eej" secondAttribute="trailing" constant="24" id="mCK-2V-tfD"/>
                                                 </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QOP-Fx-3kb" userLabel="Relationships">
-                                                <rect key="frame" x="0.0" y="500" width="414" height="110"/>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QOP-Fx-3kb" userLabel="Relationships">
+                                                <rect key="frame" x="0.0" y="508" width="414" height="110"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Семейное положение" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PRf-3a-aPp" userLabel="Label" customClass="LocalizedLabel" customModule="EasyLoan" customModuleProvider="target">
                                                         <rect key="frame" x="24" y="24" width="366" height="17"/>
@@ -232,7 +230,7 @@
                                                             <userDefinedRuntimeAttribute type="string" keyPath="localizedKey" value="FAMILY_STATUS"/>
                                                         </userDefinedRuntimeAttributes>
                                                     </label>
-                                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sDI-c9-ozk" userLabel="Drop Menu View 1" customClass="DropMenuView" customModule="EasyLoan" customModuleProvider="target">
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sDI-c9-ozk" userLabel="Drop Menu View 1" customClass="DropMenuView" customModule="EasyLoan" customModuleProvider="target">
                                                         <rect key="frame" x="24" y="57" width="366" height="53"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <userDefinedRuntimeAttributes>
@@ -251,8 +249,8 @@
                                                     <constraint firstAttribute="trailing" secondItem="sDI-c9-ozk" secondAttribute="trailing" constant="24" id="xPf-A0-WUm"/>
                                                 </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ud2-WI-vtZ" userLabel="Section 8">
-                                                <rect key="frame" x="0.0" y="610" width="414" height="85"/>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ud2-WI-vtZ" userLabel="Section 8">
+                                                <rect key="frame" x="0.0" y="618" width="414" height="85"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Количество членов семьи" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MpY-Ab-kPu" userLabel="Label" customClass="LocalizedLabel" customModule="EasyLoan" customModuleProvider="target">
                                                         <rect key="frame" x="24" y="24" width="366" height="21"/>
@@ -319,8 +317,8 @@
                                                     <constraint firstItem="GHk-fu-dKh" firstAttribute="leading" secondItem="Ud2-WI-vtZ" secondAttribute="leading" constant="24" id="row-iY-nS2"/>
                                                 </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FZY-Uj-LfR" userLabel="Section 8">
-                                                <rect key="frame" x="0.0" y="695" width="414" height="85"/>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FZY-Uj-LfR" userLabel="Section 8">
+                                                <rect key="frame" x="0.0" y="703" width="414" height="85"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Количество иждивенцов" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LFY-Yc-Ug0" userLabel="Label" customClass="LocalizedLabel" customModule="EasyLoan" customModuleProvider="target">
                                                         <rect key="frame" x="24" y="24" width="366" height="21"/>
@@ -389,8 +387,8 @@
                                             </view>
                                         </subviews>
                                     </stackView>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mCq-cu-8bP" customClass="RoundedButton" customModule="EasyLoan" customModuleProvider="target">
-                                        <rect key="frame" x="24" y="804" width="366" height="40"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mCq-cu-8bP" customClass="RoundedButton" customModule="EasyLoan" customModuleProvider="target">
+                                        <rect key="frame" x="24" y="812" width="366" height="40"/>
                                         <color key="backgroundColor" red="0.20305740829999999" green="0.27641239760000003" blue="0.49340111019999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="bOX-m6-ic9"/>

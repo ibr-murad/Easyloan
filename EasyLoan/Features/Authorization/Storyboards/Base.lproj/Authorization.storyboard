@@ -82,7 +82,9 @@
                         <constraints>
                             <constraint firstItem="vuJ-de-Rbg" firstAttribute="trailing" secondItem="dhY-bw-WjA" secondAttribute="trailing" constant="24" id="44e-K8-PvN"/>
                             <constraint firstItem="dhY-bw-WjA" firstAttribute="centerY" secondItem="Maw-Qj-lXl" secondAttribute="centerY" id="450-vo-fHE"/>
+                            <constraint firstItem="vuJ-de-Rbg" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="sjn-iL-Pm9" secondAttribute="trailing" constant="24" id="AWF-di-Ylq"/>
                             <constraint firstItem="sjn-iL-Pm9" firstAttribute="top" secondItem="Mhd-QX-v6v" secondAttribute="bottom" constant="2" id="Yef-mq-2um"/>
+                            <constraint firstItem="vuJ-de-Rbg" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Mhd-QX-v6v" secondAttribute="trailing" constant="24" id="ayz-DN-S3v"/>
                             <constraint firstItem="Mhd-QX-v6v" firstAttribute="leading" secondItem="vuJ-de-Rbg" secondAttribute="leading" constant="24" id="bQ9-O9-hJE"/>
                             <constraint firstItem="sjn-iL-Pm9" firstAttribute="leading" secondItem="Maw-Qj-lXl" secondAttribute="leading" constant="24" id="pga-PU-9yu"/>
                             <constraint firstItem="dhY-bw-WjA" firstAttribute="centerX" secondItem="Maw-Qj-lXl" secondAttribute="centerX" id="wFJ-4N-N6J"/>
@@ -124,10 +126,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="dXM-FF-9HT" userLabel="Middle Stack View">
-                                <rect key="frame" x="24" y="380" width="366" height="136"/>
+                                <rect key="frame" x="24" y="390.5" width="366" height="115.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" alpha="0.69999998807907104" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Вам отправлено сообщение с кодом активации" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rkH-j0-dqk" userLabel="instruction" customClass="LocalizedLabel" customModule="EasyLoan" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="366" height="41"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="366" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -136,13 +138,13 @@
                                         </userDefinedRuntimeAttributes>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="17058" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fXp-iZ-C7Z" userLabel="phone">
-                                        <rect key="frame" x="0.0" y="57" width="366" height="30"/>
+                                        <rect key="frame" x="0.0" y="36.5" width="366" height="30"/>
                                         <color key="textColor" red="0.3068953156" green="0.2954892516" blue="0.2954892516" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                         <textInputTraits key="textInputTraits" keyboardType="numberPad" textContentType="one-time-code"/>
                                     </textField>
                                     <button opaque="NO" alpha="0.5" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nOj-0j-Kcl" userLabel="continue" customClass="RoundedTextButton" customModule="EasyLoan" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="103" width="366" height="33"/>
+                                        <rect key="frame" x="0.0" y="82.5" width="366" height="33"/>
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <state key="normal">
@@ -164,10 +166,12 @@
                         </subviews>
                         <color key="backgroundColor" red="0.20305740829999999" green="0.27641239760000003" blue="0.49340111019999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="i9A-gs-Vwe" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="WEc-q4-ss5" secondAttribute="trailing" constant="24" id="5nV-3h-OUB"/>
                             <constraint firstItem="dXM-FF-9HT" firstAttribute="centerX" secondItem="0Fi-D5-nMo" secondAttribute="centerX" id="JOO-7t-wuI"/>
                             <constraint firstItem="dXM-FF-9HT" firstAttribute="centerY" secondItem="0Fi-D5-nMo" secondAttribute="centerY" id="LXu-n5-olr"/>
                             <constraint firstItem="i9A-gs-Vwe" firstAttribute="trailing" secondItem="dXM-FF-9HT" secondAttribute="trailing" constant="24" id="PQc-x6-RX6"/>
                             <constraint firstItem="CaG-jX-rdH" firstAttribute="leading" secondItem="i9A-gs-Vwe" secondAttribute="leading" constant="24" id="PpT-tn-aF5"/>
+                            <constraint firstItem="i9A-gs-Vwe" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="CaG-jX-rdH" secondAttribute="trailing" constant="24" id="VsN-Cl-RbW"/>
                             <constraint firstItem="WEc-q4-ss5" firstAttribute="top" secondItem="CaG-jX-rdH" secondAttribute="bottom" constant="2" id="XCt-2o-r5t"/>
                             <constraint firstItem="dXM-FF-9HT" firstAttribute="leading" secondItem="i9A-gs-Vwe" secondAttribute="leading" constant="24" id="e1j-QZ-T7U"/>
                             <constraint firstItem="WEc-q4-ss5" firstAttribute="leading" secondItem="0Fi-D5-nMo" secondAttribute="leading" constant="24" id="rZt-bj-RoO"/>

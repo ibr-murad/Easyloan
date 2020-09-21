@@ -131,7 +131,8 @@ class FormFourViewController: FormsBaseViewController {
                     }
                     self.completionHendler?(id, self.familyMemberNum)
             }) { (error, code) in
-                print(error)
+                self.allPhotosData.removeLast()
+                self.alertError(message: error.msg)
             }
         }
     }

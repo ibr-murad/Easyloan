@@ -38,7 +38,7 @@ extension String {
     }
     
     func localized() -> String? {
-        var language = Locale.current.languageCode
+        var language = "ru"
         
         if let selectedLanguage = UserDefaults.standard.string(forKey: "appLanguage") {
             language = selectedLanguage
