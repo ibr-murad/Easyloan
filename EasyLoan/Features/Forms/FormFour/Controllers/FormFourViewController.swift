@@ -129,7 +129,7 @@ class FormFourViewController: FormsBaseViewController {
                     } else {
                         self.isFormFullHandler?(false)
                     }
-                    self.completionHendler?(id, self.familyMemberNum)
+                    self.completionHendler?(id, self.mIncome)
             }) { (error, code) in
                 self.allPhotosData.removeLast()
                 self.alertError(message: error.msg)
@@ -233,7 +233,7 @@ extension FormFourViewController: UICollectionViewDelegate, UICollectionViewData
             
             if let id = self.createdRequestId {
                 self.isFormFullHandler?(self.allPhotosData.count >= 2)
-                self.completionHendler?(id, self.familyMemberNum)
+                self.completionHendler?(id, self.mIncome)
             }
         }
         self.navigationController?.pushViewController(controller, animated: true)

@@ -39,10 +39,10 @@ class MainViewController: BaseViewController {
             searchBar.searchTextField.subviews[0].subviews[0].removeFromSuperview()
         } else {
             searchBar.setSearchField(color: .white, cornerRadius: 12)
-            searchBar.setTextColor(color: AppColors.dark.color())
             searchBar.backgroundColor = AppColors.orange.color()
             searchBar.setBackgroundImage(UIImage(), for: .any, barMetrics: .default)
         }
+        searchBar.setTextColor(color: AppColors.dark.color())
         return controller
     }()
     
@@ -65,6 +65,7 @@ class MainViewController: BaseViewController {
     @IBOutlet weak var backgroundTitleLabel: UILabel!
     @IBOutlet weak var backgroundDescriptionLabel: UILabel!
     @IBOutlet weak var retryButton: LocalizedButton!
+    @IBOutlet weak var bottomTabView: UIView!
     @IBOutlet weak var newRequestButton: RoundedButton!
     
     // MARK: - View Lifecycle
@@ -94,6 +95,7 @@ class MainViewController: BaseViewController {
         self.requestForDictinaryList()
         self.setTableView()
         self.setSearchViewController()
+        self.setBottomTabView()
         self.reloadControllerData()
     }
     
@@ -144,7 +146,9 @@ class MainViewController: BaseViewController {
     }
     
     @IBAction func notificationBarButtonTapped(_ sender: UIBarButtonItem) {
+        let controller = NotificationsViewController.instantiate()
         
+        self.navigationController?.pushViewController(controller, animated: true)
     }
     
     @IBAction func retryButtonTapped(_ sender: LocalizedButton) {
@@ -217,6 +221,14 @@ class MainViewController: BaseViewController {
                 self.tableView.alpha = 1
             }
         }
+    }
+    
+    private func setBottomTabView() {
+        self.bottomTabView.layer.masksToBounds = true
+        self.bottomTabView.layer.shadowOpacity = 0.2
+        self.bottomTabView.layer.shadowOffset = CGSize(width: 0, height: 2)
+        self.bottomTabView.layer.shadowColor = UIColor.black.cgColor
+        self.bottomTabView.layer.masksToBounds = false
     }
     
     // MARK: - Networking
@@ -449,10 +461,11 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
                     success(true)
             })
             if let cgImage = UIImage(named: "contextualDelete")?.cgImage {
-                deleteAction.image =
-                    ImageWithoutRender(cgImage: cgImage, scale: 2, orientation: .up)
-                deleteAction.backgroundColor = .groupTableViewBackground
+                deleteAction.image = ImageWithoutRender(
+                    cgImage: cgImage, scale: 2, orientation: .up)
+                deleteAction.backgroundColor = .white
             }
+            
             let callAction = UIContextualAction(
                 style: .normal, title:  "",
                 handler: { [weak self, indexPath] (ac:UIContextualAction, view:UIView, success:(Bool) -> Void) in
@@ -461,16 +474,14 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
                     self.showPhoneActionSheet(for: number)
                     success(true)
             })
-            
             if let cgImage = UIImage(named: "contextualCall")?.cgImage {
                 callAction.image =
                     ImageWithoutRender(cgImage: cgImage, scale: 2, orientation: .up)
-                callAction.backgroundColor = .groupTableViewBackground
+                callAction.backgroundColor = .white
             }
             
             let config = UISwipeActionsConfiguration(actions: [deleteAction, callAction])
             config.performsFirstActionWithFullSwipe = false
-            
             return config
         }
         return UISwipeActionsConfiguration(actions: [])

@@ -14,6 +14,7 @@ class ImageViewerViewController: UIViewController {
     // MARK: - Public Variables
     
     var imageWasDeletedHandler: ((String) -> Void)?
+    var deleteButtonEnabled: Bool = true
     
     // MARK: - Private Variables
     
@@ -75,9 +76,12 @@ class ImageViewerViewController: UIViewController {
     
     private func setupNavigationBar() {
         self.navigationItem.title = self.model?.typeText
-        let deleteButton = UIBarButtonItem(barButtonSystemItem: .trash, target: self,
-                                           action: #selector(self.deleteBarButtonTapped))
-        self.navigationItem.rightBarButtonItem = deleteButton
+        if self.deleteButtonEnabled {
+            let deleteButton = UIBarButtonItem(
+                barButtonSystemItem: .trash, target: self,
+                action: #selector(self.deleteBarButtonTapped))
+            self.navigationItem.rightBarButtonItem = deleteButton
+        }
     }
     
     // MARK: - Aletrt

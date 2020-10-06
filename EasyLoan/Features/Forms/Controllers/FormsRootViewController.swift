@@ -88,11 +88,11 @@ class FormsRootViewController: UIViewController {
         self.forms.forEach {
             $0.isEditable = self.isEditable
             $0.createdRequestId = self.requestId
-            if let formFour = $0 as? FormFourViewController {
-                formFour.isRevision = self.isRevision
-            }
         }
-        
+        self.formFour.isRevision = self.isRevision
+        if self.isRevision {
+            self.formFive.isEditable = true
+        }
         self.setNavigationBar()
         self.addChildren()
     }
@@ -281,12 +281,12 @@ class FormsRootViewController: UIViewController {
             if i != 4 {
                 let current = self.forms[i]
                 let next = self.forms[i + 1]
-                current.completionHendler = { [weak self] id, familyNumber in
+                current.completionHendler = { [weak self] id, someData in
                     guard let self = self else { return }
                     if i == 0 {
-                        if let familyNumber = familyNumber {
-                            next.familyMemberNum = familyNumber
-                        }
+                        next.familyMemberNum = Int(someData)
+                    } else if i == 1 {
+                        next.mIncome = someData
                     }
                     self.createdRequestId = id
                 }

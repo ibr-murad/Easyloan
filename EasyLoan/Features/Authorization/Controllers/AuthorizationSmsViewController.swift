@@ -61,7 +61,7 @@ class AuthorizationSmsViewController: UIViewController {
             success: { (data: UserModel) in
                 UserDefaults.standard.setLoggedInUser(user: data)
                 AppDelegate.shared.rootViewController.switchToMainScreen()
-                self.dismiss(animated: false, completion: nil)
+                self.dismiss(animated: true, completion: nil)
         }) { (error, code) in
             self.dismiss(animated: true, completion: {
                 self.alertError(message: error.msg)
@@ -75,11 +75,7 @@ class AuthorizationSmsViewController: UIViewController {
         self.continueButton.isEnabled = isEnabled
         if isEnabled {
             UIView.animate(withDuration: 0.5) {
-                if #available(iOS 11.0, *) {
-                    self.continueButton.backgroundColor = UIColor(named: "appColor")
-                } else {
-                    // Fallback on earlier versions
-                }
+                self.continueButton.backgroundColor = AppColors.orange.color()
                 self.continueButton.alpha = 1
             }
         } else {

@@ -104,7 +104,29 @@ class ProfileViewController: BaseViewController {
         })
     }
     
+    private func configureNotifications(with token: String) {
+        /*Network.shared.request(
+            url: URLPath.configureNotifications,
+            method: .post,
+            parameters: ["token": token],
+            headers: ["auth-token": UserDefaults.standard.getUser().token],
+            isQueryString: false,
+            success: <#T##(Decodable) -> Void#>, feilure: <#T##Failure##Failure##(ErrorModel, Int) -> Void#>)*/
+    }
+    
     // MARK: - Actions
+    
+    @IBAction func notificationSwitch(_ sender: UISwitch) {
+        if sender.isOn {
+            UIApplication.shared.registerForRemoteNotifications()
+            UserDefaults.standard.set(true, forKey: "isNeedNotifications")
+            
+        } else {
+            UIApplication.shared.unregisterForRemoteNotifications()
+            UserDefaults.standard.set(false, forKey: "isNeedNotifications")
+        }
+    }
+    
     
     @objc private func languageViewTapped() {
         let dropDown = DropDown()
@@ -157,6 +179,8 @@ class ProfileViewController: BaseViewController {
     private func setupViews() {
         let tap = UITapGestureRecognizer(target: self, action: #selector(self.languageViewTapped))
         self.languageView.addGestureRecognizer(tap)
+        let isNeedNotifications = UserDefaults.standard.isNeedNotifications()
+        self.notificationSwitch.isOn = isNeedNotifications
     }
   
     private func setLanguageLabelText() {

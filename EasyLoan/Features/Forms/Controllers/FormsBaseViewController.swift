@@ -15,10 +15,11 @@ class FormsBaseViewController: UIViewController {
     var requestFull: RequestFullViewModel?
     var createdRequestId: Int?
     var familyMemberNum: Int = 1
+    var mIncome: Float = 0
     var isEditable: Bool = true
     var isFormFullHandler: ((Bool) -> Void)?
     var continueButtonTappedHandler: (() -> Void)?
-    var completionHendler: ((Int, Int?) -> Void)?
+    var completionHendler: ((Int, Float) -> Void)?
     
     // MARK: - View Lifecycle
     

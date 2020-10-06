@@ -27,11 +27,16 @@ class DropMenuView: UIView {
     
     var selectedId: String = "0" {
         didSet {
-            guard let dicts = self.dataSource else { return }
-            self.label.text = self.getNameById(id: self.selectedId)
-            if let element = dicts.first(where: {$0.parentID != nil && $0.id == Int(self.selectedId)}) {
-                self.parentIdHedler?(element.parentID ?? "")
+            if self.selectedId != "0" {
+                guard let dicts = self.dataSource else { return }
+                self.label.text = self.getNameById(id: self.selectedId)
+                if let element = dicts.first(where: {$0.parentID != nil && $0.id == Int(self.selectedId)}) {
+                    self.parentIdHedler?(element.parentID ?? "")
+                }
+            } else {
+                self.label.text = "Не выбрано"
             }
+            
         }
     }
     

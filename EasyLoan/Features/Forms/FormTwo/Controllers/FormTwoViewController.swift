@@ -26,7 +26,7 @@ class FormTwoViewController: FormsBaseViewController {
     
     // MARK: - Private Variables
 
-    private var monthlyIncome: Float = 0
+    var monthlyIncome: Float = 0
     private var avgConsPerFamMember: Float = 0
     private let experienceCalculateController = CalculateController()
     private let homeRadionButtonController = RadioButtonController()
@@ -127,9 +127,8 @@ class FormTwoViewController: FormsBaseViewController {
             success: { [weak self] (data: CreateRequestModel) in
                 guard let self = self else { return }
                 self.isFormFullHandler?(data.check)
-                print(data)
                 self.continueButtonTappedHandler?()
-                self.completionHendler?(data.id, self.familyMemberNum)
+                self.completionHendler?(data.id, self.monthlyIncome)
         }) { (error, code) in
             print(error)
         }
@@ -168,8 +167,9 @@ class FormTwoViewController: FormsBaseViewController {
             let familyExpenses = self.familyExpensesPerMonthView.textField.text?.toFloat()
             else { return }
         
+        self.mIncome = monthlyNetIncome - operationExpanses - familyExpenses
         self.monthlyIncome = monthlyNetIncome - operationExpanses - familyExpenses
-        self.monthlyIncomeView.textField.text = String(format: "%0.2f", self.monthlyIncome)
+        self.monthlyIncomeView.textField.text = String(format: "%0.2f", self.mIncome)
     }
     
     private func culculateAvgConsPerFamMember() {
@@ -191,6 +191,7 @@ class FormTwoViewController: FormsBaseViewController {
         self.familyExpensesPerMonthView.textField.text = "\(request.familyExpenses)"
         self.clientExpensesView.textField.text = "\(request.famClientExpenses)"
         self.monthlyIncomeView.textField.text = "\(request.monthlyIncome)"
+        self.mIncome = request.monthlyIncome
         self.avgConsPerFamMemberView.textField.text = "\(request.avgConsPerFamMember)"
         if let cityId = request.workAddress.city, let street = request.workAddress.street {
             self.workCityDropDownView.selectedId = String(describing: cityId)

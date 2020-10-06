@@ -131,7 +131,7 @@ class FormThreeViewController: FormsBaseViewController {
                 guard let self = self else { return }
                 self.isFormFullHandler?(data.check)
                 self.continueButtonTappedHandler?()
-                self.completionHendler?(data.id, self.familyMemberNum)
+                self.completionHendler?(data.id, self.mIncome)
         }) { (error, code) in
             print(error)
         }
@@ -168,7 +168,14 @@ class FormThreeViewController: FormsBaseViewController {
     }
     
     private func culculateForCoefficient() {
-        guard let request = self.requestFull else { return }
+        
+        var monthlyIncome: Double = 0
+        
+        if let request = self.requestFull {
+            monthlyIncome = Double(request.monthlyIncome)
+        } else {
+            monthlyIncome = Double(self.mIncome)
+        }
         
         guard let loanAmount = self.loanAmountView.textField.text?.toDouble(),
             let loanTerm = self.loanTermView.textField.text?.toDouble(),
@@ -179,8 +186,7 @@ class FormThreeViewController: FormsBaseViewController {
         
         let p = loanPercentage / 100.0 / 12.0
         let m = loanAmount * (p + p / ( pow((1 + p), loanTerm) - 1 ))
-        let k = Double(request.monthlyNetIncome -
-            request.operationExpanses - request.famClientExpenses) / m
+        let k = monthlyIncome / m
         
         self.loanCoeffView.textField.text = String(format: "%0.2f", k)
     }

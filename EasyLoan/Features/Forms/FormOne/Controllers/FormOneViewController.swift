@@ -85,7 +85,7 @@ class FormOneViewController: FormsBaseViewController {
                 guard let self = self else { return }
                 self.isFormFullHandler?(data.check)
                 self.continueButtonTappedHandler?()
-                self.completionHendler?(data.id, Int(self.familyValueLabel.text ?? "1") ?? 1)
+                self.completionHendler?(data.id, Float(self.familyValueLabel.text ?? "1") ?? 1)
         }) { (error, code) in
             print(error)
         }

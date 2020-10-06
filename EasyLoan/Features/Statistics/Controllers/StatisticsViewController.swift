@@ -132,7 +132,7 @@ class StatisticsViewController: BaseViewController {
         let entry3 = BarChartDataEntry(x: 3.0, y: 94.0)
         let entry4 = BarChartDataEntry(x: 4.0, y: 333.0)
         
-        let dataSet = BarChartDataSet(values: [entry1, entry2, entry3, entry4], label: nil)
+        let dataSet = BarChartDataSet(entries: [entry1, entry2, entry3, entry4], label: nil)
         dataSet.colors = [
             AppColors.orange.color(),
             UIColor.lightGray,

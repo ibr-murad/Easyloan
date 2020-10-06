@@ -44,8 +44,10 @@
 		20A414C1250B87B30026967D /* LogoutAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A414C0250B87B30026967D /* LogoutAlertView.swift */; };
 		20A414C3250B87BC0026967D /* LogoutAlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20A414C2250B87BC0026967D /* LogoutAlertView.xib */; };
 		20A8BCD92510862200170704 /* ImageViewerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A8BCD82510862200170704 /* ImageViewerViewController.swift */; };
+		20AB2FF5251A19CA004ED2E6 /* NotificationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20AB2FF4251A19CA004ED2E6 /* NotificationModel.swift */; };
 		20AD6973250618DE000996D0 /* ApprovedPhotosCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20AD6971250618DE000996D0 /* ApprovedPhotosCollectionViewCell.swift */; };
 		20AD697725062147000996D0 /* ApprovedTableViewCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20AD697625062147000996D0 /* ApprovedTableViewCellModel.swift */; };
+		20AF99DC251DCCCC00E0B705 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 20AF99DB251DCCCC00E0B705 /* GoogleService-Info.plist */; };
 		20B484A624D009AA00326734 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B484A524D009AA00326734 /* BaseViewController.swift */; };
 		20B5257E24C7F90300473D6D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B5257D24C7F90300473D6D /* AppDelegate.swift */; };
 		20B5258524C7F90500473D6D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 20B5258424C7F90500473D6D /* Assets.xcassets */; };
@@ -91,7 +93,7 @@
 		20CBD4F225078D4B002CD451 /* Notification.Name+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CBD4F125078D4B002CD451 /* Notification.Name+Ex.swift */; };
 		20CBD4F5250794DA002CD451 /* LocalizedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CBD4F4250794DA002CD451 /* LocalizedButton.swift */; };
 		20CEA87C24F79ACE00AFF5D1 /* DictinaryNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CEA87B24F79ACE00AFF5D1 /* DictinaryNames.swift */; };
-		20CF05D224E4FFFA002CA6B2 /* NotificationPopoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CF05D124E4FFFA002CA6B2 /* NotificationPopoverViewController.swift */; };
+		20CF05D224E4FFFA002CA6B2 /* NotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CF05D124E4FFFA002CA6B2 /* NotificationsViewController.swift */; };
 		20CF05D624E51866002CA6B2 /* NotificationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CF05D524E51866002CA6B2 /* NotificationTableViewCell.swift */; };
 		20CF05D924E54E72002CA6B2 /* UISearchBar+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CF05D824E54E72002CA6B2 /* UISearchBar+Ex.swift */; };
 		20D5AE7724D91F3B00821CF1 /* UIButton+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D5AE7624D91F3B00821CF1 /* UIButton+Ex.swift */; };
@@ -108,6 +110,7 @@
 		20F9F51624CFE8D000E68CD7 /* FormFiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F9F51524CFE8D000E68CD7 /* FormFiveViewController.swift */; };
 		20FB642F24FE0F3A005DBA0B /* LogoutModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20FB642E24FE0F3A005DBA0B /* LogoutModel.swift */; };
 		20FB643224FE843E005DBA0B /* DashboardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20FB643124FE843E005DBA0B /* DashboardModel.swift */; };
+		20FB68CC2521E40600A1246A /* NotificationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20FB68CB2521E40600A1246A /* NotificationViewModel.swift */; };
 		B569450231CF92AA795DFCF9 /* Pods_EasyLoan.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A069A7CC294FB3C6E8ACBBB /* Pods_EasyLoan.framework */; };
 /* End PBXBuildFile section */
 
@@ -150,8 +153,11 @@
 		20A414C0250B87B30026967D /* LogoutAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutAlertView.swift; sourceTree = "<group>"; };
 		20A414C2250B87BC0026967D /* LogoutAlertView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LogoutAlertView.xib; sourceTree = "<group>"; };
 		20A8BCD82510862200170704 /* ImageViewerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewerViewController.swift; sourceTree = "<group>"; };
+		20AB2FF4251A19CA004ED2E6 /* NotificationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationModel.swift; sourceTree = "<group>"; };
 		20AD6971250618DE000996D0 /* ApprovedPhotosCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApprovedPhotosCollectionViewCell.swift; sourceTree = "<group>"; };
 		20AD697625062147000996D0 /* ApprovedTableViewCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApprovedTableViewCellModel.swift; sourceTree = "<group>"; };
+		20AF99DB251DCCCC00E0B705 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		20AF99DD251DEB0100E0B705 /* EasyLoan.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = EasyLoan.entitlements; sourceTree = "<group>"; };
 		20B484A524D009AA00326734 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		20B5257A24C7F90300473D6D /* EasyLoan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EasyLoan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		20B5257D24C7F90300473D6D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -199,7 +205,7 @@
 		20CBD4F125078D4B002CD451 /* Notification.Name+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notification.Name+Ex.swift"; sourceTree = "<group>"; };
 		20CBD4F4250794DA002CD451 /* LocalizedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedButton.swift; sourceTree = "<group>"; };
 		20CEA87B24F79ACE00AFF5D1 /* DictinaryNames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictinaryNames.swift; sourceTree = "<group>"; };
-		20CF05D124E4FFFA002CA6B2 /* NotificationPopoverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationPopoverViewController.swift; sourceTree = "<group>"; };
+		20CF05D124E4FFFA002CA6B2 /* NotificationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsViewController.swift; sourceTree = "<group>"; };
 		20CF05D524E51866002CA6B2 /* NotificationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationTableViewCell.swift; sourceTree = "<group>"; };
 		20CF05D824E54E72002CA6B2 /* UISearchBar+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UISearchBar+Ex.swift"; sourceTree = "<group>"; };
 		20D5AE7624D91F3B00821CF1 /* UIButton+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Ex.swift"; sourceTree = "<group>"; };
@@ -216,6 +222,7 @@
 		20F9F51524CFE8D000E68CD7 /* FormFiveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormFiveViewController.swift; sourceTree = "<group>"; };
 		20FB642E24FE0F3A005DBA0B /* LogoutModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutModel.swift; sourceTree = "<group>"; };
 		20FB643124FE843E005DBA0B /* DashboardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardModel.swift; sourceTree = "<group>"; };
+		20FB68CB2521E40600A1246A /* NotificationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewModel.swift; sourceTree = "<group>"; };
 		3A069A7CC294FB3C6E8ACBBB /* Pods_EasyLoan.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EasyLoan.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5483D8C113C4501CB119588C /* Pods-EasyLoan.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasyLoan.release.xcconfig"; path = "Target Support Files/Pods-EasyLoan/Pods-EasyLoan.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -361,6 +368,7 @@
 			children = (
 				20392C0124F4D5DD00E892BB /* RequestViewModel.swift */,
 				20392C0524F5148200E892BB /* RequestFullViewModel.swift */,
+				20FB68CB2521E40600A1246A /* NotificationViewModel.swift */,
 			);
 			path = "View Models";
 			sourceTree = "<group>";
@@ -638,8 +646,10 @@
 		20B5257C24C7F90300473D6D /* EasyLoan */ = {
 			isa = PBXGroup;
 			children = (
+				20AF99DD251DEB0100E0B705 /* EasyLoan.entitlements */,
 				20B5257D24C7F90300473D6D /* AppDelegate.swift */,
 				20B5258924C7F90500473D6D /* Info.plist */,
+				20AF99DB251DCCCC00E0B705 /* GoogleService-Info.plist */,
 				20B5259124C7FE6200473D6D /* Common */,
 				20B5259224C7FE6A00473D6D /* Features */,
 				20B5259324C7FE7300473D6D /* Extensions */,
@@ -714,6 +724,7 @@
 				20988BAE24F3D4F000DE69E0 /* AddressModel.swift */,
 				20392C0324F4F75700E892BB /* RefereesInfoModel.swift */,
 				20CBD4E32507578C002CD451 /* RequestsOrderBy.swift */,
+				20AB2FF4251A19CA004ED2E6 /* NotificationModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -739,7 +750,7 @@
 			isa = PBXGroup;
 			children = (
 				20B5259F24C800F700473D6D /* MainViewController.swift */,
-				20CF05D124E4FFFA002CA6B2 /* NotificationPopoverViewController.swift */,
+				20CF05D124E4FFFA002CA6B2 /* NotificationsViewController.swift */,
 				20DC60CE24E6CE44007EAF0E /* SortbyPopoverViewController.swift */,
 			);
 			path = Controllers;
@@ -1225,6 +1236,7 @@
 				20CBD4EA2507856F002CD451 /* tj.strings in Resources */,
 				20C05DF524E1496A007D5A5A /* FormFour.storyboard in Resources */,
 				20BEECBC24D7F1D80043EDD3 /* SuccesPopoverView.xib in Resources */,
+				20AF99DC251DCCCC00E0B705 /* GoogleService-Info.plist in Resources */,
 				20B5258524C7F90500473D6D /* Assets.xcassets in Resources */,
 				20C05DE924E14925007D5A5A /* Profile.storyboard in Resources */,
 				20B525C724C8703B00473D6D /* DropMenuView.xib in Resources */,
@@ -1318,7 +1330,7 @@
 				20B484A624D009AA00326734 /* BaseViewController.swift in Sources */,
 				2003500E24CED3CF00ED30A1 /* RequestState.swift in Sources */,
 				20FB643224FE843E005DBA0B /* DashboardModel.swift in Sources */,
-				20CF05D224E4FFFA002CA6B2 /* NotificationPopoverViewController.swift in Sources */,
+				20CF05D224E4FFFA002CA6B2 /* NotificationsViewController.swift in Sources */,
 				209F269C24CAB49F002C22A9 /* AuthorizationSmsViewController.swift in Sources */,
 				2098AA2124C97CF400DA5CAB /* RoundedView.swift in Sources */,
 				20B525A724C80DAD00473D6D /* RequestModel.swift in Sources */,
@@ -1330,7 +1342,9 @@
 				20988BAF24F3D4F000DE69E0 /* AddressModel.swift in Sources */,
 				2098AA1924C961C000DA5CAB /* RoundedButton.swift in Sources */,
 				20CF05D624E51866002CA6B2 /* NotificationTableViewCell.swift in Sources */,
+				20FB68CC2521E40600A1246A /* NotificationViewModel.swift in Sources */,
 				20DC60CF24E6CE44007EAF0E /* SortbyPopoverViewController.swift in Sources */,
+				20AB2FF5251A19CA004ED2E6 /* NotificationModel.swift in Sources */,
 				2041EB0824DC236400CE3B2C /* PhotoCellModel.swift in Sources */,
 				20A414C1250B87B30026967D /* LogoutAlertView.swift in Sources */,
 				2097373124D13887009A4EEA /* RadionButtonController.swift in Sources */,
@@ -1579,18 +1593,19 @@
 			baseConfigurationReference = 1499289A1A429105DBEB4143 /* Pods-EasyLoan.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = EasyLoan/EasyLoan.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 3WB39GU29C;
 				INFOPLIST_FILE = EasyLoan/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = tj.murad.EasyLoan;
+				PRODUCT_BUNDLE_IDENTIFIER = tj.humo.easyloan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -1599,18 +1614,19 @@
 			baseConfigurationReference = 5483D8C113C4501CB119588C /* Pods-EasyLoan.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = EasyLoan/EasyLoan.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 3WB39GU29C;
 				INFOPLIST_FILE = EasyLoan/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = tj.murad.EasyLoan;
+				PRODUCT_BUNDLE_IDENTIFIER = tj.humo.easyloan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

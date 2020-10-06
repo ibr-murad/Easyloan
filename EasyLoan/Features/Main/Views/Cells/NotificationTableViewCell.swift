@@ -14,17 +14,26 @@ class NotificationTableViewCell: UITableViewCell {
     
     @IBOutlet weak var conteinerView: RoundedView!
     @IBOutlet weak var statusImageView: UIImageView!
-    @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var timeLabel: UILabel!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        
+        self.conteinerView.layer.masksToBounds = true
+        self.conteinerView.layer.shadowOpacity = 0.2
+        self.conteinerView.layer.shadowOffset = CGSize(width: 0, height: 3)
+        self.conteinerView.layer.shadowRadius = 5
+        self.conteinerView.layer.shadowColor = UIColor.black.cgColor
+        self.conteinerView.layer.masksToBounds = false
     }
     
-    func initView(statusImage: UIImage, name: String, time: String) {
+    func initView(statusImage: UIImage, title: String, description: String, date: String) {
         self.statusImageView.image = statusImage
-        self.nameLabel.text = name
-        self.timeLabel.text = time
+        self.titleLabel.text = title
+        self.descriptionLabel.text = description
+        self.dateLabel.text = date
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {

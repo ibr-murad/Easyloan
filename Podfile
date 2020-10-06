@@ -5,12 +5,14 @@ target 'EasyLoan' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
 
-  # Pods for EasyLoan
-  pod 'Alamofire', '4.9.0'
-  pod 'SwiftEntryKit', '0.8.1'
-  pod 'IQKeyboardManagerSwift', '6.0.4'
-  pod 'Charts', '3.2.0'
-  pod 'DropDown', '2.3.4'
-  pod 'SnapKit', '~> 4.0'
+  inhibit_all_warnings!
 
+  pod 'Alamofire', '4.9.1'
+  pod 'SwiftEntryKit', '1.2.6'
+  pod 'IQKeyboardManagerSwift', '6.5.0'
+  pod 'Charts', '3.4.0'
+  pod 'DropDown', '2.3.10'
+  pod 'SnapKit', '4.2.0'
+  pod 'Firebase/Messaging'
+  pod 'FirebaseAnalytics'
 end

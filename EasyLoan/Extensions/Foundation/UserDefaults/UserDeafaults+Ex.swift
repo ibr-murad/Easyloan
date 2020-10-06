@@ -26,6 +26,7 @@ extension UserDefaults {
     }
 
     func isLoggedIn() -> Bool {
+        synchronize()
         return bool(forKey: "isLoggedIn")
     }
     
@@ -62,5 +63,23 @@ extension UserDefaults {
             }
         }
         return list
+    }
+    
+    func setFcmToken(token: String) {
+        set(token, forKey: "fcmToken")
+    }
+    
+    func getFcmToken() -> String {
+        guard let token = value(forKey: "fcmToken") as? String else {
+            synchronize()
+            return ""
+        }
+        synchronize()
+        return token
+    }
+    
+    func isNeedNotifications() -> Bool {
+        synchronize()
+        return bool(forKey: "isNeedNotifications")
     }
 }

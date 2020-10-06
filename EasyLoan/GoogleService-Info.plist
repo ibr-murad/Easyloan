@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>703614828489-iebjdh285l0crtv2dtla6jag2qdj64lb.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.703614828489-iebjdh285l0crtv2dtla6jag2qdj64lb</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>703614828489-d0rqlinbosai4tdj3saub41fup9c94b7.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyA6A7vQhqFaxl9LYYCIEFG0RIohtsC0Q3Q</string>
+	<key>GCM_SENDER_ID</key>
+	<string>703614828489</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>tj.humo.easyloan</string>
+	<key>PROJECT_ID</key>
+	<string>easyloan-667e1</string>
+	<key>STORAGE_BUCKET</key>
+	<string>easyloan-667e1.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:703614828489:ios:f6f4b1a3cd3a8424343218</string>
+	<key>DATABASE_URL</key>
+	<string>https://easyloan-667e1.firebaseio.com</string>
+</dict>
+</plist>

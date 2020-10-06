@@ -95,6 +95,7 @@ class FormFiveViewController: FormsBaseViewController {
     // MARK: - Actions
     
     @IBAction func sendButtonTapped(_ sender: Any) {
+        self.setEnabledSendButton(isEnabled: false)
         guard let request = self.requestFull else { return }
         Network.shared.syncWithCFT(id: String(describing: request.id)) { [weak self] in
             guard let self = self else { return }
@@ -103,6 +104,7 @@ class FormFiveViewController: FormsBaseViewController {
                 guard let self = self else { return }
                 self.navigationController?.popToRootViewController(animated: true)
             }
+            self.setEnabledSendButton(isEnabled: true)
             SwiftEntryKit.display(entry: view, using: EKAttributes.setupAttributes(statusBar: .light))
         }
     }
@@ -122,6 +124,9 @@ class FormFiveViewController: FormsBaseViewController {
         if isAllFormsFilled && request.files.count >= 2 {
             self.setEnabledSendButton(isEnabled: true)
         } else {
+            self.setEnabledSendButton(isEnabled: false)
+        }
+        if request.stepFive {
             self.setEnabledSendButton(isEnabled: false)
         }
     }

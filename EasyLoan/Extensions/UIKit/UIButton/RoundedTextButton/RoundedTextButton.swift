@@ -11,6 +11,8 @@ import UIKit
 @IBDesignable
 class RoundedTextButton: UIButton {
     
+    // MARK: - Public Variables
+    
     @IBInspectable var cornerRadius: CGFloat = 5 {
         didSet {
             self.layer.cornerRadius = self.cornerRadius

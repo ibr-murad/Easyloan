@@ -69,12 +69,12 @@ class ApprovedViewController: BaseViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        self.setupNavigationBar()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.setupNavigationBar()
     }
     
     
@@ -330,4 +330,10 @@ extension ApprovedViewController: UICollectionViewDelegate, UICollectionViewData
         return CGSize(width: 100, height: 155)
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let model = self.allPhotosData[indexPath.row]
+        let controller = ImageViewerViewController.instantiate(with: model)
+        controller.deleteButtonEnabled = false
+        self.navigationController?.pushViewController(controller, animated: true)
+    }
 }

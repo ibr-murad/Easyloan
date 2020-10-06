@@ -20,5 +20,6 @@ struct URLPath {
     static let uploadFile = "file/application/"
     static let downloadFile = "file/application/"
     static let syncWithCFT = "application/sync/"
-    
+    static let getNotifications = "notifications/user"
+    static let configureNotifications = "notifications/user/tkn"
 }
