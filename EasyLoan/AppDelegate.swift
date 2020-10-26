@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import UserNotifications
 import IQKeyboardManagerSwift
 import Firebase
 import DropDown
@@ -47,6 +48,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
       // Messaging.messaging().appDidReceiveMessage(userInfo)
 
       // Print message ID.
+        //device id BA161404-6BEE-47D9-B952-DACAE6337C02
       if let messageID = userInfo[gcmMessageIDKey] {
         print("Message ID: \(messageID)")
       }
@@ -86,7 +88,9 @@ extension AppDelegate: UNUserNotificationCenterDelegate, MessagingDelegate {
           let authOptions: UNAuthorizationOptions = [.alert, .badge, .sound]
           UNUserNotificationCenter.current().requestAuthorization(
             options: authOptions,
-            completionHandler: {_, _ in })
+            completionHandler: {granted, _ in
+                print("-----------Granted: \(granted)")
+            })
         } else {
           let settings: UIUserNotificationSettings =
           UIUserNotificationSettings(types: [.alert, .badge, .sound], categories: nil)
@@ -94,27 +98,26 @@ extension AppDelegate: UNUserNotificationCenterDelegate, MessagingDelegate {
         }
         
         InstanceID.instanceID().instanceID { (result, error) in
-          if let error = error {
+          /*if let error = error {
             print("Error fetching remote instance ID: \(error)")
           } else if let result = result {
             print("Remote instance ID token: \(result.token)")
-            //self.instanceIDTokenMessage.text = "Remote InstanceID token: \(result.token)"
-          }
+          }*/
         }
         
         application.registerForRemoteNotifications()
     }
     
     func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String) {
-        print("Firebase registration token: \(fcmToken)")
-        
-        let dataDict:[String: String] = ["token": fcmToken]
-        NotificationCenter.default.post(name: .fcmToken, object: nil, userInfo: dataDict)
+        print(fcmToken)
         UserDefaults.standard.setFcmToken(token: fcmToken)
-        
-      // TODO: If necessary send token to application server.
-      // Note: This callback is fired at each app startup and whenever a new token is generated.
+        if UserDefaults.standard.isNeedNotifications() {
+            Network.shared.sendFcmTokenToAPI(token: fcmToken)
+        } else {
+            Network.shared.sendFcmTokenToAPI()
+        }
     }
+    
 
     
 }

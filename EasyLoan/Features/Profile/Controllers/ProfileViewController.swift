@@ -104,29 +104,18 @@ class ProfileViewController: BaseViewController {
         })
     }
     
-    private func configureNotifications(with token: String) {
-        /*Network.shared.request(
-            url: URLPath.configureNotifications,
-            method: .post,
-            parameters: ["token": token],
-            headers: ["auth-token": UserDefaults.standard.getUser().token],
-            isQueryString: false,
-            success: <#T##(Decodable) -> Void#>, feilure: <#T##Failure##Failure##(ErrorModel, Int) -> Void#>)*/
-    }
-    
     // MARK: - Actions
     
     @IBAction func notificationSwitch(_ sender: UISwitch) {
         if sender.isOn {
-            UIApplication.shared.registerForRemoteNotifications()
+            let fcmToken = UserDefaults.standard.getFcmToken()
+            Network.shared.sendFcmTokenToAPI(token: fcmToken)
             UserDefaults.standard.set(true, forKey: "isNeedNotifications")
-            
         } else {
-            UIApplication.shared.unregisterForRemoteNotifications()
+            Network.shared.sendFcmTokenToAPI()
             UserDefaults.standard.set(false, forKey: "isNeedNotifications")
         }
     }
-    
     
     @objc private func languageViewTapped() {
         let dropDown = DropDown()

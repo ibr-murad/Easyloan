@@ -79,7 +79,18 @@ class FormFourViewController: FormsBaseViewController {
     }
     
     @IBAction func cameraButtonTapped(_ sender: UIButton) {
-        self.showImagePickerController(sourceType: .camera)
+        let controller = DocumetsTypePopoverController.instantiate()
+        self.presentPopoverViewController(controller: controller,
+                                          sourceView: self.view,
+                                          size: CGSize(width: 300, height: 300),
+                                          minusY: 70, arrowDirection: UIPopoverArrowDirection(rawValue: 0))
+        controller.selectedDocumentValueHendler = { [weak self] type in
+            guard let self = self else { return }
+            self.currentPhotoType = type
+            self.dismiss(animated: true, completion: { [weak self] in
+                self?.showImagePickerController(sourceType: .camera)
+            })
+        }
     }
     
     @IBAction func continueButtonTapped(_ sender: Any) {
@@ -144,14 +155,24 @@ class FormFourViewController: FormsBaseViewController {
         self.collectionView.dataSource = self
     }
     
+    private func makeSubviewsEnabled(value: Bool) {
+        for subview in self.view.subviews {
+            if subview === self.collectionView {
+                subview.isUserInteractionEnabled = true
+            } else {
+                subview.isUserInteractionEnabled = value
+            }
+        }
+    }
+    
     private func setIsEditable() {
         if self.isEditable {
-            self.view.isUserInteractionEnabled = true
+            self.makeSubviewsEnabled(value: true)
         } else {
             if self.isRevision {
-                self.view.isUserInteractionEnabled = true
+                self.makeSubviewsEnabled(value: true)
             } else {
-                self.view.isUserInteractionEnabled = false
+                self.makeSubviewsEnabled(value: false)
             }
         }
     }
@@ -225,7 +246,12 @@ extension FormFourViewController: UICollectionViewDelegate, UICollectionViewData
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let model = self.allPhotosData[indexPath.row]
         let controller = ImageViewerViewController.instantiate(with: model)
-        
+        if self.isEditable {
+            controller.deleteButtonEnabled = true
+        } else {
+            controller.deleteButtonEnabled = false
+        }
+    
         controller.imageWasDeletedHandler = { [weak self] id in
             guard let self = self else { return }
             self.allPhotosData = self.allPhotosData.filter({$0.fileId != id})

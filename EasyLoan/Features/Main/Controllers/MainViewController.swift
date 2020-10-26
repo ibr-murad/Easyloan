@@ -13,16 +13,7 @@ import IQKeyboardManagerSwift
 class MainViewController: BaseViewController {
 
     // MARK: - GUI Variables
-    
-    private lazy var searchBar: UISearchBar = {
-        var searchBar = UISearchBar()
         
-        searchBar.barStyle = .default
-        searchBar.searchTextField.backgroundColor = .white
-        
-        return searchBar
-    }()
-    
     private lazy var searchController: UISearchController = {
         var controller = UISearchController(searchResultsController: nil)
         if #available(iOS 9.1, *) {

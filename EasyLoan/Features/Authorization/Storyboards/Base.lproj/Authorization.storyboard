@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="DIY-aP-Gcl">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="DIY-aP-Gcl">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment version="2304" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -29,10 +29,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="dhY-bw-WjA">
-                                <rect key="frame" x="24" y="361" width="366" height="174"/>
+                                <rect key="frame" x="24" y="371.5" width="366" height="153.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" alpha="0.69999999999999996" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Для авторизации введите свой номер телефона" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rDz-mZ-lTz" userLabel="instruction" customClass="LocalizedLabel" customModule="EasyLoan" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="366" height="41"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="366" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="0.3068953156" green="0.2954892516" blue="0.2954892516" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -41,13 +41,13 @@
                                         </userDefinedRuntimeAttributes>
                                     </label>
                                     <textField opaque="NO" contentMode="left" semanticContentAttribute="forceLeftToRight" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="98 765 43 21" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Zgr-vn-faD" userLabel="phone">
-                                        <rect key="frame" x="0.0" y="57" width="366" height="34"/>
+                                        <rect key="frame" x="0.0" y="36.5" width="366" height="34"/>
                                         <color key="textColor" red="0.3068953156" green="0.2954892516" blue="0.2954892516" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                         <textInputTraits key="textInputTraits" keyboardType="phonePad" returnKeyType="done" textContentType="tel"/>
                                     </textField>
-                                    <button opaque="NO" alpha="0.5" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e8i-fh-bqF" userLabel="continue" customClass="RoundedTextButton" customModule="EasyLoan" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="107" width="366" height="33"/>
+                                    <button opaque="NO" alpha="0.5" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e8i-fh-bqF" userLabel="continue" customClass="RoundedTextButton" customModule="EasyLoan" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="86.5" width="366" height="33"/>
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <state key="normal">
@@ -64,7 +64,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" alpha="0.69999999999999996" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="*Для кредитных экспертов Хумо" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NWJ-3f-44w" userLabel="note" customClass="LocalizedLabel" customModule="EasyLoan" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="156" width="366" height="18"/>
+                                        <rect key="frame" x="0.0" y="135.5" width="366" height="18"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <color key="textColor" red="0.3068953156" green="0.2954892516" blue="0.2954892516" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -75,6 +75,7 @@
                                 </subviews>
                             </stackView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="vuJ-de-Rbg"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="vuJ-de-Rbg" firstAttribute="trailing" secondItem="dhY-bw-WjA" secondAttribute="trailing" constant="24" id="44e-K8-PvN"/>
@@ -88,7 +89,6 @@
                             <constraint firstItem="dhY-bw-WjA" firstAttribute="leading" secondItem="vuJ-de-Rbg" secondAttribute="leading" constant="24" id="wNQ-ow-OZD"/>
                             <constraint firstItem="Mhd-QX-v6v" firstAttribute="top" secondItem="vuJ-de-Rbg" secondAttribute="top" constant="48" id="y6c-Hs-UHL"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="vuJ-de-Rbg"/>
                     </view>
                     <navigationItem key="navigationItem" id="Inf-GK-dXH"/>
                     <connections>
@@ -136,11 +136,12 @@
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="17058" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fXp-iZ-C7Z" userLabel="phone">
                                         <rect key="frame" x="0.0" y="36.5" width="366" height="34"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="textColor" red="0.3068953156" green="0.2954892516" blue="0.2954892516" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                         <textInputTraits key="textInputTraits" keyboardType="numberPad" textContentType="one-time-code"/>
                                     </textField>
-                                    <button opaque="NO" alpha="0.5" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nOj-0j-Kcl" userLabel="continue" customClass="RoundedTextButton" customModule="EasyLoan" customModuleProvider="target">
+                                    <button opaque="NO" alpha="0.5" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nOj-0j-Kcl" userLabel="continue" customClass="RoundedTextButton" customModule="EasyLoan" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="86.5" width="366" height="33"/>
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -160,6 +161,7 @@
                                 </subviews>
                             </stackView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="i9A-gs-Vwe"/>
                         <color key="backgroundColor" red="0.20305740829999999" green="0.27641239760000003" blue="0.49340111019999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="i9A-gs-Vwe" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="WEc-q4-ss5" secondAttribute="trailing" constant="24" id="5nV-3h-OUB"/>
@@ -173,7 +175,6 @@
                             <constraint firstItem="WEc-q4-ss5" firstAttribute="leading" secondItem="0Fi-D5-nMo" secondAttribute="leading" constant="24" id="rZt-bj-RoO"/>
                             <constraint firstItem="CaG-jX-rdH" firstAttribute="top" secondItem="i9A-gs-Vwe" secondAttribute="top" constant="48" id="ufa-mp-Kwl"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="i9A-gs-Vwe"/>
                     </view>
                     <connections>
                         <outlet property="continueButton" destination="nOj-0j-Kcl" id="dml-eH-eoV"/>
@@ -205,4 +206,21 @@
             <point key="canvasLocation" x="992.75362318840587" y="77.678571428571431"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="NWJ-3f-44w">
+            <size key="intrinsicContentSize" width="110.5" height="18"/>
+        </designable>
+        <designable name="e8i-fh-bqF">
+            <size key="intrinsicContentSize" width="86" height="33"/>
+        </designable>
+        <designable name="nOj-0j-Kcl">
+            <size key="intrinsicContentSize" width="86" height="33"/>
+        </designable>
+        <designable name="rDz-mZ-lTz">
+            <size key="intrinsicContentSize" width="283" height="20.5"/>
+        </designable>
+        <designable name="rkH-j0-dqk">
+            <size key="intrinsicContentSize" width="226.5" height="20.5"/>
+        </designable>
+    </designables>
 </document>

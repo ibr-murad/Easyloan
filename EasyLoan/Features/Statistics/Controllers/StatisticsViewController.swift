@@ -83,25 +83,9 @@ class StatisticsViewController: BaseViewController {
     // MARK: - Networking
     
     private func fetchStaistic(from: String, to: String) {
-        
-        /*Network.shared.request(
-            url: URLPath.dashboard, method: .get,
-            /*parameters: ["to": to,
-                         "from": from],*/
-            headers: ["auth-token": UserDefaults.standard.getUser().token],
-            success: { (data: DashboardModel) in
-                self.dismiss(animated: true, completion: nil)
-        }) { (error, code) in
-            self.dismiss(animated: true, completion: {
-                self.alertError(message: error.msg)
-            })
-        }*/
-        
-        
-        
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .seconds(1)) {
             self.barChartUpdate()
-            self.setStatisticVisible(true)
+            self.setStatisticVisible(false)
             self.dismiss(animated: true, completion: nil)
         }
     }
@@ -127,12 +111,12 @@ class StatisticsViewController: BaseViewController {
     }
     
     private func barChartUpdate () {
-        let entry1 = BarChartDataEntry(x: 1.0, y: 516.0)
-        let entry2 = BarChartDataEntry(x: 2.0, y: 624.0)
-        let entry3 = BarChartDataEntry(x: 3.0, y: 94.0)
-        let entry4 = BarChartDataEntry(x: 4.0, y: 333.0)
+        let entry1 = BarChartDataEntry(x: 1.0, y: 0.0)
+        let entry2 = BarChartDataEntry(x: 2.0, y: 0.0)
+        let entry3 = BarChartDataEntry(x: 3.0, y: 0.0)
+        let entry4 = BarChartDataEntry(x: 4.0, y: 0.0)
         
-        let dataSet = BarChartDataSet(entries: [entry1, entry2, entry3, entry4], label: nil)
+        let dataSet = BarChartDataSet(entries: [entry1, entry2, entry3, entry4])
         dataSet.colors = [
             AppColors.orange.color(),
             UIColor.lightGray,

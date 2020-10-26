@@ -6,24 +6,58 @@
   Copyright © 2020 Murad Ibrohimov. All rights reserved.
 */
 
+//MARK: -Authorization
+
+ENTER_YOUR_NUMBER_FOR_AUTH = "Enter your phone number for authirization";
+FOR_HUMO_CE = "*For loan officers of Humo";
+SMS_WITH_ACTIVATE_CODE = "You have been sent a message with an activation code";
+
 //MARK: -Main
+
+SEARCH = "Search...";
+REQUESTS_LIST = "Applications list";
+YOUR_FUTURE_REQUESTS_LIST = "Your future applications list";
+YOU_HAVE_NOT_REQUESTS = "You have no applications";
+WITH_STATUS = "with status";
+DO_YOU_WANT_DELETE_REQUEST = "Do you want to delete aplication?";
+YOU_CAN_DELETE_ONLY_DRAFT = "You can delete only drafts";
+RETRY = "Retry";
 
 //MARK: -Statistic
 
+STATISTIC = "Statistics";
+ACTIVE_PROFILE = "Active portfolio";
+LOAN_SUMM = "Issued amount";
+PAR_ONE = "PAR 1";
+PAR_THIRTY = "PAR 30";
+ACTICE_CLIENT_COUNT = "Active numbers of clients";
+APPROVED_LOANS_COUNT = "Number of loans issued";
+
+//MARK: -Filter
+
+FILTER_TITLE = "Filter for";
+ONE_MONTH = "Month";
+THREE_MONTH = "3 months";
+SIX_MONTH = "6 months";
+ONE_YEAR = "Year";
+FROM = "From";
+TO = "To";
+
 //MARK: -Profile
 
-ALL_REQUESTS = "Total\nloans";
-UPLOADED_REQUESTS = "Uploaded\nloans";
-APPROVED_REQUESTS = "Approved\nloans";
+ALL_REQUESTS = "Total\napplications";
+UPLOADED_REQUESTS = "Uploaded\napplications";
+APPROVED_REQUESTS = "Approved\napplications";
 
 APP_LANGUAGE = "Language";
 LANGUAGE_RU = "Russian";
 LANGUAGE_TJ = "Tajik";
 LANGUAGE_EN = "English";
-NOTIFICATION = "Notification";
+NOTIFICATION = "Notifications";
 VERSION = "Version";
 
 LOGOUT = "Logout";
+DO_YOU_WANT_LOGOUT = "Do you want to logout?";
 
 //MARK: -OrderBy
 
@@ -39,11 +73,80 @@ ORDER_BY_REVISION = "Revision";
 
 //MARK: -Form 1
 
+REQUEST = "Application";
+NEW_REQUEST = "New application";
+
+FULL_NAME = "Full name";
+ACTUAL_ADRESS = "Residence address";
+PHONE_NUMBER = "Phone number";
+EMAIL = "E-mail";
+EDUCATION = "Education";
+FAMILY_STATUS = "Maritail status";
+FAMILY_NUMBER = "Number of family members";
+DEPENDICIS_NUMBER = "Number of dependents";
+
 //MARK: -Form 2
+
+MONTHLY_INCOME_NET = "Client's financial income per month";
+MONTHLY_INCOME_NET_COM = "More details";
+OPERATION_EXPENSES = "Operating expenses per month";
+FAMILY_EXPENSES = "Family expenses per month";
+CLIENT_FAMILY_EXPENSES = "Client's family expenses";
+MONHTLY_ICOM = "Monthly income";
+EXPENSES_PER_FAMILY_MEMBER = "Expenses per family member per month";
+WORK_ADRESS = "Work address";
+WORK_PLACE = "Work place";
+EXPIRIENCE = "Work experience (in months)";
+HAVE_PROPERTY = "Have property";
+HAVE_CAR = "Have car";
 
 //MARK: -Form 3
 
+CREDIT_PRODUCT = "Loan product";
+CREDIT_TARG = "Loan purpose";
+CREDIT_TARG_COM = "Loan purpose (more details)";
+LOAN_AMOUT = "Loan amount";
+LOAN_TERM = "Loan term (in months)";
+LOAN_CURRENCY = "Loan currency";
+PAYMENT_TYPE = "Payment type";
+GRACE_PERIOD = "Grace period (in months)";
+LOAN_PERCENTAGE = "Loan percentage (%)";
+LOAN_COEFFICIENT = "Loan coverage ration";
+REFEREE = "Referee";
+REF_ONE_NAME = "Referee 1 full name";
+REF_ONE_PNONE = "Referee 1 phone number";
+REF_TWO_NAME = "Referee 2 full name";
+REF_TWO_PHONE = "Referee 1 phone number";
+
 //MARK: -Form 4
+
+CHOSE_DOCUMENT = "Select document";
+PASSPORT = "Pasport";
+INN = "Identification number";
+INCOME_STATEMENT = "Income statement";
+REQUEST_FOR_LOAN = "Loan statement";
+CLIENT_PHOTO = "Client photo";
+OTHER_DOCUMENTS = "Other documents";
+DO_YOU_WANT_DELETE_DOCUMENT = "Do you want to delete document?";
 
 //MARK: -Form 5
 
+REQUEST_SYNC = "Synchronized!";
+REQUEST_NOT_SYNC = "Not synchronized!";
+REQUEST_FILL = "All fields are filled!";
+REQUEST_FILL_MSG = "The application is ready to be sent";
+REQUEST_NOT_FILL = "All fields are not filled!";
+REQUEST_NOT_FILL_MSG = "Please, fill all fields";
+SEND_TO_CFT = "Send to CFT";
+WAIT_FOR_ANSWER = "Expect a response within 24 hours";
+
+//MARK: -Other
+
+FILES = "Files";
+ERROR = "Error";
+ERROR_MSG = "Something went wrong. Try again.";
+WAIT = "Wait";
+CONTINUE = "Continue";
+APPLY = "Apply";
+DELETE = "Delete";
+MAKE_CALL = "Call";

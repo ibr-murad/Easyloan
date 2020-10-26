@@ -14,8 +14,8 @@ class UnderlinedButton: UIButton {
     // MARK: - variables
     
     var buttonAtributes: [NSAttributedString.Key: Any] = [
-        .font: UIFont.systemFont(ofSize: 14),
-        .underlineStyle: NSUnderlineStyle.double.rawValue]
+        .font: UIFont.systemFont(ofSize: 15),
+        .underlineStyle: 1.0]
     
     @IBInspectable
     var textColor: UIColor = .black {

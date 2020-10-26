@@ -67,6 +67,7 @@ extension UserDefaults {
     
     func setFcmToken(token: String) {
         set(token, forKey: "fcmToken")
+        synchronize()
     }
     
     func getFcmToken() -> String {

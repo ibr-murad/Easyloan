@@ -56,7 +56,7 @@ LANGUAGE_EN = "Анлглийский";
 NOTIFICATION = "Уведомления";
 VERSION = "Версия";
 
-LOGOUT = "Деактивировать устройство";
+LOGOUT = "Выйти из профиля";
 DO_YOU_WANT_LOGOUT = "Вы действительно хотите выйти из профиля?";
 
 //MARK: -OrderBy

@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="qZq-2D-Xmm">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="qZq-2D-Xmm">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment version="2304" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -131,14 +132,14 @@
                                 </connections>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="fZz-ax-O39"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="7Jr-RV-Dgq" firstAttribute="top" secondItem="fZz-ax-O39" secondAttribute="top" constant="16" id="9kk-5C-xnv"/>
                             <constraint firstItem="7Jr-RV-Dgq" firstAttribute="leading" secondItem="fZz-ax-O39" secondAttribute="leading" id="GM1-rA-mEI"/>
                             <constraint firstItem="fZz-ax-O39" firstAttribute="bottom" secondItem="7Jr-RV-Dgq" secondAttribute="bottom" id="UfV-pj-Fbv"/>
                             <constraint firstItem="fZz-ax-O39" firstAttribute="trailing" secondItem="7Jr-RV-Dgq" secondAttribute="trailing" id="syI-Ne-mhv"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="fZz-ax-O39"/>
                     </view>
                     <connections>
                         <outlet property="tableView" destination="7Jr-RV-Dgq" id="C60-ES-H2I"/>
@@ -178,7 +179,7 @@
                                                     <constraint firstAttribute="height" constant="20" id="mcU-lp-pV0"/>
                                                 </constraints>
                                             </imageView>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xFO-zi-AlJ" customClass="LocalizedButton" customModule="EasyLoan" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xFO-zi-AlJ" customClass="LocalizedButton" customModule="EasyLoan" customModuleProvider="target">
                                                 <rect key="frame" x="44" y="8" width="330" height="20"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <state key="normal" title="Показать все">
@@ -213,7 +214,7 @@
                                                     <constraint firstAttribute="height" constant="20" id="O4j-sh-ZgU"/>
                                                 </constraints>
                                             </imageView>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kzY-EW-iH5" customClass="LocalizedButton" customModule="EasyLoan" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kzY-EW-iH5" customClass="LocalizedButton" customModule="EasyLoan" customModuleProvider="target">
                                                 <rect key="frame" x="44" y="8" width="330" height="20"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <state key="normal" title="По имени">
@@ -248,7 +249,7 @@
                                                     <constraint firstAttribute="width" constant="20" id="TcC-bT-JnG"/>
                                                 </constraints>
                                             </imageView>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G4i-mz-Jve" customClass="LocalizedButton" customModule="EasyLoan" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G4i-mz-Jve" customClass="LocalizedButton" customModule="EasyLoan" customModuleProvider="target">
                                                 <rect key="frame" x="44" y="8" width="330" height="20"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <state key="normal" title="Утвержденные">
@@ -283,7 +284,7 @@
                                                     <constraint firstAttribute="width" constant="20" id="Va5-C9-Giz"/>
                                                 </constraints>
                                             </imageView>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JGf-fl-ce1" customClass="LocalizedButton" customModule="EasyLoan" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JGf-fl-ce1" customClass="LocalizedButton" customModule="EasyLoan" customModuleProvider="target">
                                                 <rect key="frame" x="44" y="8" width="330" height="20"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <state key="normal" title="Отклоненные">
@@ -318,7 +319,7 @@
                                                     <constraint firstAttribute="height" constant="20" id="l0p-Pp-phU"/>
                                                 </constraints>
                                             </imageView>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eLf-qx-oCY" customClass="LocalizedButton" customModule="EasyLoan" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eLf-qx-oCY" customClass="LocalizedButton" customModule="EasyLoan" customModuleProvider="target">
                                                 <rect key="frame" x="44" y="8" width="330" height="20"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <state key="normal" title="Черновики">
@@ -353,7 +354,7 @@
                                                     <constraint firstAttribute="width" constant="20" id="i60-AY-F6U"/>
                                                 </constraints>
                                             </imageView>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XQe-g4-DAL" customClass="LocalizedButton" customModule="EasyLoan" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XQe-g4-DAL" customClass="LocalizedButton" customModule="EasyLoan" customModuleProvider="target">
                                                 <rect key="frame" x="44" y="8" width="330" height="20"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <state key="normal" title="Отправленные">
@@ -388,7 +389,7 @@
                                                     <constraint firstAttribute="height" constant="20" id="q3Z-JK-znY"/>
                                                 </constraints>
                                             </imageView>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m6j-vm-RPE" customClass="LocalizedButton" customModule="EasyLoan" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m6j-vm-RPE" customClass="LocalizedButton" customModule="EasyLoan" customModuleProvider="target">
                                                 <rect key="frame" x="44" y="8" width="330" height="20"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <state key="normal" title="На доработку">
@@ -416,6 +417,7 @@
                                 </subviews>
                             </stackView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="eUw-EG-kEt"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="WAm-hi-qiz" firstAttribute="leading" secondItem="eUw-EG-kEt" secondAttribute="leading" constant="16" id="7gu-P0-PJh"/>
@@ -425,7 +427,6 @@
                             <constraint firstItem="ILE-us-bUk" firstAttribute="leading" secondItem="9OB-A8-LVI" secondAttribute="leading" constant="24" id="jWB-AL-ybR"/>
                             <constraint firstAttribute="trailing" secondItem="ILE-us-bUk" secondAttribute="trailing" constant="24" id="kAe-Os-dOT"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="eUw-EG-kEt"/>
                     </view>
                     <value key="contentSizeForViewInPopover" type="size" width="414" height="600"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
@@ -447,16 +448,16 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="659"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="mIm-hv-x2d" userLabel="Top Stack View">
-                                        <rect key="frame" x="75.666666666666671" y="296.66666666666669" width="223.66666666666663" height="65.666666666666686"/>
+                                        <rect key="frame" x="74.666666666666686" y="296.66666666666669" width="226" height="65.666666666666686"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Все поля не заполнены!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ldx-xB-aos" userLabel="Label 1">
-                                                <rect key="frame" x="0.0" y="0.0" width="223.66666666666666" height="24"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="226" height="24"/>
                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
                                                 <color key="textColor" red="0.3068953156" green="0.2954892516" blue="0.2954892516" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Заполните пропущенные поля" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3VK-b4-Ujp" userLabel="Label 2">
-                                                <rect key="frame" x="12" y="31.999999999999996" width="200" height="33.666666666666657"/>
+                                                <rect key="frame" x="13" y="31.999999999999996" width="200" height="33.666666666666657"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="200" id="ndR-vZ-QQx"/>
                                                 </constraints>
@@ -464,8 +465,8 @@
                                                 <color key="textColor" red="0.3068953156" green="0.2954892516" blue="0.2954892516" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cno-JR-Jl4" customClass="LocalizedButton" customModule="EasyLoan" customModuleProvider="target">
-                                                <rect key="frame" x="90.333333333333329" y="65.666666666666629" width="42.999999999999986" height="0.0"/>
+                                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cno-JR-Jl4" customClass="LocalizedButton" customModule="EasyLoan" customModuleProvider="target">
+                                                <rect key="frame" x="90.999999999999986" y="65.666666666666629" width="44.000000000000014" height="0.0"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <state key="normal" title="Button">
                                                     <color key="titleColor" name="linkColor" catalog="System" colorSpace="catalog"/>
@@ -508,13 +509,13 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" multipleTouchEnabled="YES" alpha="0.5" contentMode="left" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" text="Agro-micro" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tqy-N2-g9y" userLabel="type">
-                                                            <rect key="frame" x="71.999999999999986" y="67" width="198.66666666666663" height="18"/>
+                                                            <rect key="frame" x="72.000000000000014" y="67" width="198.33333333333337" height="18"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                             <color key="textColor" red="0.3068953156" green="0.2954892516" blue="0.2954892516" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" multipleTouchEnabled="YES" alpha="0.5" contentMode="left" horizontalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" text="17.07.2020" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ym4-VT-wJg" userLabel="date">
-                                                            <rect key="frame" x="278.66666666666669" y="68" width="68.333333333333314" height="17"/>
+                                                            <rect key="frame" x="278.33333333333331" y="68" width="68.666666666666686" height="17"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                             <color key="textColor" red="0.3068953156" green="0.2954892516" blue="0.2954892516" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
@@ -555,6 +556,7 @@
                                                 <constraint firstAttribute="bottom" secondItem="bjs-wy-Nlx" secondAttribute="bottom" constant="6" id="uDJ-J4-gaL"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         <connections>
                                             <outlet property="containerView" destination="bjs-wy-Nlx" id="dLY-Eq-QQ5"/>
@@ -625,6 +627,7 @@
                                 </constraints>
                             </view>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="JVt-jr-ziP"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="JVt-jr-ziP" firstAttribute="trailing" secondItem="jPw-yI-4X0" secondAttribute="trailing" id="0hn-ui-OBz"/>
@@ -639,7 +642,6 @@
                             <constraint firstItem="J9v-ad-enC" firstAttribute="leading" secondItem="JVt-jr-ziP" secondAttribute="leading" id="uSo-Kg-udr"/>
                             <constraint firstItem="Nqv-Uc-GzE" firstAttribute="top" secondItem="J9v-ad-enC" secondAttribute="bottom" id="waV-Gx-ET0"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="JVt-jr-ziP"/>
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="a0o-Aw-lsQ">
@@ -672,6 +674,38 @@
             <point key="canvasLocation" x="7848.8000000000002" y="106.40394088669952"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="6hd-b3-gbQ">
+            <size key="intrinsicContentSize" width="24" height="24"/>
+        </designable>
+        <designable name="Cno-JR-Jl4">
+            <size key="intrinsicContentSize" width="44" height="29"/>
+        </designable>
+        <designable name="G4i-mz-Jve">
+            <size key="intrinsicContentSize" width="182" height="33"/>
+        </designable>
+        <designable name="ILE-us-bUk">
+            <size key="intrinsicContentSize" width="50" height="23"/>
+        </designable>
+        <designable name="JGf-fl-ce1">
+            <size key="intrinsicContentSize" width="177" height="33"/>
+        </designable>
+        <designable name="XQe-g4-DAL">
+            <size key="intrinsicContentSize" width="182" height="33"/>
+        </designable>
+        <designable name="eLf-qx-oCY">
+            <size key="intrinsicContentSize" width="148" height="33"/>
+        </designable>
+        <designable name="kzY-EW-iH5">
+            <size key="intrinsicContentSize" width="142" height="33"/>
+        </designable>
+        <designable name="m6j-vm-RPE">
+            <size key="intrinsicContentSize" width="170" height="33"/>
+        </designable>
+        <designable name="xFO-zi-AlJ">
+            <size key="intrinsicContentSize" width="136" height="33"/>
+        </designable>
+    </designables>
     <resources>
         <image name="bellIcon" width="24" height="24"/>
         <image name="newRequestIcon" width="24" height="24"/>
@@ -686,5 +720,8 @@
         <image name="statusApproved" width="32" height="32"/>
         <image name="tabProfileIcon" width="24" height="24"/>
         <image name="tabStatisticsIcon" width="24" height="24"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>

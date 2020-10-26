@@ -78,6 +78,32 @@ class Network {
         }
     }
     
+    func sendFcmTokenToAPI(token: String = "",
+                           completion: ((Bool) -> ())? = nil) {
+        let headers = [ "version": "201000", "auth-token": UserDefaults.standard.getUser().token]
+        let params = ["token": token]
+        let fullPath = self.baseURL + URLPath.configureNotifications
+        guard let url = URL(string: fullPath) else {
+            completion?(false)
+            return
+        }
+        
+        Alamofire.request(
+            url, method: .post,
+            parameters: params,
+            encoding: JSONEncoding.default,
+            headers: headers).responseData { (response) in
+                switch response.result {
+                case .success(_):
+                    print(params)
+                    completion?(true)
+                    break
+                case .failure(_):
+                    completion?(false)
+                    break
+                }
+            }
+    }
     
     func delete(url: String,
                 headers: [String: String]? = nil,
